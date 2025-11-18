@@ -4,6 +4,7 @@ using UnityEngine;
 public class EnemyManager : MonoBehaviour
 {
     [System.Serializable]
+  
     public class EnemyType
     {
         public GameObject prefab;
@@ -19,7 +20,7 @@ public class EnemyManager : MonoBehaviour
     private float spawnTimer = 0f;
 
     // Wave management
-    private int currentWave = 1;
+    public int currentWave = 1;
     private int enemiesPerWave = 10; // Start with 10 enemies in wave 1
     private int enemiesSpawnedInWave = 0;
     private int currentEnemiesAlive = 0;

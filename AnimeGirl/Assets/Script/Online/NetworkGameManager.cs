@@ -1,16 +1,43 @@
+using Unity.Netcode;
+
 using UnityEngine;
 
+
 public class NetworkGameManager : MonoBehaviour
+
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+
+    public GameObject playerPrefab;
+
+
+    void OnGUI()
+
     {
-        
+
+        // Simple debugging UI
+
+        if (!NetworkManager.Singleton.IsClient && !NetworkManager.Singleton.IsServer)
+
+        {
+
+            if (GUI.Button(new Rect(10, 10, 150, 40), "Start Host"))
+
+            {
+
+                NetworkManager.Singleton.StartHost();
+
+            }
+
+            if (GUI.Button(new Rect(10, 60, 150, 40), "Start Client"))
+
+            {
+
+                NetworkManager.Singleton.StartClient();
+
+            }
+
+        }
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

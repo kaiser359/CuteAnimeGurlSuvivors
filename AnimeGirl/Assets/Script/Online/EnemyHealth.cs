@@ -1,4 +1,8 @@
 using UnityEngine;
+public interface IDamageable
+{
+    void TakeDamage(float amount);
+}
 
 public class EnemyHealth : MonoBehaviour
 {
@@ -17,6 +21,7 @@ public class EnemyHealth : MonoBehaviour
         manager = mgr;
     }
 
+  
     public void TakeDamage(float damage)
     {
         currentHealth -= damage;

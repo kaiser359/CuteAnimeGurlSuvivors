@@ -130,7 +130,7 @@ public class EnemyManager : MonoBehaviour
         }
 
         // Should not happen if chances add up correctly
-        return enemyTypes[0].prefab;
+        return enemyTypes[0].prefab; // later i will add a guarantee chance to come a boss fight using similar code here
     }
 
     private void StartNextWave()

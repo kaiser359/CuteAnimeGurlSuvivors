@@ -14,6 +14,8 @@ public class EnemyManager : MonoBehaviour
     public List<EnemyType> enemyTypes = new List<EnemyType>();
     public Transform spawnPoint; // Assign a spawn point in the Inspector
 
+    public Transform Player;
+
     // Spawning parameters
     private const float BASE_SPAWN_RATE_PER_SECOND = 3.0f;
     private float timeBetweenSpawns; // Time needed to pass for one spawn
@@ -29,6 +31,9 @@ public class EnemyManager : MonoBehaviour
     private const float WAVE_BREAK_TIME = 20.0f;
     private float waveBreakTimer = WAVE_BREAK_TIME;
     private bool inWaveBreak = true;
+
+    public float MinSpawnDistance = 10f; // Min Spawn Distance Away From Player
+    public float MaxSpawnDistance = 30f; // Max Spawn Distance Away From Player
 
     // Difficulty scaling (adjust as needed)
     private const int ENEMIES_INCREASE_PER_WAVE = 5; //const int, and other functions make the game run more smoothly, i recommend. 
@@ -100,7 +105,8 @@ public class EnemyManager : MonoBehaviour
 
         if (enemyPrefabToSpawn != null)
         {
-            GameObject newEnemy = Instantiate(enemyPrefabToSpawn, spawnPoint.position, Quaternion.identity);
+            Vector3 spawnPosition = GetRandomSpawnPosition();
+            GameObject newEnemy = Instantiate(enemyPrefabToSpawn, spawnPosition, Quaternion.identity);
             // We need a reference to the manager within the enemy script. the script for enemy i did is subject to change.
             newEnemy.GetComponent<EnemyHealth>().SetManager(this);
 
@@ -133,6 +139,14 @@ public class EnemyManager : MonoBehaviour
         return enemyTypes[0].prefab; // later i will add a guarantee chance to come a boss fight using similar code here
     }
 
+    private Vector3 GetRandomSpawnPosition()
+    {
+        Vector2 randomDirection = Random.insideUnitCircle.normalized; // Random direction
+        float randomDistance = Random.Range(MinSpawnDistance, MaxSpawnDistance);
+        Vector3 spawnOffset = new Vector3(randomDirection.x, 0, randomDirection.y) * randomDistance;
+        return Player.position + spawnOffset; // Final spawn position
+    }
+
     private void StartNextWave()
     {
         currentWave++;
@@ -146,6 +160,20 @@ public class EnemyManager : MonoBehaviour
         inWaveBreak = false;
         Debug.Log($"Starting Wave {currentWave} with {enemiesPerWave} enemies at a rate of 1 every {timeBetweenSpawns:F2} seconds.");
     }
+    private void OnDrawGizmos()
+    {
+        if (Player == null) return;
+
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(Player.position, MinSpawnDistance);
+
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(Player.position, MaxSpawnDistance);
+
+        Gizmos.color = Color.yellow; 
+    }
+
+
 
     // Public method called by the Enemy Health script when an enemy dies
     public void EnemyDied()

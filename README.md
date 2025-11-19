@@ -13,6 +13,7 @@ Paragraph
   [VGP](https://docs.google.com/document/d/1ZXbfAHAAeYmI9o55s-C7s9YBHRh8hQ9pqyCZ16Je86g/edit?usp=sharing)
 [Project Charter](https://docs.google.com/document/d/121_F8jBetXMtFNl8QFWn_b2a5muxrVeEIS67DZCoOPU/edit?usp=sharing)
 [Jira](https://mukilteo-team-cqya1673.atlassian.net/browse/KAN-1?atlOrigin=eyJpIjoiZjI1MDNiNTAzNWM4NDBjZWI3OTg5NDBhZjcxMThkOWIiLCJwIjoiaiJ9)
+[itch](https://kaiser359.itch.io/crescent-fighters)
 
 
 - Jacobe link: https://itch.io/game/accept-admin/4039830/12054483

@@ -1,12 +1,13 @@
 using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class LevelUpCard : MonoBehaviour
 {
-    public Text titleText;
-    public Text descriptionText;
-    public Text countText;    // optional small text to show duplicate count
+    public TextMeshProUGUI titleText;
+    public TextMeshProUGUI descriptionText;
+    public TextMeshProUGUI countText;    // optional small text to show duplicate count
     public Image iconImage;
     public Button button;
 

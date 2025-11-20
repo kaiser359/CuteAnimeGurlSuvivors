@@ -143,7 +143,7 @@ public class EnemyManager : MonoBehaviour
     {
         Vector2 randomDirection = Random.insideUnitCircle.normalized; // Random direction
         float randomDistance = Random.Range(MinSpawnDistance, MaxSpawnDistance);
-        Vector3 spawnOffset = new Vector3(randomDirection.x, 0, randomDirection.y) * randomDistance;
+        Vector3 spawnOffset = new Vector3(randomDirection.x, randomDirection.y, 0) * randomDistance;
         return Player.position + spawnOffset; // Final spawn position
     }
 

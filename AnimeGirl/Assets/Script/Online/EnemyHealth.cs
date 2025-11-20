@@ -1,10 +1,6 @@
 using UnityEngine;
-public interface IDamageable
-{
-    void TakeDamage(float amount);
-}
 
-public class EnemyHealth : MonoBehaviour
+public class EnemyHealth : MonoBehaviour, IDamageable
 {
     public float maxHealth = 10f;
     private float currentHealth;
@@ -34,8 +30,11 @@ public class EnemyHealth : MonoBehaviour
 
     private void Die()
     {
+
+        LevelUpSystem.Instance.OnPlayerLeveledUp();
         if (manager != null)
         {
+            
             manager.EnemyDied();
         }
         Destroy(gameObject);

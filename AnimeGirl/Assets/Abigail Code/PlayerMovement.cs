@@ -22,22 +22,18 @@ public class PlayerMovement : MonoBehaviour
 
         _rb.linearVelocity = _movement * _moveSpeed;
 
-        if (isWalking)
-        {
-            Vector3 vector3 = Vector3.left * input.x + Vector3.down * input.y;
-            Aim.rotation = Quaternion.LookRotation(Vector3.forward, vector3);
-        }
-
-        if(_rb.linearVelocity == new Vector2(0,0))
+        if(_rb.linearVelocity == Vector2.zero)
         {
             isWalking = false;
-            lastMoveDirection = input;
-            Vector3 vector3 = Vector3.left * input.x + Vector3.down * input.y;
-            Aim.rotation = Quaternion.LookRotation(Vector3.forward, vector3);
+            lastMoveDirection = InputManager.Movement;
+            Vector3 vector3 = Vector3.left * lastMoveDirection.x + Vector3.down * lastMoveDirection.y;
+            
         }
-        else if (!( _rb.linearVelocity == new Vector2(0, 0)))
+        else
         {
             isWalking = true;
+            Vector3 vector3 = Vector3.left * InputManager.Movement.x + Vector3.down * InputManager.Movement.y;
+            Aim.rotation = Quaternion.LookRotation(Vector3.forward, vector3);
         }
     }
 }

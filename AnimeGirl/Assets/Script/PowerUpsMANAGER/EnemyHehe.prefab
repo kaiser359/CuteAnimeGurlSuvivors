@@ -148,3 +148,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 55
+  currentHealth: 0
+  stats: {fileID: 0}
+  xpdrop: {fileID: 5569618417064185599, guid: 939cf18005a3e7e42b072ee1054c016c, type: 3}

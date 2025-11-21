@@ -711,6 +711,7 @@ GameObject:
   - component: {fileID: 638040974}
   - component: {fileID: 638040973}
   - component: {fileID: 638040972}
+  - component: {fileID: 638040977}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -812,6 +813,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &638040977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 638040971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e8d2d64b72e0424cb36482b2f0c90df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baselevelToLevelUp: 5
+  currentLevel: 1
+  curenteXp: 0
+  xpNeeded: 0
 --- !u!1 &839010463
 GameObject:
   m_ObjectHideFlags: 0
@@ -831,6 +848,7 @@ GameObject:
   - component: {fileID: 839010471}
   - component: {fileID: 839010475}
   - component: {fileID: 839010474}
+  - component: {fileID: 839010476}
   m_Layer: 0
   m_Name: Square
   m_TagString: Player
@@ -940,6 +958,7 @@ MonoBehaviour:
   maxHealth: 10
   currentHealth: 0
   stats: {fileID: 0}
+  xpdrop: {fileID: 0}
 --- !u!114 &839010468
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1106,6 +1125,22 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &839010476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 839010463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e8d2d64b72e0424cb36482b2f0c90df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baselevelToLevelUp: 5
+  currentLevel: 1
+  curenteXp: 0
+  xpNeeded: 0
 --- !u!1001 &914221075
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1117,7 +1152,7 @@ PrefabInstance:
     - target: {fileID: -5102765534398560868, guid: 047d1c68039267d4c9f8172dd99b349e, type: 3}
       propertyPath: stats
       value: 
-      objectReference: {fileID: 839010468}
+      objectReference: {fileID: 0}
     - target: {fileID: -5102765534398560868, guid: 047d1c68039267d4c9f8172dd99b349e, type: 3}
       propertyPath: maxHealth
       value: 100

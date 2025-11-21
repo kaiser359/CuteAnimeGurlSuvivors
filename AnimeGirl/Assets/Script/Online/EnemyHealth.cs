@@ -1,6 +1,7 @@
-using UnityEngine;
 using System;
 using System.Collections.Generic;
+using UnityEngine;
+using static UnityEngine.Rendering.DebugUI;
 
 public class EnemyHealth : MonoBehaviour, IDamageable
 {
@@ -8,6 +9,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     [SerializeField]private float currentHealth;
     private EnemyManager manager; // Reference to the manager
     public PlayerStats stats;
+    public GameObject xpdrop;
     void Start()
     {
         currentHealth = maxHealth;
@@ -49,11 +51,14 @@ public class EnemyHealth : MonoBehaviour, IDamageable
 
     private void Die()
     {
-
-        LevelUpSystem.Instance.OnPlayerLeveledUp();
+        float xpamount = UnityEngine.Random.Range(1f, 5f);
+        int xpCount = Mathf.FloorToInt(xpamount);
+        for (int i = 0; i < xpCount; i++)
+        {
+            Instantiate(xpdrop, transform.position, Quaternion.identity);
+        }
         if (manager != null)
         {
-            
             manager.EnemyDied();
         }
         Destroy(gameObject);

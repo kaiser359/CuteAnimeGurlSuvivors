@@ -16,7 +16,7 @@ public class PlayerAttack : MonoBehaviour
     void Update()
     {
         CheckMeleeTimer();
-
+        shootTimer += Time.deltaTime;
         if (Input.GetMouseButtonDown(0))
         {
             OnAttack();

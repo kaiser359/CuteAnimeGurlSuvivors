@@ -214,6 +214,10 @@ public class LevelUpSystem : MonoBehaviour
                 if (playerStats != null) playerStats.SetCritDamage(computedValue * addedLevels);
                 else Debug.Log($"[Ability] critdamage added {computedValue * addedLevels} (addedLevels {addedLevels})");
                 break;
+            case AbilityType.MikuBean:
+                if (playerStats != null) playerStats.SetMikuBean(computedValue);
+                else Debug.Log($"[Ability] MikuBean set to {computedValue} (level {newLevel})");
+                break;
 
 
             // inside LevelUpSystem.ApplyAbilityEffect(...)

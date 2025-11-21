@@ -210,6 +210,11 @@ public class LevelUpSystem : MonoBehaviour
                 if (playerStats != null) playerStats.AddShield(computedValue * addedLevels);
                 else Debug.Log($"[Ability] Shield added {computedValue * addedLevels} (addedLevels {addedLevels})");
                 break;
+            case AbilityType.CritDamage:
+                if (playerStats != null) playerStats.SetCritDamage(computedValue * addedLevels);
+                else Debug.Log($"[Ability] critdamage added {computedValue * addedLevels} (addedLevels {addedLevels})");
+                break;
+
 
             // inside LevelUpSystem.ApplyAbilityEffect(...)
             case AbilityType.Meteor:

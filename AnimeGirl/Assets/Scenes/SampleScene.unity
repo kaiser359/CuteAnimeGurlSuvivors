@@ -150,14 +150,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   abilities:
   - abilityName: KABOM
-    description: THE MOON
+    description: increase meteor damage
     icon: {fileID: 0}
-    abilityType: 8
+    abilityType: 9
     baseValue: 50
     valuePerLevel: 5
     isMultiplier: 0
     cooldownBase: 20
     cooldownReductionPerLevel: 1
+    cooldownIsMultiplier: 0
+    maxLevel: 100
+  - abilityName: protection
+    description: gains shield
+    icon: {fileID: 0}
+    abilityType: 0
+    baseValue: 5
+    valuePerLevel: 5
+    isMultiplier: 0
+    cooldownBase: 0
+    cooldownReductionPerLevel: 0
     cooldownIsMultiplier: 0
     maxLevel: 100
   - abilityName: haha
@@ -822,7 +833,7 @@ GameObject:
   - component: {fileID: 839010474}
   m_Layer: 0
   m_Name: Square
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -927,6 +938,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 10
+  currentHealth: 0
+  stats: {fileID: 0}
 --- !u!114 &839010468
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -946,6 +959,7 @@ MonoBehaviour:
   baseCritChance: 0.15
   baseLootChance: 0.05
   dashCooldown: 1
+  baseCritDamage: 1.5
   meteorDamage: 50
   meteorCooldown: 20
   meteorRadius: 2.5
@@ -1101,8 +1115,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -5102765534398560868, guid: 047d1c68039267d4c9f8172dd99b349e, type: 3}
+      propertyPath: stats
+      value: 
+      objectReference: {fileID: 839010468}
+    - target: {fileID: -5102765534398560868, guid: 047d1c68039267d4c9f8172dd99b349e, type: 3}
       propertyPath: maxHealth
-      value: 5
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4599729207739323120, guid: 047d1c68039267d4c9f8172dd99b349e, type: 3}
       propertyPath: m_Name

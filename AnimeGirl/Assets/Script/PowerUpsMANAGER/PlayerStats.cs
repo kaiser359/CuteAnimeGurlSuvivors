@@ -11,6 +11,7 @@ public class PlayerStats : MonoBehaviour
     public float baseLootChance = 0.05f;
     public float dashCooldown = 1f;
     private float shield = 0f;
+    public float baseCritDamage = 2f;
 
     // Meteor specific (tuned by LevelUpSystem when Meteor is chosen)
     [Header("Meteor")]
@@ -27,6 +28,7 @@ public class PlayerStats : MonoBehaviour
     public void SetLootChance(float value) => baseLootChance = value;
     public void SetDashCooldown(float value) => dashCooldown = value;
     public void AddShield(float amount) { shield += amount; }
+    public void SetCritDamage(float value) => baseCritDamage = value;
 
     // Meteor setters
     public void SetMeteorDamage(float damage)

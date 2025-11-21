@@ -5,6 +5,7 @@ public enum AbilityType
     MoveSpeed,
     FireRate,           // faster attack
     CritChance,
+    CritDamage,
     LootChance,
     DashCooldown,       // reduce dash cooldown
     Shield,// flat shield amount

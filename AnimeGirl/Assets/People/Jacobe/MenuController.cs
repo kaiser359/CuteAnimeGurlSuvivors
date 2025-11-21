@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
+using System.Xml.Linq;
 
 public class MenuController : MonoBehaviour
 {
@@ -49,6 +50,9 @@ public class MenuController : MonoBehaviour
     public TMP_Dropdown resolutionDropdown;
     private Resolution[] resolutions;
 
+    public float volume;
+    //public TMP_Text volumeText;
+
     private void Start()
     {
         resolutions = Screen.resolutions;
@@ -72,6 +76,14 @@ public class MenuController : MonoBehaviour
         resolutionDropdown.AddOptions(options);
         resolutionDropdown.value = currentResolutionIndex;
         resolutionDropdown.RefreshShownValue();
+
+        volumeSlider.value = PlayerPrefs.GetFloat("volume");
+    }
+
+    private void Update()
+    {
+        PlayerPrefs.SetFloat("volume", volume);
+        volumeTextValue.text = Mathf.Round(volume * 100) + "%";
     }
 
     public void SetResolution(int resolutionIndex)
@@ -104,10 +116,9 @@ public class MenuController : MonoBehaviour
         Application.Quit();
     }
 
-    public void SetVolume(float volume)
+    public void SetVolume(float volume1)
     {
-        AudioListener.volume = volume;
-        volumeTextValue.text = volume.ToString("0.0");
+        volume = volume1;
     }
 
     public void VolumeApply()

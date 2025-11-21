@@ -13,6 +13,12 @@ public class EnemyHealth : MonoBehaviour, IDamageable
         currentHealth = maxHealth;
     }
 
+    void Awake()
+    {
+        stats = GameObject.FindWithTag("Player").GetComponent<PlayerStats>();
+    }
+
+
     // Call this immediately after instantiation
     public void SetManager(EnemyManager mgr)
     {

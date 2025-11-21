@@ -271,6 +271,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
+  weaponType: 0
 --- !u!1 &232561669
 GameObject:
   m_ObjectHideFlags: 0
@@ -641,8 +642,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Melee: {fileID: 126389447}
-  Aim: {fileID: 0}
-  bullet: {fileID: 0}
+  Aim: {fileID: 1614288647}
+  bullet: {fileID: 8396061388431266999, guid: 2f3a5c7ff0cb3cf4fba83653a1699750, type: 3}
   fireForce: 10
 --- !u!1 &1487442019
 GameObject:

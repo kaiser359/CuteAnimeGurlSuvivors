@@ -9,6 +9,8 @@ public enum AbilityType
     LootChance,
     DashCooldown,       // reduce dash cooldown
     Shield,// flat shield amount
-    Meteor             // call down a meteor
+    Meteor,
+    MikuBean,
+    // call down a meteor
     // Add more as needed
 }

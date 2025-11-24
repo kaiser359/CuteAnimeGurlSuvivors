@@ -1178,11 +1178,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d364e7c10955148418d19a9d2bb10196, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defDistanceRay: 100
+  defDistanceRay: 10
   lazerFirePoint: {fileID: 1739270768}
   m_lineRenderer: {fileID: 1708097909}
   lazer: {fileID: 1708097906}
-  energy: 100
+  energy: 10
   maxEnergy: 20
   cooldownTime: 3
   isCoolingDown: 0

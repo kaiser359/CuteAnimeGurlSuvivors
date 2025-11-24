@@ -79,36 +79,39 @@ public class MikuBean : MonoBehaviour
         Vector2 origin = lazerFirePoint != null ? (Vector2)lazerFirePoint.position : (Vector2)m_transform.position;
         Vector2 direction = lazerFirePoint != null ? (Vector2)lazerFirePoint.right : (Vector2)transform.right;
 
-        // Cast with a distance so we know where to end the beam if nothing is hit
-        RaycastHit2D hit = Physics2D.Raycast(origin, direction, defDistanceRay);
-        Vector2 endPoint;
-        if (hit.collider != null)
-        {
-            // endPoint = hit.point;
-            endPoint = origin + direction.normalized * defDistanceRay;
-            // FIX: RaycastHit2D is a single hit, not a collection. Remove foreach and use hit.collider directly.
-            var enemyHealth = hit.collider.GetComponent<EnemyHealth>();
-            if (enemyHealth != null && candamage && damageInterval >= 0.2f)
-            {
-                
-                enemyHealth.TakeDamage(damage);
-                damageInterval = 0f;
+        // cast all hits along the ray so we can damage every hit object
+        RaycastHit2D[] hits = Physics2D.RaycastAll(origin, direction, defDistanceRay);
 
-            }
-            else
+        // default end point is full range; you can change to hits[0].point if you want beam to stop at first obstacle
+        Vector2 endPoint = origin + direction.normalized * defDistanceRay;
+
+        if (hits != null && hits.Length > 0)
+        {
+            // sort hits by distance so behavior is deterministic
+            Array.Sort(hits, (a, b) => a.distance.CompareTo(b.distance));
+
+            // apply damage to all hit objects at once (respecting damage interval)
+            if (candamage && damageInterval >= 0.2f)
             {
-                if (candamage == false) return;
-                if (damageInterval < 0.2f) return;
-                var dmgable = hit.collider.GetComponent<IDamageable>();
-                if (dmgable != null) dmgable.TakeDamage(damage);
+                foreach (var h in hits)
+                {
+                    if (h.collider == null) continue;
+                    if (h.collider.gameObject == gameObject) continue; // avoid hitting self
+
+                    var enemyHealth = h.collider.GetComponent<EnemyHealth>();
+                    if (enemyHealth != null)
+                    {
+                        enemyHealth.TakeDamage(damage);
+                        continue;
+                    }
+
+                    var dmgable = h.collider.GetComponent<IDamageable>();
+                    if (dmgable != null)
+                        dmgable.TakeDamage(damage);
+                }
+
                 damageInterval = 0f;
             }
-
-        }
-        else
-        {
-            // compute a world-space end point: origin + direction * distance
-            endPoint = origin + direction.normalized * defDistanceRay;
         }
 
         Draw2DRay(origin, endPoint);

@@ -130,7 +130,7 @@ public class MenuController : MonoBehaviour
     public void SetSensitvity(float sensitvity)
     {
         mainSensitivity = Mathf.RoundToInt(sensitvity);
-        SensitvityTextValue.text = sensitvity.ToString("0");
+        SensitvityTextValue.text = Mathf.Round(sensitvity * 10) + "%";
     }
 
     public void GameplayApply()

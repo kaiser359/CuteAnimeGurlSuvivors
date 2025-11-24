@@ -14,11 +14,11 @@ public class xpDrop : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    public void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collider.gameObject.CompareTag("Player"))
         {
-            GrindingLevels grindingLevels = collision.gameObject.GetComponent<GrindingLevels>();
+            GrindingLevels grindingLevels = collider.gameObject.GetComponent<GrindingLevels>();
             if (grindingLevels != null)
             {
                 grindingLevels.AddXP(1); // Add 1 XP to the player

@@ -18,6 +18,7 @@ public class MikuBean : MonoBehaviour
     private float damage = 2f;
     [SerializeField]private bool candamage = false;
     [SerializeField] private float damageInterval = 0.3f;
+    public AudioSource lazersound;
 
     private PlayerStats statsPlayer;
 
@@ -35,11 +36,13 @@ public class MikuBean : MonoBehaviour
             lazer.SetActive(true);
             energy -= Time.deltaTime * 5f;
             candamage = true;
+            if (!lazersound.isPlaying)  lazersound.Play();
         }
         else
         {
             lazer.SetActive(false);
             candamage = false;
+            lazersound.Stop();
 
         }
         if (energy < maxEnergy)

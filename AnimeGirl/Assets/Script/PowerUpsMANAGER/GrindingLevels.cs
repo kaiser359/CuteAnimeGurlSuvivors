@@ -6,6 +6,7 @@ public int baselevelToLevelUp = 5;
 public int currentLevel = 1;
 public int curenteXp = 0;
 public int xpNeeded;
+    public AudioSource AudioSource;
 
     public void AddXP(int xp)
     {
@@ -22,11 +23,12 @@ public int xpNeeded;
             LevelUpSystem.Instance.OnPlayerLeveledUp();
             Debug.Log("Leveled up to level " + currentLevel);
             xpNeeded = baselevelToLevelUp * currentLevel;
+            AudioSource.Play();
         }
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.L) && Input.GetKeyDown(KeyCode.O))
+        if (Input.GetKey(KeyCode.L) && Input.GetKey(KeyCode.O))
         {
             AddXP(7);
         }

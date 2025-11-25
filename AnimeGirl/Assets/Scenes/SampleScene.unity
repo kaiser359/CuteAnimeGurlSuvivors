@@ -1003,7 +1003,7 @@ MonoBehaviour:
   baseLootChance: 0.05
   dashCooldown: 1
   baseCritDamage: 1.5
-  baseMikuBean: 0
+  baseMikuBean: 2
   meteorDamage: 50
   meteorCooldown: 20
   meteorRadius: 2.5
@@ -1684,7 +1684,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0

@@ -11,6 +11,7 @@ public enum AbilityType
     Shield,// flat shield amount
     Meteor,
     MikuBean,
+    Lifesteal,
     // call down a meteor
     // Add more as needed
 }

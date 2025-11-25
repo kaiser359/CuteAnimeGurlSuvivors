@@ -13,6 +13,7 @@ public class PlayerStats : MonoBehaviour
     private float shield = 0f;
     public float baseCritDamage = 2f;
     public float baseMikuBean;
+    public float lifesteal = 0.1f;
 
     // Meteor specific (tuned by LevelUpSystem when Meteor is chosen)
     [Header("Meteor")]
@@ -32,6 +33,8 @@ public class PlayerStats : MonoBehaviour
     public void SetCritDamage(float value) => baseCritDamage = value;
 
     public void SetMikuBean(float value) => baseMikuBean = value;
+
+    public void setlifesteal(float value) => baseMikuBean = value;
 
     // Meteor setters
     public void SetMeteorDamage(float damage)

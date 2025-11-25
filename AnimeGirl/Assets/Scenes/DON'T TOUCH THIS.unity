@@ -719,9 +719,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Melee: {fileID: 126389447}
+  damage: 10
   Aim: {fileID: 1614288647}
   bullet: {fileID: 8396061388431266999, guid: 2f3a5c7ff0cb3cf4fba83653a1699750, type: 3}
   fireForce: 10
+  weaponType: 0
 --- !u!114 &426308120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1095,6 +1097,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 854a30da4d2e2ee40aaa011e067b439c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 40
+  maxHealth: 40
 --- !u!114 &1929341423
 MonoBehaviour:
   m_ObjectHideFlags: 0

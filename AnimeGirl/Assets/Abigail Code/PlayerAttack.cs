@@ -6,12 +6,14 @@ public class PlayerAttack : MonoBehaviour
     float atkDuration = 0.3f;
     float atkTimer = 0f;
     bool isAttacking = false;
-
+    public float damage = 1;
     public Transform Aim;
     public GameObject bullet;
     public float fireForce = 10f;
     float shootCooldown = 0.25f;
     float shootTimer = 0.5f;
+    public enum WeaponType { Melee, Bullet };
+    public WeaponType weaponType;
     // Update is called once per frame
     void Update()
     {
@@ -58,6 +60,19 @@ public class PlayerAttack : MonoBehaviour
                 atkTimer = 0;
                 isAttacking= false;
                 Melee.SetActive(false);
+            }
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Enemy enemy = collision.GetComponent<Enemy>();
+        if (enemy != null)
+        {
+            enemy.TakeDamage(damage);
+            if(weaponType == WeaponType.Bullet)
+            {
+                Destroy(gameObject);
             }
         }
     }

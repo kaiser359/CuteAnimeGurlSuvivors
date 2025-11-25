@@ -1,7 +1,8 @@
 using System;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 using UnityEngine.InputSystem;
-
+[RequireComponent(typeof(PlayerStats))]
 public class MikuBean : MonoBehaviour
 {
     [SerializeField] private float defDistanceRay = 100;
@@ -18,8 +19,11 @@ public class MikuBean : MonoBehaviour
     [SerializeField]private bool candamage = false;
     [SerializeField] private float damageInterval = 0.3f;
 
+    private PlayerStats statsPlayer;
+
     private void Awake()
     {
+        statsPlayer = GetComponent<PlayerStats>();
         m_transform = GetComponent<Transform>();
 
     }
@@ -101,13 +105,13 @@ public class MikuBean : MonoBehaviour
                     var enemyHealth = h.collider.GetComponent<EnemyHealth>();
                     if (enemyHealth != null)
                     {
-                        enemyHealth.TakeDamage(damage);
+                        enemyHealth.TakeDamage(statsPlayer.baseMikuBean);
                         continue;
                     }
 
                     var dmgable = h.collider.GetComponent<IDamageable>();
                     if (dmgable != null)
-                        dmgable.TakeDamage(damage);
+                        dmgable.TakeDamage(statsPlayer.baseMikuBean);
                 }
 
                 damageInterval = 0f;

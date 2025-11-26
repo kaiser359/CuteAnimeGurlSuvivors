@@ -10,6 +10,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     private EnemyManager manager; // Reference to the manager
     public PlayerStats stats;
     public GameObject xpdrop;
+    public ParticleSystem critdamaged;
     void Start()
     {
         currentHealth = maxHealth;
@@ -41,6 +42,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
         {
             float critDamage = damage * stats.baseCritDamage;
             currentHealth -= critDamage;
+            critdamaged.Play();
             Debug.Log("Critical Hit! Enemy took " + critDamage + " damage.");
         }        
         if (currentHealth <= 0)

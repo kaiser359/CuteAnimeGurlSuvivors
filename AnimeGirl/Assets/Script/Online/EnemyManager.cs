@@ -28,7 +28,7 @@ public class EnemyManager : MonoBehaviour
     private int currentEnemiesAlive = 0;
 
     // Wave transition
-    private const float WAVE_BREAK_TIME = 20.0f;
+    private const float WAVE_BREAK_TIME = 10.0f;
     private float waveBreakTimer = WAVE_BREAK_TIME;
     private bool inWaveBreak = true;
 
@@ -36,7 +36,7 @@ public class EnemyManager : MonoBehaviour
     public float MaxSpawnDistance = 30f; // Max Spawn Distance Away From Player
 
     // Difficulty scaling (adjust as needed)
-    private const int ENEMIES_INCREASE_PER_WAVE = 5; //const int, and other functions make the game run more smoothly, i recommend. 
+    private const int ENEMIES_INCREASE_PER_WAVE = 10; //const int, and other functions make the game run more smoothly, i recommend. 
     private const float SPAWN_RATE_INCREASE_PER_WAVE = 0.2f;
     void Start()
     {

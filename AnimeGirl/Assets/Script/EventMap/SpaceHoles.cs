@@ -7,6 +7,8 @@ public class SpaceHoles : MonoBehaviour
     public float MinSpawnDistance = 10f; // Min Spawn Distance Away From Player
     public float MaxSpawnDistance = 30f; // Max Spawn Distance Away From Player
     public GameObject enemyPrefabToSpawn;
+    [SerializeField]private System.Random random = new System.Random();
+    public float spawnInterval = 5f; // Time interval between spawns
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -17,9 +19,17 @@ public class SpaceHoles : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GetRandomSpawnPosition();
         Vector3 spawnPosition = GetRandomSpawnPosition();
-        GameObject newEnemy = Instantiate(enemyPrefabToSpawn, spawnPosition, Quaternion.identity);
+        int randomValue = 0; // Declare randomValue at the start of Update
+
+        if (spawnInterval >= 3)
+        {
+            randomValue = random.Next(1, 5); 
+            spawnInterval = 0f; // Reset spawn interval
+        }
+        spawnInterval += Time.deltaTime * 2;
+        if (randomValue == 3)
+        { GameObject newEnemy = Instantiate(enemyPrefabToSpawn, spawnPosition, Quaternion.identity); }
     }
     private Vector3 GetRandomSpawnPosition()
     {
@@ -28,7 +38,6 @@ public class SpaceHoles : MonoBehaviour
         Vector3 spawnOffset = new Vector3(randomDirection.x, randomDirection.y, 0) * randomDistance;
         return Player.position + spawnOffset; // Final spawn position
     }
-
 
     private void OnDrawGizmos()
     {

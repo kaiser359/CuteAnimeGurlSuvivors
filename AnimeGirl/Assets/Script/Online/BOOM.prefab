@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 5911033495980390877}
   - component: {fileID: -8045205010262349656}
   - component: {fileID: 9008311973608818268}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: BOOM
-  m_TagString: Untagged
+  m_TagString: Fire
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

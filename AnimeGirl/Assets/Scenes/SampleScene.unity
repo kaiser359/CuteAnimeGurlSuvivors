@@ -402,6 +402,25 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1 &379535130 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4599729207739323120, guid: 047d1c68039267d4c9f8172dd99b349e, type: 3}
+  m_PrefabInstance: {fileID: 914221075}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &379535138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 379535130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df547df5a3a9c35468b59b58fec1739a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pHealth: {fileID: 839010482}
+  damage: 5
 --- !u!1 &474321474
 GameObject:
   m_ObjectHideFlags: 0
@@ -925,7 +944,6 @@ GameObject:
   - component: {fileID: 839010466}
   - component: {fileID: 839010465}
   - component: {fileID: 839010464}
-  - component: {fileID: 839010467}
   - component: {fileID: 839010468}
   - component: {fileID: 839010469}
   - component: {fileID: 839010470}
@@ -939,6 +957,7 @@ GameObject:
   - component: {fileID: 839010479}
   - component: {fileID: 839010480}
   - component: {fileID: 839010481}
+  - component: {fileID: 839010482}
   m_Layer: 0
   m_Name: Square
   m_TagString: Player
@@ -1036,23 +1055,6 @@ Transform:
   - {fileID: 1552806999}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &839010467
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 839010463}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5b4bb5416cad8f4fb3b8992507d6aaf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 10
-  currentHealth: 0
-  stats: {fileID: 0}
-  xpdrop: {fileID: 0}
-  critdamaged: {fileID: 0}
 --- !u!114 &839010468
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1331,6 +1333,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   paperFigurines: 0
+--- !u!114 &839010482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 839010463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11e3edd7f13633448a92ffa036a1b0fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  maxHealth: 100
+  healthBar: {fileID: 0}
 --- !u!1 &888104839
 GameObject:
   m_ObjectHideFlags: 0
@@ -1370,6 +1387,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 613174705556009423, guid: 047d1c68039267d4c9f8172dd99b349e, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 839010463}
     - target: {fileID: 4599729207739323120, guid: 047d1c68039267d4c9f8172dd99b349e, type: 3}
       propertyPath: m_Name
       value: EnemyHehe
@@ -1417,7 +1438,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4599729207739323120, guid: 047d1c68039267d4c9f8172dd99b349e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 379535138}
   m_SourcePrefab: {fileID: 100100000, guid: 047d1c68039267d4c9f8172dd99b349e, type: 3}
 --- !u!1 &1496804200
 GameObject:

@@ -75,5 +75,17 @@ public class PlayerAttack : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+        
+        EnemyHealth eme = collision.GetComponent<EnemyHealth>();
+        if (eme != null)
+        {
+            Debug.Log("Bullet hit EnemyHealth, applying damage.");
+            eme.TakeDamage(damage);
+            if (weaponType == WeaponType.Bullet)
+            {
+                Debug.Log("Bullet hit enemy, destroying bullet.");
+                Destroy(gameObject);
+            }
+        }
     }
 }

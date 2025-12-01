@@ -17,5 +17,14 @@ public class Weapon : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+        EnemyHealth Enemy = collision.GetComponent<EnemyHealth>();
+        if (Enemy != null)
+        {
+            Enemy.TakeDamage(damage);
+            if (weaponType == WeaponType.Bullet)
+            {
+                Destroy(gameObject);
+            }
+        }
     }
 }

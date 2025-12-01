@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: -5102765534398560868}
   - component: {fileID: 1720885562770543941}
   - component: {fileID: 3522639258436894319}
+  - component: {fileID: 613174705556009423}
+  - component: {fileID: 7940874943817009455}
   m_Layer: 0
   m_Name: EnemyHehe
   m_TagString: Untagged
@@ -4954,3 +4956,31 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &613174705556009423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4599729207739323120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4319bb98e51acdc46b7ecde941ac4bd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  speed: 2
+--- !u!114 &7940874943817009455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4599729207739323120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df547df5a3a9c35468b59b58fec1739a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pHealth: {fileID: 0}
+  damage: 5

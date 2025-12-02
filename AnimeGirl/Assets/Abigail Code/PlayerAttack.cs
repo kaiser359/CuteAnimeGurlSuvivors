@@ -72,7 +72,7 @@ public class PlayerAttack : MonoBehaviour
             enemy.TakeDamage(damage);
             if(weaponType == WeaponType.Bullet)
             {
-                Destroy(gameObject);
+              //  Destroy(gameObject);
             }
         }
         
@@ -84,7 +84,7 @@ public class PlayerAttack : MonoBehaviour
             if (weaponType == WeaponType.Bullet)
             {
                 Debug.Log("Bullet hit enemy, destroying bullet.");
-                Destroy(gameObject);
+               // Destroy(gameObject);
             }
         }
     }

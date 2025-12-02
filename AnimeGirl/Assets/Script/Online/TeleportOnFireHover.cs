@@ -54,7 +54,7 @@ public class TeleportOnFireHover : MonoBehaviour
 
             {
 
-                // Call the ServerRpc to teleport
+                // Call the Server to teleport online only
 
                 TeleportServerRpc(hit.collider.transform.position);
                 //transform.position = hit.collider.transform.position;

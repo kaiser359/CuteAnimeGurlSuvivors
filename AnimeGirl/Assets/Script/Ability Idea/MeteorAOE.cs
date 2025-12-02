@@ -15,8 +15,9 @@ public class MeteorAOE : MonoBehaviour
     private Vector3 startPosition;
 
     public GameObject Fire;
+    public int fireCount = 10; // number of fires to spawn in the AOE
 
-    // Initialize and start the sequence
+    
     public void Initialize(Vector2 targetPosition, float damageAmount, float r)
     {
         target = targetPosition;
@@ -48,8 +49,7 @@ public class MeteorAOE : MonoBehaviour
 
 
 
-        // damage enemies in radius, i tried but it is not working for some unknown reason
-        //nvm it worked somehow
+        
         Collider2D[] hits = Physics2D.OverlapCircleAll(target, radius, enemyLayer);
         foreach (var col in hits)
         {
@@ -62,13 +62,26 @@ public class MeteorAOE : MonoBehaviour
             {
                 var dmgable = col.GetComponent<IDamageable>();
                 if (dmgable != null) dmgable.TakeDamage(damage);
-
             }
         }
 
-        // wait then destroy the meteor object, instatiate fire effect
+        // spawn multiple fires distributed inside the AOE, For loop 
+        if (Fire != null)
+        {
+            for (int i = 0; i < fireCount; i++)
+            {
+                Vector2 offset = Random.insideUnitCircle * radius;
+                Vector3 spawnPos = (Vector3)target + new Vector3(offset.x, offset.y, 0f);
+                Instantiate(Fire, spawnPos, Quaternion.identity);
+            }
+        }
+        else
+        {
+            Debug.LogWarning("MeteorAOE: Fire prefab is not assigned.");
+        }
+
+        
         yield return new WaitForSeconds(destroyAfter);
-        Instantiate(Fire, this.gameObject.transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 

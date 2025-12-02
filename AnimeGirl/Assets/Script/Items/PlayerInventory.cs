@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerInventory : MonoBehaviour
@@ -9,4 +10,6 @@ public class PlayerInventory : MonoBehaviour
         paperFigurines += amount;
         Debug.Log("Picked up +1 paper figurine! Total: " + paperFigurines);
     }
+
+    
 }//might usse this script for storing items later on. 

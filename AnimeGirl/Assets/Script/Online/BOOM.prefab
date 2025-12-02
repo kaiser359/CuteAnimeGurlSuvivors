@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5911033495980390877}
   - component: {fileID: -8045205010262349656}
   - component: {fileID: 9008311973608818268}
-  m_Layer: 4
+  m_Layer: 3
   m_Name: BOOM
   m_TagString: Fire
   m_Icon: {fileID: 0}
@@ -111,6 +111,7 @@ MonoBehaviour:
   impactVFX: {fileID: 0}
   destroyAfter: 1
   fallDuration: 1
+  Fire: {fileID: 5003941174864543176, guid: 62e03ba3fb797ab439df52ff7f259dd4, type: 3}
 --- !u!61 &5911033495980390877
 BoxCollider2D:
   m_ObjectHideFlags: 0

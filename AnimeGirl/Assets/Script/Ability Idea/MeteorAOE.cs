@@ -14,6 +14,8 @@ public class MeteorAOE : MonoBehaviour
     private Vector2 target;
     private Vector3 startPosition;
 
+    public GameObject Fire;
+
     // Initialize and start the sequence
     public void Initialize(Vector2 targetPosition, float damageAmount, float r)
     {
@@ -31,7 +33,7 @@ public class MeteorAOE : MonoBehaviour
         float elapsed = 0f;
        
 
-        // optional: delay before impact effect
+        
         yield return new WaitForSeconds(delayBeforeImpact);
         while (elapsed < fallDuration)
         {
@@ -40,16 +42,14 @@ public class MeteorAOE : MonoBehaviour
             transform.position = Vector3.Lerp(startPosition, (Vector3)target, t);
             yield return null;
         }
-        // spawn impact VFX
+        // spawn impact VFX might delete later
         if (impactVFX != null)
             Instantiate(impactVFX, (Vector3)target, Quaternion.identity);
-        // optionally draw debug circle (editor only)
-#if UNITY_EDITOR
-        Debug.DrawLine(target + Vector2.right * radius, target - Vector2.right * radius, Color.red, 1f);
-        Debug.DrawLine(target + Vector2.up * radius, target - Vector2.up * radius, Color.red, 1f);
-#endif
 
-        // damage enemies in radius
+
+
+        // damage enemies in radius, i tried but it is not working for some unknown reason
+        //nvm it worked somehow
         Collider2D[] hits = Physics2D.OverlapCircleAll(target, radius, enemyLayer);
         foreach (var col in hits)
         {
@@ -66,8 +66,9 @@ public class MeteorAOE : MonoBehaviour
             }
         }
 
-        // wait then destroy the meteor object
+        // wait then destroy the meteor object, instatiate fire effect
         yield return new WaitForSeconds(destroyAfter);
+        Instantiate(Fire, this.gameObject.transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 

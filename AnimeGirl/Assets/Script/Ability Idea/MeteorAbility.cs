@@ -4,8 +4,8 @@ using UnityEngine;
 [RequireComponent(typeof(PlayerStats))]
 public class MeteorAbility : MonoBehaviour
 {
-    public GameObject meteorPrefab;       // prefab that has MeteorAOE component
-    public LayerMask groundLayers;        // optional: layers allowed to target
+    public GameObject meteorPrefab;       // prefab that needs to have MeteorAOE component
+    public LayerMask groundLayers;        
     public KeyCode throwKey = KeyCode.Mouse1; // right click by default
     public Camera mainCamera;
 
@@ -33,11 +33,11 @@ public class MeteorAbility : MonoBehaviour
             mouseWorldPos.z = 0f;   // IMPORTANT for 2D accuracy
             Vector2 targetPos = mouseWorldPos;
 
-            // optional ground layer check
+            
             if (groundLayers != 0)
             {
                 Collider2D col = Physics2D.OverlapPoint(targetPos, groundLayers);
-                // if (col == null) return;  // if you want to restrict
+                
             }
 
             SpawnMeteor(targetPos);
@@ -49,7 +49,7 @@ public class MeteorAbility : MonoBehaviour
     private void SpawnMeteor(Vector2 targetPosition)
     {
         GameObject go = Instantiate(meteorPrefab, (Vector3)targetPosition + Vector3.up * 10f, Quaternion.identity);
-        // We spawn above and let the prefab handle the "fall" effect or we can position directly
+        
         MeteorAOE aoe = go.GetComponent<MeteorAOE>();
         if (aoe != null)
         {
@@ -61,7 +61,7 @@ public class MeteorAbility : MonoBehaviour
         }
     }
 
-    // Optional: allow other scripts to trigger meteor
+    
     public bool TryTriggerMeteorAt(Vector2 worldPos)
     {
         if (cooldownTimer <= 0f && meteorPrefab != null)
@@ -76,6 +76,6 @@ public class MeteorAbility : MonoBehaviour
         return false;
     }
 
-    // Optional helper to show cooldown percentage
+   
     public float GetCooldownRemaining() => cooldownTimer;
 }

@@ -1,3 +1,5 @@
+using JetBrains.Annotations;
+using Unity.Burst.Intrinsics;
 using UnityEngine;
 
 public class EnemyRangedAttack : MonoBehaviour
@@ -7,7 +9,6 @@ public class EnemyRangedAttack : MonoBehaviour
     private Rigidbody2D rb;
 
     public float distanceToShoot = 5f;
-    public float distanceToStop = 3f;
     public Transform firingPoint;
     public float fireRate;
     private float timeToFire;
@@ -30,7 +31,7 @@ public class EnemyRangedAttack : MonoBehaviour
             RotateTowardsTarget();
         }
 
-        if (Vector2.Distance(target.position, transform.position) <= distanceToStop)
+        if (Vector2.Distance(target.position, transform.position) <= distanceToShoot)
         {
             Shoot();
         }
@@ -41,19 +42,12 @@ public class EnemyRangedAttack : MonoBehaviour
         if (timeToFire <= 0f)
         {
             Debug.Log("Shoot");
+            //Instantiate(bulletPrefab, firingPoint.position, firingPoint.rotation);
             timeToFire = fireRate;
         }
         else
         {
             timeToFire -= Time.deltaTime;
-        }
-    }
-
-    private void FixedUpdate()
-    {
-        if (Vector2.Distance(target.position, transform.position) >= distanceToStop)
-        {
-            
         }
     }
 

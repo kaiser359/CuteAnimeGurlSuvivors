@@ -165,7 +165,7 @@ Material:
     m_Colors:
     - _BaseColor: {r: 0.8113208, g: 0.29866308, b: 0, a: 1}
     - _ClipRect: {r: -32767, g: -32767, b: 32767, a: 32767}
-    - _Color: {r: 1, g: 0.6623478, b: 0.3160377, a: 0.8235294}
+    - _Color: {r: 1, g: 0.5057472, b: 0, a: 0.8235294}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FaceColor: {r: 1, g: 1, b: 1, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}

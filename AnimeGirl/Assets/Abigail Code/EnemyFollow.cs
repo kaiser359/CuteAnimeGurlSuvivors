@@ -18,7 +18,7 @@ public class EnemyFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        findPaperFigurine = GameObject.Find("PaperFigurine");
+        findPaperFigurine = GameObject.FindWithTag("PaperFigurine");
 
         if (findPaperFigurine != null)
         {

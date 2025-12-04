@@ -2,6 +2,7 @@ using System;
 using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static UnityEngine.Rendering.DebugUI;
 [RequireComponent(typeof(PlayerStats))]
 public class MikuBean : MonoBehaviour
 {
@@ -26,26 +27,17 @@ public class MikuBean : MonoBehaviour
     {
         statsPlayer = GetComponent<PlayerStats>();
         m_transform = GetComponent<Transform>();
+        candamage = false;
+        lazer.SetActive(false);
 
     }
+   
+
     private void Update()
     {
         Shootlazer();
-        if (Input.GetKey(KeyCode.E) && energy >= 0f && cooldownTime >= 3f)
-        {
-            lazer.SetActive(true);
-            energy -= Time.deltaTime * 5f;
-            candamage = true;
-            if (!lazersound.isPlaying)  lazersound.Play();
-        }
-        else
-        {
-            lazer.SetActive(false);
-            candamage = false;
-            lazersound.Stop();
-
-        }
-        if (energy < maxEnergy)
+ 
+        if (energy < maxEnergy && candamage == false)
         {
             energy += Time.deltaTime * 3f;
         }
@@ -67,6 +59,9 @@ public class MikuBean : MonoBehaviour
                 isCoolingDown = false;
             }
         }
+        if (candamage == true) {
+            energy -= Time.deltaTime * 5f;
+        }
 
         Vector3 MousePos = (Vector2)Cam.ScreenToWorldPoint(Input.mousePosition);
         float angledRad = Mathf.Atan2(MousePos.y - transform.position.y, MousePos.x - transform.position.x);
@@ -75,6 +70,25 @@ public class MikuBean : MonoBehaviour
         if (damageInterval <= 0.2f)
         {
             damageInterval += Time.deltaTime * 3;
+        }
+    }
+    public void PowerSuperCool(InputAction.CallbackContext ctx)
+    {
+        if (ctx.started)
+        {
+            if (energy >= 0f && cooldownTime >= 3f)
+            {
+                lazer.SetActive(true);
+
+                candamage = true;
+                if (!lazersound.isPlaying) lazersound.Play();
+            }
+        }
+        if (ctx.canceled || energy <= 0f || cooldownTime < 3f)
+        {
+            lazer.SetActive(false);
+            candamage = false;
+            lazersound.Stop();
         }
     }
 

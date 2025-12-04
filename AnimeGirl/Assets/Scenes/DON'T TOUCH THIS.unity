@@ -271,6 +271,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
+  owner: {fileID: 0}
   weaponType: 0
 --- !u!1 &232561669
 GameObject:
@@ -1121,7 +1122,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5062858261542363923, guid: c80d37f700e61f4459c23c21c476c17e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7929798845094656947, guid: c80d37f700e61f4459c23c21c476c17e, type: 3}
       propertyPath: player
@@ -1144,9 +1145,29 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 426308117}
+    - target: {fileID: 1194086609726181569, guid: 109a9fa3336684c49b3b3f59a856a3ef, type: 3}
+      propertyPath: lifeTime
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1194086609726181569, guid: 109a9fa3336684c49b3b3f59a856a3ef, type: 3}
+      propertyPath: fireForce
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1194086609726181569, guid: 109a9fa3336684c49b3b3f59a856a3ef, type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 8396061388431266999, guid: 2f3a5c7ff0cb3cf4fba83653a1699750, type: 3}
     - target: {fileID: 1582329503974493024, guid: 109a9fa3336684c49b3b3f59a856a3ef, type: 3}
       propertyPath: m_Name
       value: Ranged Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1582329503974493024, guid: 109a9fa3336684c49b3b3f59a856a3ef, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5251115011904468234, guid: 109a9fa3336684c49b3b3f59a856a3ef, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.668
       objectReference: {fileID: 0}
     - target: {fileID: 5454627520420073423, guid: 109a9fa3336684c49b3b3f59a856a3ef, type: 3}
       propertyPath: m_LocalPosition.x

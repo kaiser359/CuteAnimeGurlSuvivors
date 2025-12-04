@@ -12,6 +12,7 @@ public class PlayerAttack : MonoBehaviour
     public float fireForce = 10f;
     float shootCooldown = 0.25f;
     float shootTimer = 0.5f;
+    
     public enum WeaponType { Melee, Bullet };
     public WeaponType weaponType;
     // Update is called once per frame
@@ -34,10 +35,12 @@ public class PlayerAttack : MonoBehaviour
     {
         if(shootTimer > shootCooldown)
         {
+            Debug.Log("HELLO IS THIS SHOOTING");
             shootTimer = 0;
             GameObject intBullet = Instantiate(bullet, Aim.position, Aim.rotation);
             intBullet.GetComponent<Rigidbody2D>().AddForce(-Aim.up * fireForce, ForceMode2D.Impulse);
-            Destroy(intBullet, 2f);
+            intBullet.GetComponent<Weapon>().owner = gameObject;
+           
         }
     }
 
@@ -64,28 +67,5 @@ public class PlayerAttack : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        Enemy enemy = collision.GetComponent<Enemy>();
-        if (enemy != null)
-        {
-            enemy.TakeDamage(damage);
-            if(weaponType == WeaponType.Bullet)
-            {
-              //  Destroy(gameObject);
-            }
-        }
-        
-        EnemyHealth eme = collision.GetComponent<EnemyHealth>();
-        if (eme != null)
-        {
-            Debug.Log("Bullet hit EnemyHealth, applying damage.");
-            eme.TakeDamage(damage);
-            if (weaponType == WeaponType.Bullet)
-            {
-                Debug.Log("Bullet hit enemy, destroying bullet.");
-               // Destroy(gameObject);
-            }
-        }
-    }
+    
 }

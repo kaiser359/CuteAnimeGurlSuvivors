@@ -6,6 +6,9 @@ public class Weapon : MonoBehaviour
     public enum WeaponType { Melee, Bullet }
     public GameObject owner;
     public WeaponType weaponType;
+
+    
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject == owner)

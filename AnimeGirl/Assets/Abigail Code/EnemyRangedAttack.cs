@@ -7,11 +7,12 @@ public class EnemyRangedAttack : MonoBehaviour
     public Transform target;
     public float rotateSpeed = 0.0025f;
     private Rigidbody2D rb;
-
+    public GameObject bulletPrefab;
     public float distanceToShoot = 5f;
     public Transform firingPoint;
     public float fireRate;
     private float timeToFire;
+    public float fireForce = 10f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -42,7 +43,9 @@ public class EnemyRangedAttack : MonoBehaviour
         if (timeToFire <= 0f)
         {
             Debug.Log("Shoot");
-            //Instantiate(bulletPrefab, firingPoint.position, firingPoint.rotation);
+            GameObject intBullet = Instantiate(bulletPrefab, firingPoint.position, firingPoint.rotation);
+            intBullet.GetComponent<Rigidbody2D>().AddForce(-firingPoint.up * -fireForce, ForceMode2D.Impulse);
+            intBullet.GetComponent<Weapon>().owner = gameObject;
             timeToFire = fireRate;
         }
         else

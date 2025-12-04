@@ -34,9 +34,11 @@ public class PlayerAttack : MonoBehaviour
     {
         if(shootTimer > shootCooldown)
         {
+            Debug.Log("HELLO IS THIS SHOOTING");
             shootTimer = 0;
             GameObject intBullet = Instantiate(bullet, Aim.position, Aim.rotation);
             intBullet.GetComponent<Rigidbody2D>().AddForce(-Aim.up * fireForce, ForceMode2D.Impulse);
+            intBullet.GetComponent<Weapon>().owner = gameObject;
             Destroy(intBullet, 2f);
         }
     }

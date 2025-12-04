@@ -4,10 +4,13 @@ public class Weapon : MonoBehaviour
 {
     public float damage = 1;
     public enum WeaponType { Melee, Bullet }
-
+    public GameObject owner;
     public WeaponType weaponType;
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.gameObject == owner)
+            return;
+
         Enemy enemy = collision.GetComponent<Enemy>();
         if(enemy != null)
         {
@@ -17,10 +20,10 @@ public class Weapon : MonoBehaviour
                 Destroy(gameObject);
             }
         }
-        EnemyHealth Enemy = collision.GetComponent<EnemyHealth>();
-        if (Enemy != null)
+        PlayerHealth player = collision.GetComponent<PlayerHealth>();
+        if (player != null)
         {
-            Enemy.TakeDamage(damage);
+            player.TakeDamage(damage);
             if (weaponType == WeaponType.Bullet)
             {
                 Destroy(gameObject);

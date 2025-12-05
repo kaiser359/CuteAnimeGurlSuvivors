@@ -1,7 +1,5 @@
-
 using System.Collections.Generic;
 using UnityEngine;
-
 
 public class Necromancy : MonoBehaviour
 {
@@ -15,6 +13,9 @@ public class Necromancy : MonoBehaviour
 
     [Tooltip("Radius around the player where allies will spawn.")]
     public float spawnRadius = 1.2f;
+
+    // optional default lifetime (the Ally also has its own lifetime field)
+    public float allyLifetime = 30f;
 
     private readonly List<GameObject> _allies = new List<GameObject>();
 
@@ -36,20 +37,31 @@ public class Necromancy : MonoBehaviour
         int toSpawn = Mathf.FloorToInt(amount);
         for (int i = 0; i < toSpawn; i++)
         {
+            // enforce max allies
             if (_allies.Count >= maxAllies) break;
 
             Vector2 offset = Random.insideUnitCircle * spawnRadius;
             Vector3 spawnPos = transform.position + new Vector3(offset.x, offset.y, 0f);
             GameObject allyGO = Instantiate(allyPrefab, spawnPos, Quaternion.identity);
-            _allies.Add(allyGO);
 
+            // Configure ally so it knows its owner
+            Ally allyComp = allyGO.GetComponent<Ally>();
+            if (allyComp != null)
+            {
+                allyComp.OwnerNecromancy = this;
+                // make sure ally lifetime matches necromancy default if desired
+                allyComp.lifeTime = allyLifetime;
+            }
+
+            _allies.Add(allyGO);
         }
     }
 
 
     public void NotifyAllyDestroyed(GameObject ally)
     {
-        _allies.Remove(ally);
+        if (_allies.Contains(ally))
+            _allies.Remove(ally);
     }
 
     // Optional: debug helper to clear all allies

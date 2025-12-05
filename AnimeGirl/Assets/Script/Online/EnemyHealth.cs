@@ -51,6 +51,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
         }
     }
 
+    // inside Die() method, replace or update it to call Necromancy.Instance
     private void Die()
     {
         float xpamount = UnityEngine.Random.Range(1f, 5f);
@@ -63,6 +64,15 @@ public class EnemyHealth : MonoBehaviour, IDamageable
         {
             manager.EnemyDied();
         }
+
+        // Spawn an ally on death (if necromancy exists)
+        if (Necromancy.Instance != null)
+        {
+            Necromancy.Instance.CreateAllys(1f); // spawn 1 ally
+        }
+
         Destroy(gameObject);
     }
+
+
 }

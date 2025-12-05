@@ -2109,6 +2109,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 519420031}
     - target: {fileID: 6430154637289168971, guid: 318e52dae0d62384db695fa760cb1bd6, type: 3}
+      propertyPath: energy
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6430154637289168971, guid: 318e52dae0d62384db695fa760cb1bd6, type: 3}
+      propertyPath: maxEnergy
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6430154637289168971, guid: 318e52dae0d62384db695fa760cb1bd6, type: 3}
       propertyPath: lazersound
       value: 
       objectReference: {fileID: 1845422314}

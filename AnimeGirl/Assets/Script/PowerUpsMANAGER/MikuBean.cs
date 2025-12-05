@@ -20,7 +20,7 @@ public class MikuBean : MonoBehaviour
     [SerializeField]private bool candamage = false;
     [SerializeField] private float damageInterval = 0.3f;
     public AudioSource lazersound;
-
+    private bool isPressing = false;
     private PlayerStats statsPlayer;
 
     private void Awake()
@@ -35,6 +35,28 @@ public class MikuBean : MonoBehaviour
 
     private void Update()
     {
+        if (energy >= 0f && cooldownTime >= 3f && isPressing)
+        {
+            lazer.SetActive(true);
+
+            candamage = true;
+            if (!lazersound.isPlaying) lazersound.Play();
+
+
+        }
+        if (energy <= 0f || cooldownTime < 3f || !isPressing)
+        {
+            Debug.Log("Out of energy");
+            lazer.SetActive(false);
+            candamage = false;
+            lazersound.Stop();
+            
+
+        }
+
+
+
+
         Shootlazer();
  
         if (energy < maxEnergy && candamage == false)
@@ -69,26 +91,23 @@ public class MikuBean : MonoBehaviour
         lazer.transform.rotation = Quaternion.Euler(0, 0, angledDeg);
         if (damageInterval <= 0.2f)
         {
-            damageInterval += Time.deltaTime * 3;
+            damageInterval += Time.deltaTime * 1.15f;
         }
     }
     public void PowerSuperCool(InputAction.CallbackContext ctx)
     {
-        if (ctx.started)
-        {
-            if (energy >= 0f && cooldownTime >= 3f)
+       
+            if (ctx.started)
             {
-                lazer.SetActive(true);
 
-                candamage = true;
-                if (!lazersound.isPlaying) lazersound.Play();
-            }
+             isPressing = true;
+
         }
-        if (ctx.canceled || energy <= 0f || cooldownTime < 3f)
+        
+
+        if (ctx.canceled)
         {
-            lazer.SetActive(false);
-            candamage = false;
-            lazersound.Stop();
+            isPressing = false;
         }
     }
 

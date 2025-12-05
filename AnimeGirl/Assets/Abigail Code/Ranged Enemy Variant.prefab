@@ -79,9 +79,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3572638935911192686, guid: c80d37f700e61f4459c23c21c476c17e, type: 3}
+      propertyPath: xpdrop
+      value: 
+      objectReference: {fileID: 5569618417064185599, guid: 939cf18005a3e7e42b072ee1054c016c, type: 3}
+    - target: {fileID: 3572638935911192686, guid: c80d37f700e61f4459c23c21c476c17e, type: 3}
+      propertyPath: critdamaged
+      value: 
+      objectReference: {fileID: 7456503366990984155}
     - target: {fileID: 5062858261542363923, guid: c80d37f700e61f4459c23c21c476c17e, type: 3}
       propertyPath: m_Name
       value: Ranged Enemy Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 5062858261542363923, guid: c80d37f700e61f4459c23c21c476c17e, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 7929798845094656947, guid: c80d37f700e61f4459c23c21c476c17e, type: 3}
       propertyPath: distanceToStop
@@ -118,11 +130,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   rotateSpeed: 0.0025
+  bulletPrefab: {fileID: 8396061388431266999, guid: 2f3a5c7ff0cb3cf4fba83653a1699750, type: 3}
   distanceToShoot: 8
   firingPoint: {fileID: 5251115011904468234}
   fireRate: 0.8
+  fireForce: 1
+  lifeTime: 10
 --- !u!4 &5454627520420073423 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1731009926468347836, guid: c80d37f700e61f4459c23c21c476c17e, type: 3}
+  m_PrefabInstance: {fileID: 6032416184952383603}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &7456503366990984155 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: -5418498023830905944, guid: c80d37f700e61f4459c23c21c476c17e, type: 3}
   m_PrefabInstance: {fileID: 6032416184952383603}
   m_PrefabAsset: {fileID: 0}

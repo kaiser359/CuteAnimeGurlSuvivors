@@ -12,6 +12,7 @@ public enum AbilityType
     Meteor,
     MikuBean,
     Lifesteal,
+    Necromancy
     // call down a meteor
     // Add more as needed
 }

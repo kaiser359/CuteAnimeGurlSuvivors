@@ -171,10 +171,10 @@ MonoBehaviour:
     cooldownReductionPerLevel: 0
     cooldownIsMultiplier: 0
     maxLevel: 100
-  - abilityName: haha
+  - abilityName: Health
     description: a
     icon: {fileID: 0}
-    abilityType: 7
+    abilityType: 1
     baseValue: 5
     valuePerLevel: 5
     isMultiplier: 0
@@ -215,6 +215,17 @@ MonoBehaviour:
     cooldownReductionPerLevel: 0
     cooldownIsMultiplier: 0
     maxLevel: 100
+  - abilityName: Necromancy
+    description: 
+    icon: {fileID: 0}
+    abilityType: 12
+    baseValue: 5
+    valuePerLevel: 6
+    isMultiplier: 0
+    cooldownBase: 0
+    cooldownReductionPerLevel: 0
+    cooldownIsMultiplier: 0
+    maxLevel: 5
   abilityLevels: 
   levelUpCanvas: {fileID: 638040972}
   cardsParent: {fileID: 96869024}
@@ -1987,14 +1998,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyTypes:
-  - prefab: {fileID: 4599729207739323120, guid: 047d1c68039267d4c9f8172dd99b349e, type: 3}
-    spawnChance: 0.5
-  - prefab: {fileID: 1073693073089515087, guid: ebff593ffe57df24aad08a40c90f467c, type: 3}
+  - prefab: {fileID: 1582329503974493024, guid: 109a9fa3336684c49b3b3f59a856a3ef, type: 3}
     spawnChance: 0.2
   - prefab: {fileID: 1073693073089515087, guid: faac33f031d5b52479833f5075c197a1, type: 3}
-    spawnChance: 0.2
+    spawnChance: 0.1
   - prefab: {fileID: 1073693073089515087, guid: a64406f1c839496468428a5b406589d7, type: 3}
     spawnChance: 0.1
+  - prefab: {fileID: 5062858261542363923, guid: c80d37f700e61f4459c23c21c476c17e, type: 3}
+    spawnChance: 0.1
+  - prefab: {fileID: 1073693073089515087, guid: b7835c5f259689e419c92304fcdf8998, type: 3}
+    spawnChance: 0.5
   spawnPoint: {fileID: 1872445366}
   Player: {fileID: 1872445366}
   currentWave: 1
@@ -2100,6 +2113,14 @@ PrefabInstance:
       propertyPath: playerCamera
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 4655429733741332835, guid: 318e52dae0d62384db695fa760cb1bd6, type: 3}
+      propertyPath: dashCooldown
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4655429733741332835, guid: 318e52dae0d62384db695fa760cb1bd6, type: 3}
+      propertyPath: dashDistance
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4972336310639523834, guid: 318e52dae0d62384db695fa760cb1bd6, type: 3}
       propertyPath: healthBar
       value: 
@@ -2283,63 +2304,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df4cb1bfcb17087428d42960931426b7, type: 3}
---- !u!1001 &5728289750238852796
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1239107604011450304, guid: 901d37f030676ce49afb0a57b617c6f2, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1.77
-      objectReference: {fileID: 0}
-    - target: {fileID: 1239107604011450304, guid: 901d37f030676ce49afb0a57b617c6f2, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -3.07
-      objectReference: {fileID: 0}
-    - target: {fileID: 1239107604011450304, guid: 901d37f030676ce49afb0a57b617c6f2, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1239107604011450304, guid: 901d37f030676ce49afb0a57b617c6f2, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1239107604011450304, guid: 901d37f030676ce49afb0a57b617c6f2, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1239107604011450304, guid: 901d37f030676ce49afb0a57b617c6f2, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1239107604011450304, guid: 901d37f030676ce49afb0a57b617c6f2, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1239107604011450304, guid: 901d37f030676ce49afb0a57b617c6f2, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1239107604011450304, guid: 901d37f030676ce49afb0a57b617c6f2, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1239107604011450304, guid: 901d37f030676ce49afb0a57b617c6f2, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1954799501554029143, guid: 901d37f030676ce49afb0a57b617c6f2, type: 3}
-      propertyPath: m_Name
-      value: Ally
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 901d37f030676ce49afb0a57b617c6f2, type: 3}
 --- !u!1001 &7719226498922479908
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2541,6 +2505,5 @@ SceneRoots:
   - {fileID: 4107321844819024835}
   - {fileID: 924238862}
   - {fileID: 662009650}
-  - {fileID: 5728289750238852796}
   - {fileID: 799482907}
   - {fileID: 1713232291}

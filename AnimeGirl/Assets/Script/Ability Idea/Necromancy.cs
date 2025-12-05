@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Necromancy : MonoBehaviour
@@ -17,12 +18,16 @@ public class Necromancy : MonoBehaviour
     // optional default lifetime (the Ally also has its own lifetime field)
     public float allyLifetime = 30f;
 
+    private PlayerStats statsPlayer;
+
     private readonly List<GameObject> _allies = new List<GameObject>();
 
     void Awake()
     {
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
+        statsPlayer = GetComponent<PlayerStats>();
+
     }
 
     // Call this when an enemy is killed (amount is number of allies to create, typically 1)
@@ -72,5 +77,10 @@ public class Necromancy : MonoBehaviour
             if (a != null) Destroy(a);
         }
         _allies.Clear();
+    }
+
+    public void Update()
+    {
+        maxAllies = (int)statsPlayer.necromancyAmount;
     }
 }

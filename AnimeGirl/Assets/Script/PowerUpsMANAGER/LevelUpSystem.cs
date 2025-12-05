@@ -222,6 +222,10 @@ public class LevelUpSystem : MonoBehaviour
                 if (playerStats != null) playerStats.SetMikuBean(computedValue);
                 else Debug.Log($"[Ability] MikuBean set to {computedValue} (level {newLevel})");
                 break;
+            case AbilityType.Necromancy:
+                if (playerStats != null) playerStats.SetNecromancyAmount(computedValue);
+                else Debug.Log($"[Ability] Necromancy set to {computedValue} (level {newLevel})");
+                break;
 
             // inside LevelUpSystem.ApplyAbilityEffect(...)
             case AbilityType.Meteor:

@@ -220,7 +220,7 @@ MonoBehaviour:
     icon: {fileID: 0}
     abilityType: 12
     baseValue: 5
-    valuePerLevel: 6
+    valuePerLevel: 1
     isMultiplier: 0
     cooldownBase: 0
     cooldownReductionPerLevel: 0
@@ -892,6 +892,7 @@ MonoBehaviour:
   currentLevel: 1
   curenteXp: 0
   xpNeeded: 0
+  XpBar: {fileID: 0}
   AudioSource: {fileID: 0}
 --- !u!1 &662009646
 GameObject:

@@ -917,7 +917,6 @@ GameObject:
   - component: {fileID: 589474334}
   - component: {fileID: 589474333}
   - component: {fileID: 589474331}
-  - component: {fileID: 589474332}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -937,24 +936,6 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!114 &589474332
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 589474330}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e8d2d64b72e0424cb36482b2f0c90df, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  baselevelToLevelUp: 5
-  currentLevel: 1
-  curenteXp: 0
-  xpNeeded: 0
-  XpBar: {fileID: 0}
-  AudioSource: {fileID: 0}
 --- !u!114 &589474333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2561,7 +2542,7 @@ MonoBehaviour:
   baselevelToLevelUp: 5
   currentLevel: 1
   curenteXp: 0
-  xpNeeded: 0
+  xpNeeded: 9
   XpBar: {fileID: 1865283453}
   AudioSource: {fileID: 1641070999}
 --- !u!50 &1469371866
@@ -3563,7 +3544,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 0
+  m_FillAmount: 0.5
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0

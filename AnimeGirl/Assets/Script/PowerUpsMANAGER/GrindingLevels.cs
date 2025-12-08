@@ -39,8 +39,8 @@ public Image XpBar;
         {
             AddXP(7);
         }
-       
-        XpBar.fillAmount = Mathf.Clamp(curenteXp / xpNeeded, 0, 1);
+
+        XpBar.fillAmount = Mathf.Clamp((float)curenteXp / xpNeeded, 0, 1);
     }
 
 }// GrindingLevels.AddXP(value); to add xp

@@ -24,8 +24,8 @@ public class EnemyManager : MonoBehaviour
     // Wave management
     public int currentWave = 1;
     private int enemiesPerWave = 10; // Start with 10 enemies in wave 1
-    private int enemiesSpawnedInWave = 0;
-    private int currentEnemiesAlive = 0;
+    [SerializeField]private int enemiesSpawnedInWave = 0;
+   [SerializeField] private int currentEnemiesAlive = 0;
 
     // Wave transition
     private const float WAVE_BREAK_TIME = 10.0f;

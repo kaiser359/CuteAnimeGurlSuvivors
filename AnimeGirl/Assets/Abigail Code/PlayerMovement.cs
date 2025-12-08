@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -18,22 +19,25 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        _movement.Set(InputManager.Movement.x, InputManager.Movement.y);
-
         _rb.linearVelocity = _movement * _moveSpeed;
 
         if(_rb.linearVelocity == Vector2.zero)
         {
             isWalking = false;
-            lastMoveDirection = InputManager.Movement;
-            Vector3 vector3 = Vector3.left * lastMoveDirection.x + Vector3.down * lastMoveDirection.y;
+            //lastMoveDirection = InputManager.Movement;
+            //Vector3 vector3 = Vector3.left * lastMoveDirection.x + Vector3.down * lastMoveDirection.y;
             
         }
         else
         {
             isWalking = true;
-            Vector3 vector3 = Vector3.left * InputManager.Movement.x + Vector3.down * InputManager.Movement.y;
+            Vector3 vector3 = Vector3.left * _movement.x + Vector3.down * _movement.y;
             Aim.rotation = Quaternion.LookRotation(Vector3.forward, vector3);
         }
+    }
+
+    public void Move(InputAction.CallbackContext ctx)
+    {
+        _movement= ctx.ReadValue<Vector2>();
     }
 }

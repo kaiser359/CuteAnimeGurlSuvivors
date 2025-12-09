@@ -9,7 +9,7 @@ public class EnemyFollow : MonoBehaviour
 
     public float distanceToStop = 3f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void Awake()
     {
         player = GameObject.FindWithTag("Player");
         target = GameObject.Find("Player");
@@ -25,6 +25,14 @@ public class EnemyFollow : MonoBehaviour
             player = findPaperFigurine;
         }
         else
+        {
+            player = GameObject.FindWithTag("Player");
+        }
+        if (target == null)
+        {
+            target = GameObject.Find("Player");
+        }
+        if (player == null)
         {
             player = GameObject.FindWithTag("Player");
         }

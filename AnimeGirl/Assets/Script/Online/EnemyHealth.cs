@@ -28,7 +28,13 @@ public class EnemyHealth : MonoBehaviour, IDamageable
         manager = mgr;
     }
 
-  
+    private void Update()
+    {
+        if (stats == null)
+        {
+            stats = GameObject.FindWithTag("Player").GetComponent<PlayerStats>();
+        }
+    }
     public void TakeDamage(float damage)
     {
         float critChance = stats.baseCritChance;

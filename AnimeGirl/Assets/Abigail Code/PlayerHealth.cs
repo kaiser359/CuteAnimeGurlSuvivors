@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -21,6 +22,11 @@ public class PlayerHealth : MonoBehaviour
         maxHealth = statsPlayer.baseMaxHealth;
         healthBar.fillAmount = Mathf.Clamp(health / maxHealth, 0, 1);
         DestroyGameObject();
+
+        if(health > maxHealth)
+        {
+            health -= Time.deltaTime ;
+        }
     }
 
     void DestroyGameObject()

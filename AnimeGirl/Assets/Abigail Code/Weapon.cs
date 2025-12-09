@@ -23,7 +23,7 @@ public class Weapon : MonoBehaviour
                 Destroy(gameObject);
             }
         }
-        PlayerHealth player = collision.GetComponent<PlayerHealth>();
+        EnemyHealth player = collision.GetComponent<EnemyHealth>();
         if (player != null)
         {
             player.TakeDamage(damage);

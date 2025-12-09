@@ -1028,7 +1028,7 @@ MonoBehaviour:
   target: {fileID: 426308117}
   rotateSpeed: 0.0025
   bulletPrefab: {fileID: 8396061388431266999, guid: 2f3a5c7ff0cb3cf4fba83653a1699750, type: 3}
-  distanceToShoot: 3
+  distanceToShoot: 10
   firingPoint: {fileID: 381825306}
   fireRate: 0.8
   fireForce: 10
@@ -1105,7 +1105,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Actions: {fileID: -944628639613478452, guid: 55196b69ddbba5f4f915ff744914d3c4, type: 3}
-  m_NotificationBehavior: 0
+  m_NotificationBehavior: 2
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
     m_PersistentCalls:
@@ -1116,7 +1116,23 @@ MonoBehaviour:
   m_ControlsChangedEvent:
     m_PersistentCalls:
       m_Calls: []
-  m_ActionEvents: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 426308115}
+        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+        m_MethodName: Move
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: d7c8c4eb-6885-4e98-9c9a-27206c41d80f
+    m_ActionName: 'Player/Movement[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d,/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -1176,7 +1192,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5062858261542363923, guid: c80d37f700e61f4459c23c21c476c17e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3346946381707849374, guid: c80d37f700e61f4459c23c21c476c17e, type: 3}
@@ -1250,7 +1266,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1582329503974493024, guid: 109a9fa3336684c49b3b3f59a856a3ef, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5454627520420073423, guid: 109a9fa3336684c49b3b3f59a856a3ef, type: 3}
       propertyPath: m_LocalPosition.x

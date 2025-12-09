@@ -1028,7 +1028,7 @@ MonoBehaviour:
   target: {fileID: 426308117}
   rotateSpeed: 0.0025
   bulletPrefab: {fileID: 8396061388431266999, guid: 2f3a5c7ff0cb3cf4fba83653a1699750, type: 3}
-  distanceToShoot: 3
+  distanceToShoot: 10
   firingPoint: {fileID: 381825306}
   fireRate: 0.8
   fireForce: 10
@@ -1176,7 +1176,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5062858261542363923, guid: c80d37f700e61f4459c23c21c476c17e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3346946381707849374, guid: c80d37f700e61f4459c23c21c476c17e, type: 3}
@@ -1250,7 +1250,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1582329503974493024, guid: 109a9fa3336684c49b3b3f59a856a3ef, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5454627520420073423, guid: 109a9fa3336684c49b3b3f59a856a3ef, type: 3}
       propertyPath: m_LocalPosition.x

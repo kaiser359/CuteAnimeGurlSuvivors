@@ -471,11 +471,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Melee: {fileID: 8629395397066012288}
-  damage: 10
+  damage: 1000
   Aim: {fileID: 8940313313642672361}
   bullet: {fileID: 8396061388431266999, guid: 2f3a5c7ff0cb3cf4fba83653a1699750, type: 3}
   fireForce: 10
-  weaponType: 1
+  weaponType: 0
 --- !u!114 &4655429733741332835
 MonoBehaviour:
   m_ObjectHideFlags: 0

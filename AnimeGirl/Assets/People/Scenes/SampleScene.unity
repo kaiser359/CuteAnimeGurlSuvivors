@@ -737,6 +737,8 @@ MonoBehaviour:
   spawnPoint: {fileID: 1872445366}
   Player: {fileID: 1872445366}
   currentWave: 1
+  enemiesSpawnedInWave: 0
+  currentEnemiesAlive: 0
   MinSpawnDistance: 2.97
   MaxSpawnDistance: 21.84
 --- !u!4 &1872445366

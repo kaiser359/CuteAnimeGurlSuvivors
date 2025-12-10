@@ -415,7 +415,7 @@ MonoBehaviour:
   currentLevel: 1
   curenteXp: 0
   xpNeeded: 0
-  XpBar: {fileID: 8767538150068282485}
+  XpBar: {fileID: 5985920062153425982}
   AudioSource: {fileID: 7465953054605582060}
 --- !u!114 &6430154637289168971
 MonoBehaviour:
@@ -495,7 +495,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   maxHealth: 100
-  healthBar: {fileID: 8767538150068282485}
+  healthBar: {fileID: 976766521928913166}
 --- !u!114 &3569463104248567208
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2085,7 +2085,7 @@ MonoBehaviour:
   m_FillMethod: 0
   m_FillAmount: 1
   m_FillClockwise: 1
-  m_FillOrigin: 1
+  m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
 --- !u!1 &8629395397066012288

@@ -31,5 +31,6 @@ public class LevelUpCard : MonoBehaviour
             button.onClick.RemoveAllListeners();
             button.onClick.AddListener(() => onClick?.Invoke());
         }
+
     }
 }

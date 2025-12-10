@@ -1411,6 +1411,39 @@ MonoBehaviour:
     cooldownReductionPerLevel: 0
     cooldownIsMultiplier: 0
     maxLevel: 100
+  - abilityName: MaxHealth
+    description: adds a chance to do extra damage
+    icon: {fileID: 0}
+    abilityType: 5
+    baseValue: 1.5
+    valuePerLevel: 0.05
+    isMultiplier: 0
+    cooldownBase: 0
+    cooldownReductionPerLevel: 0
+    cooldownIsMultiplier: 0
+    maxLevel: 100
+  - abilityName: Necromancy
+    description: adds a chance to do extra damage
+    icon: {fileID: 0}
+    abilityType: 5
+    baseValue: 1.5
+    valuePerLevel: 0.05
+    isMultiplier: 0
+    cooldownBase: 0
+    cooldownReductionPerLevel: 0
+    cooldownIsMultiplier: 0
+    maxLevel: 100
+  - abilityName: CritDamage
+    description: adds a chance to do extra damage
+    icon: {fileID: 0}
+    abilityType: 5
+    baseValue: 1.5
+    valuePerLevel: 0.05
+    isMultiplier: 0
+    cooldownBase: 0
+    cooldownReductionPerLevel: 0
+    cooldownIsMultiplier: 0
+    maxLevel: 100
   abilityLevels: 
   levelUpCanvas: {fileID: 0}
   cardsParent: {fileID: 1506501006}

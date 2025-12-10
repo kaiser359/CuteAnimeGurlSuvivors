@@ -268,7 +268,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 1931835614
+  GlobalObjectIdHash: 1180380803
   InScenePlacedSourceGlobalObjectIdHash: 1180380803
   DeferredDespawnTick: 0
   Ownership: 1
@@ -1930,7 +1930,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   abilities:
   - abilityName: KABOM
-    description: increase meteor damage
+    description: Increase meteor damage and decrease cooldown time
     icon: {fileID: 0}
     abilityType: 9
     baseValue: 50
@@ -1941,7 +1941,7 @@ MonoBehaviour:
     cooldownIsMultiplier: 0
     maxLevel: 100
   - abilityName: protection
-    description: gains shield
+    description: Gain a shield (this will stack)
     icon: {fileID: 0}
     abilityType: 8
     baseValue: 5
@@ -1952,8 +1952,8 @@ MonoBehaviour:
     cooldownIsMultiplier: 0
     maxLevel: 100
   - abilityName: Health
-    description: a
-    icon: {fileID: 0}
+    description: Increases max health
+    icon: {fileID: -8783021853406769408, guid: 9c7be927c625681498a2c907a7efe639, type: 3}
     abilityType: 1
     baseValue: 110
     valuePerLevel: 20
@@ -1962,8 +1962,8 @@ MonoBehaviour:
     cooldownReductionPerLevel: 0
     cooldownIsMultiplier: 0
     maxLevel: 10
-  - abilityName: MikuBean
-    description: Miku bean!!!!!!!!!!!!!!!!!!
+  - abilityName: Miku Beam
+    description: Decreases cooldown time and slightly increases damage
     icon: {fileID: 0}
     abilityType: 10
     baseValue: 2
@@ -1974,7 +1974,7 @@ MonoBehaviour:
     cooldownIsMultiplier: 0
     maxLevel: 100
   - abilityName: CritRate
-    description: 
+    description: Increases base damage
     icon: {fileID: 0}
     abilityType: 4
     baseValue: 0.15
@@ -1985,7 +1985,7 @@ MonoBehaviour:
     cooldownIsMultiplier: 0
     maxLevel: 5
   - abilityName: CritDamage
-    description: 
+    description: increases base damage
     icon: {fileID: 0}
     abilityType: 5
     baseValue: 1.5
@@ -1996,7 +1996,7 @@ MonoBehaviour:
     cooldownIsMultiplier: 0
     maxLevel: 100
   - abilityName: Necromancy
-    description: 
+    description: After killing an enemy it will come back from the dead to help you
     icon: {fileID: 0}
     abilityType: 12
     baseValue: 5

@@ -513,30 +513,8 @@
                 },
                 {
                     "name": "",
-                    "id": "1617f465-6edd-4113-8e44-095ba4a965c1",
-                    "path": "<Gamepad>/buttonWest",
-                    "interactions": "Press(behavior=2)",
-                    "processors": "",
-                    "groups": "",
-                    "action": "PowerSuperCool",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "b98dcbcd-d059-4337-a795-56fe5a8bead1",
                     "path": "<Keyboard>/e",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Power2",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "45024b8a-385d-4f1d-ad02-feae9f56fc57",
-                    "path": "<Gamepad>/buttonEast",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

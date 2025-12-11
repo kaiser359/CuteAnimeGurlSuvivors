@@ -104,7 +104,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5062858261542363923, guid: c80d37f700e61f4459c23c21c476c17e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6256198512470294710}
+    - targetCorrespondingSourceObject: {fileID: 5062858261542363923, guid: c80d37f700e61f4459c23c21c476c17e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5010742559237416471}
   m_SourcePrefab: {fileID: 100100000, guid: c80d37f700e61f4459c23c21c476c17e, type: 3}
+--- !u!198 &1446055429119639286 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: -5418498023830905944, guid: c80d37f700e61f4459c23c21c476c17e, type: 3}
+  m_PrefabInstance: {fileID: 2367990709972395358}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4096309023073518306 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1731009926468347836, guid: c80d37f700e61f4459c23c21c476c17e, type: 3}
@@ -164,3 +172,20 @@ MonoBehaviour:
   fireRate: 0.8
   fireForce: 10
   lifeTime: 10
+--- !u!114 &5010742559237416471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7394393555285182029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5b4bb5416cad8f4fb3b8992507d6aaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 500
+  currentHealth: 0
+  stats: {fileID: 0}
+  xpdrop: {fileID: 5569618417064185599, guid: 939cf18005a3e7e42b072ee1054c016c, type: 3}
+  critdamaged: {fileID: 1446055429119639286}

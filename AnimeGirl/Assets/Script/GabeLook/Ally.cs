@@ -4,39 +4,49 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class Ally : MonoBehaviour
 {
-    [Tooltip("Movement speed of the ally.")]
+
     public float moveSpeed = 3f;
 
-    [Tooltip("Damage applied to enemy health.")]
     public float damage = 5f;
 
-    [Tooltip("How often (seconds) the ally deals damage while in range.")]
     public float attackInterval = 0.5f;
 
-    [Tooltip("Range at which the ally considers itself in melee range and deals damage.")]
     public float attackRange = 0.8f;
 
-    [Tooltip("How far the ally will search for enemies (from the ally's position).")]
     public float detectionRadius = 10f;
 
-    [Tooltip("Max distance the ally may stray from the player (owner).")]
     public float maxDistanceFromOwner = 6f;
 
-    [Tooltip("How long (seconds) the ally lives before dying automatically.")]
     public float lifeTime = 30f;
 
     [HideInInspector]
     public Necromancy OwnerNecromancy;
 
+    // Separation / avoidance settings
+
+    public float separationRadius = 0.8f;
+
+    public float separationStrength = 2.5f;
+
+    // Idle spread so allies don't all sit on the exact same point near owner
+
+    public float idleMinRadius = 0.4f;
+
+    public float idleMaxRadius = 1.2f;
+
     private Rigidbody2D _rb;
     private Transform _target;
     private float _attackTimer;
     private Vector2 _cachedOwnerPos;
+    private Vector2 _idleOffset; // per-ally offset so they spread around owner
 
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
         _attackTimer = attackInterval;
+
+        // pick a persistent random idle offset direction & radius so allies spread
+        _idleOffset = Random.insideUnitCircle.normalized * Random.Range(idleMinRadius, idleMaxRadius);
 
         StartCoroutine(TargetAndMoveRoutine());
         StartCoroutine(LifeTimer());
@@ -66,14 +76,14 @@ public class Ally : MonoBehaviour
         else
             _cachedOwnerPos = transform.position;
 
-        // If no target, idle near owner
+       
         if (_target == null)
         {
             ReturnTowardOwner();
             return;
         }
 
-        // If target destroyed unexpectedly, clear and find a new one immediately
+        
         if (_target == null || !_target.gameObject.activeInHierarchy)
         {
             _target = null;
@@ -84,23 +94,30 @@ public class Ally : MonoBehaviour
         Vector2 dir = ((Vector2)_target.position - _rb.position);
         float dist = dir.magnitude;
 
-        // If chasing target would put ally further than allowed distance from owner, don't chase
+        
         if (OwnerNecromancy != null)
         {
             float distTargetToOwner = Vector2.Distance(_cachedOwnerPos, _target.position);
             if (distTargetToOwner > maxDistanceFromOwner)
             {
-                // instead go back toward the owner (stay nearby)
+              
                 ReturnTowardOwner();
-                _attackTimer = attackInterval; // reset (don't spam leftover timer)
+                _attackTimer = attackInterval; 
                 return;
             }
         }
 
-        // Move toward target
+        
+        Vector2 separation = ComputeSeparation();
+
+       
+        Vector2 moveDir = dir.normalized;
+        Vector2 combined = (moveDir + separation).normalized;
+
+        
         if (dist > 0.01f)
         {
-            Vector2 vel = dir.normalized * moveSpeed;
+            Vector2 vel = combined * moveSpeed;
             _rb.MovePosition(_rb.position + vel * Time.fixedDeltaTime);
         }
 
@@ -116,9 +133,43 @@ public class Ally : MonoBehaviour
         }
         else
         {
-            // reset timer when out of range so cadence is consistent
+
             _attackTimer = Mathf.Min(_attackTimer, attackInterval);
         }
+    }
+
+    private Vector2 ComputeSeparation()
+    {
+        Vector2 result = Vector2.zero;
+        Collider2D[] hits = Physics2D.OverlapCircleAll(_rb.position, separationRadius);
+        int count = 0;
+
+        for (int i = 0; i < hits.Length; i++)
+        {
+            var col = hits[i];
+            if (col == null) continue;
+
+
+            var otherAlly = col.GetComponentInParent<Ally>();
+            if (otherAlly == null) continue;
+            if (otherAlly == this) continue;
+
+            Vector2 diff = _rb.position - (Vector2)otherAlly.transform.position;
+            float d = diff.magnitude;
+            if (d <= 0f) continue;
+
+ 
+            float strength = Mathf.Clamp01((separationRadius - d) / separationRadius);
+            result += diff.normalized * strength;
+            count++;
+        }
+
+        if (count > 0)
+        {
+            result = result / count; // average
+            result = result.normalized * separationStrength * Mathf.Clamp01(result.magnitude);
+        }
+        return result;
     }
 
     private void ReturnTowardOwner()
@@ -126,14 +177,20 @@ public class Ally : MonoBehaviour
         // move to a nearby point around the owner (so ally doesn't stack exactly on player)
         if (OwnerNecromancy == null) return;
 
+        Vector2 targetPos = (Vector2)OwnerNecromancy.transform.position + _idleOffset;
         Vector2 ownerPos = (Vector2)OwnerNecromancy.transform.position;
-        float currentDist = Vector2.Distance(_rb.position, ownerPos);
+        float currentDist = Vector2.Distance(_rb.position, targetPos);
 
         // If too far, move closer; else do minor idle (small wander)
-        if (currentDist > 1.2f)
+        if (currentDist > 0.25f) // get reasonably close to idle offset
         {
-            Vector2 dir = (ownerPos - _rb.position).normalized;
-            _rb.MovePosition(_rb.position + dir * moveSpeed * Time.fixedDeltaTime);
+            Vector2 dir = (targetPos - _rb.position).normalized;
+
+            // apply separation while returning to avoid stacking near owner
+            Vector2 separation = ComputeSeparation();
+            Vector2 combined = (dir + separation).normalized;
+
+            _rb.MovePosition(_rb.position + combined * moveSpeed * Time.fixedDeltaTime);
         }
     }
 
@@ -216,6 +273,9 @@ public class Ally : MonoBehaviour
     {
         Gizmos.color = Color.cyan;
         Gizmos.DrawWireSphere(transform.position, detectionRadius);
+
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position, separationRadius);
 
         if (OwnerNecromancy != null)
         {

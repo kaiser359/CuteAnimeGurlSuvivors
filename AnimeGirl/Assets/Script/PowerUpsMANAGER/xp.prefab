@@ -203,5 +203,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
-  attractionRange: 3
+  attractionRange: 15.45
   attractionSpeed: 2

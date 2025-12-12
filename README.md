@@ -24,3 +24,6 @@ https://drive.google.com/drive/folders/1hCJvDAiD7FAdU20jBgq_o3D-eL_NM-YF?usp=dri
 https://drive.google.com/drive/folders/1tO87l2Ak4RKJkHI8awWM-TZg_PoM0rZU?usp=drive_link
 
 [LAN PARTY FOOD DO IT](https://docs.google.com/forms/d/e/1FAIpQLSfIaU677-_d5VBduLYnTDw3wfw3dsoDaIofRKRZxStxht7UYg/viewform)
+
+Derek was not here
+Or was he?

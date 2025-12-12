@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class GrindingLevels : MonoBehaviour
@@ -35,12 +36,16 @@ public Image XpBar;
     }
     private void Update()
     {
-        if (Input.GetKey(KeyCode.L) && Input.GetKey(KeyCode.O))
-        {
-            AddXP(7);
-        }
 
         XpBar.fillAmount = Mathf.Clamp((float)curenteXp / xpNeeded, 0, 1);
+    }
+
+    public void AddXP(InputAction.CallbackContext ctx)
+    {
+        if (ctx.canceled)
+            return;
+
+        AddXP(7);
     }
 
 }// GrindingLevels.AddXP(value); to add xp

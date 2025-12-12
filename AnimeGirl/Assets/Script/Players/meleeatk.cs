@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class meleeatk : MonoBehaviour
 {
@@ -22,6 +23,8 @@ public class meleeatk : MonoBehaviour
 
     private float _cooldownTimer;
 
+    private Vector2 aimDirection;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -38,16 +41,31 @@ public class meleeatk : MonoBehaviour
             Camera cam = Camera.main;
             if (cam != null)
             {
-                Vector3 mouseWorld = cam.ScreenToWorldPoint(Input.mousePosition);
-                Vector2 dir = mouseWorld - transform.position;
-                float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+                //Vector3 mouseWorld = cam.ScreenToWorldPoint(Input.mousePosition);
+                //Vector2 dir = mouseWorld - transform.position;
+                float angle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg;
                 transform.rotation = Quaternion.Euler(0f, 0f, angle + rotationOffset);
             }
         }
 
         // attack input & cooldown
         _cooldownTimer -= Time.deltaTime;
-        if (Input.GetKeyDown(attackKey) && _cooldownTimer <= 0f)
+    }
+
+    public void Aim(InputAction.CallbackContext ctx)
+    {
+        if (ctx.ReadValue<Vector2>() == Vector2.zero)
+            return;
+
+        aimDirection = ctx.ReadValue<Vector2>();
+    }
+
+    public void Melee(InputAction.CallbackContext ctx)
+    {
+        if (ctx.canceled)
+            return;
+
+        if (_cooldownTimer <= 0f)
         {
             if (attackHitWindow > 0f)
                 StartCoroutine(PerformAttackWindow());

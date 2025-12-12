@@ -1,45 +1,43 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PauseMenue : MonoBehaviour
 {
 
-    public GameObject PauseMenu;
-    private bool Paused = false;
-    // Start is called before the first frame update
-    void Start()
-    {
+    private GameObject PauseMenu;
+    public string pauseMenuTag;
 
+    private void Awake()
+    {
+        PauseMenu = GameObject.FindWithTag(pauseMenuTag);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void TogglePause(InputAction.CallbackContext ctx)
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && Paused == false)
+        if (ctx.canceled)
+            return;
+
+        if (PauseMenu.activeSelf == false)
         {
             PausedMenu();
-            return;
         }
-
-        if (Input.GetKeyDown(KeyCode.Escape) && Paused == true)
+        else
         {
             UnPuasedMenu();
-            return;
         }
     }
 
     private void PausedMenu()
     {
-        Paused = true;
-        PauseMenu.gameObject.SetActive(true);
+        PauseMenu.SetActive(true);
         Time.timeScale = 0;
         return;
     }
     public void UnPuasedMenu()
     {
-        Paused = false;
-        PauseMenu.gameObject.SetActive(false);
+        PauseMenu.SetActive(false);
         Time.timeScale = 1.0f;
         return;
     }

@@ -1,16 +1,17 @@
 ﻿using UnityEngine;
 using System;
 using System.Collections.Generic;
+using UnityEngine.InputSystem;
 
 public class PlayerAbilities : MonoBehaviour
 {
-    void Update()
+    // TODO: Test
+    public void UseAbility(InputAction.CallbackContext ctx)
     {
-        // input handling
-        if (Input.GetMouseButtonDown(1))
-        {
-            TryUseAbility(AbilityType.Meteor);
-        }
+        if (ctx.canceled)
+            return;
+
+        TryUseAbility(AbilityType.Meteor);
     }
 
     // Added missing method definition

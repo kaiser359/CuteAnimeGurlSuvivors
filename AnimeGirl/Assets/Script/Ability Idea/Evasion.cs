@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Evasion : MonoBehaviour
 {
@@ -27,11 +28,12 @@ public class Evasion : MonoBehaviour
         if (_rb != null) _originalConstraints = _rb.constraints;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Dash(InputAction.CallbackContext ctx)
     {
-        // preserved comment block — handle dash input
-        if (Input.GetKeyDown(dashKey) && !_isDashing && Time.time >= _lastDashTime + dashCooldown)
+        if (ctx.canceled)
+            return;
+
+        if (!_isDashing && Time.time >= _lastDashTime + dashCooldown)
         {
             StartCoroutine(DashRoutine());
         }
@@ -55,7 +57,7 @@ public class Evasion : MonoBehaviour
         }
 
         // determine dash direction from input; fallback to current up if no input
-        Vector2 inputDir = InputManager.Movement;
+        Vector2 inputDir = GetComponent<PlayerMovement>().lastMoveDirection;
         Vector2 dashDir = inputDir.sqrMagnitude > 0.0001f ? inputDir.normalized : (Vector2)transform.up;
         Vector2 startPos = _rb != null ? _rb.position : (Vector2)transform.position;
         Vector2 targetPos = startPos + dashDir * dashDistance;

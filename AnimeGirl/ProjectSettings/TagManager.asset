@@ -7,6 +7,7 @@ TagManager:
   - Fire
   - Enemy
   - PaperFigurine
+  - Pause Menu
   layers:
   - Default
   - TransparentFX

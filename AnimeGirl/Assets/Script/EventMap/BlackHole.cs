@@ -1,9 +1,9 @@
+using System.Linq;
 using UnityEngine;
 
 public class BlackHole : MonoBehaviour
 {
 
-    public Transform Player;
     public float PullRange = 20f;
 
     public float PullStrength = 20f;
@@ -17,23 +17,17 @@ public class BlackHole : MonoBehaviour
 
     [SerializeField]private float timer;
 
-    void Start()
-    {
-        if (Player == null)
-        {
-            var found = GameObject.FindWithTag("Player");
-            if (found != null) Player = found.transform;
-        }
-
-        if (Player != null)
-            _playerRb = Player.GetComponent<Rigidbody2D>();
-    }
-
     void Update()
     {
-        if (Player == null) return;
+        var player = FindObjectsByType<PlayerMovement>(FindObjectsSortMode.None)
+            .Where(item => Vector2.Distance(item.transform.position, transform.position) < PullRange)
+            .FirstOrDefault()
+            ?.GetComponent<PlayerMovement>();
 
-        float distance = Vector2.Distance(Player.position, transform.position);
+        if (!player)
+            return;
+
+        float distance = Vector2.Distance(player.transform.position, transform.position);
         _shouldPull = distance <= PullRange;
 
         timer += Time.deltaTime * 2;
@@ -45,10 +39,15 @@ public class BlackHole : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (!_shouldPull || Player == null) return;
+        var player = FindObjectsByType<PlayerMovement>(FindObjectsSortMode.None)
+            .Where(item => Vector2.Distance(item.transform.position, transform.position) < PullRange)
+            .FirstOrDefault()
+            ?.GetComponent<PlayerMovement>();
+
+        if (!_shouldPull || player == null) return;
 
         Vector2 holePos = transform.position;
-        Vector2 playerPos = Player.position;
+        Vector2 playerPos = player.transform.position;
         Vector2 toHole = holePos - playerPos;
         float distance = toHole.magnitude;
         if (distance < 0.001f) return;
@@ -56,8 +55,7 @@ public class BlackHole : MonoBehaviour
         
         float distanceFactor = 1f - Mathf.Clamp01(distance / PullRange);
 
-        
-        float inputMag = InputManager.Movement.magnitude; 
+        float inputMag = player.lastMoveDirection.magnitude; 
         float controlReduction = Mathf.Clamp01(inputMag); 
         float effectiveStrength = PullStrength * distanceFactor * (1f - 0.6f * controlReduction); 
 
@@ -75,7 +73,7 @@ public class BlackHole : MonoBehaviour
             
             float fallbackFactor = 1f - 0.6f * controlReduction;
             Vector2 newPos = Vector2.MoveTowards(playerPos, holePos, FallbackMoveSpeed * fallbackFactor * Time.fixedDeltaTime);
-            Player.position = newPos;
+            player.transform.position = newPos;
         }
     }
 
@@ -84,4 +82,6 @@ public class BlackHole : MonoBehaviour
         Gizmos.color = Color.magenta;
         Gizmos.DrawWireSphere(transform.position, PullRange);
     }
+
+
 }

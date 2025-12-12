@@ -23,6 +23,8 @@ public class MikuBean : MonoBehaviour
     private bool isPressing = false;
     private PlayerStats statsPlayer;
 
+    private Vector2 aimDirection;
+
     private void Awake()
     {
         statsPlayer = GetComponent<PlayerStats>();
@@ -85,8 +87,10 @@ public class MikuBean : MonoBehaviour
             energy -= Time.deltaTime * 5f;
         }
 
-        Vector3 MousePos = (Vector2)Cam.ScreenToWorldPoint(Input.mousePosition);
-        float angledRad = Mathf.Atan2(MousePos.y - transform.position.y, MousePos.x - transform.position.x);
+        //Vector3 MousePos = (Vector2)Cam.ScreenToWorldPoint(Input.mousePosition);
+        //float angledRad = Mathf.Atan2(MousePos.y - transform.position.y, MousePos.x - transform.position.x);
+        float angledRad = Mathf.Atan2(aimDirection.y, aimDirection.x);
+        
         float angledDeg = (180 / Mathf.PI) * angledRad ; //offset this by 90 degrees
         lazer.transform.rotation = Quaternion.Euler(0, 0, angledDeg);
         if (damageInterval <= 0.2f)
@@ -94,6 +98,12 @@ public class MikuBean : MonoBehaviour
             damageInterval += Time.deltaTime * 1.15f;
         }
     }
+
+    public void Aim(InputAction.CallbackContext ctx)
+    {
+        aimDirection = ctx.ReadValue<Vector2>();
+    }
+
     public void PowerSuperCool(InputAction.CallbackContext ctx)
     {
        

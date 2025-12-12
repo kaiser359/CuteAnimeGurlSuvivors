@@ -6,16 +6,16 @@ public class CameraController : MonoBehaviour
     public float speed = 5.0f;
     public Vector3 offset; //= new Vector3(0, 0, -10);
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void Awake()
     {
-
+        transform.SetParent(null);
     }
 
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-        transform.position = Vector3.Lerp(transform.position, target.transform.position + offset, speed * Time.deltaTime);
-    }
+    //// Update is called once per frame
+    //void FixedUpdate()
+    //{
+    //    transform.position = Vector3.Lerp(transform.position, target.transform.position + offset, speed * Time.deltaTime);
+    //}
 
     //[Range(0, 1)]
     //public float smoothTime;

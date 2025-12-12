@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
 
     private Rigidbody2D _rb;
     private Vector2 input;
-    private Vector2 lastMoveDirection;
+    public Vector2 lastMoveDirection;
     public Transform Aim;
     bool isWalking = false;
     private void Awake()
@@ -39,5 +39,10 @@ public class PlayerMovement : MonoBehaviour
     public void Move(InputAction.CallbackContext ctx)
     {
         _movement= ctx.ReadValue<Vector2>();
+
+        if (ctx.ReadValue<Vector2>() != Vector2.zero)
+        {
+            lastMoveDirection = ctx.ReadValue<Vector2>();
+        }
     }
 }

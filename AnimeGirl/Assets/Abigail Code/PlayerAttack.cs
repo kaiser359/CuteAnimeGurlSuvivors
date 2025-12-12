@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerAttack : MonoBehaviour
 {
@@ -20,19 +21,13 @@ public class PlayerAttack : MonoBehaviour
     {
         CheckMeleeTimer();
         shootTimer += Time.deltaTime;
-        if (Input.GetMouseButtonDown(0))
-        {
-            OnAttack();
-        }
-
-        if (Input.GetMouseButtonDown(1))
-        {
-            OnShoot();
-        }
     }
 
-    void OnShoot()
+    public void OnShoot(InputAction.CallbackContext ctx)
     {
+        if (ctx.canceled)
+            return;
+
         if(shootTimer > shootCooldown)
         {
             Debug.Log("HELLO IS THIS SHOOTING");
@@ -44,8 +39,11 @@ public class PlayerAttack : MonoBehaviour
         }
     }
 
-    void OnAttack()
+    public void OnAttack(InputAction.CallbackContext ctx)
     {
+        if (ctx.canceled)
+            return;
+
         if (!isAttacking)
         {
             Melee.SetActive(true);

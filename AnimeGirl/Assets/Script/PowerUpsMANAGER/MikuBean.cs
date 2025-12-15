@@ -23,44 +23,85 @@ public class MikuBean : MonoBehaviour
     private bool isPressing = false;
     private PlayerStats statsPlayer;
 
-    private Vector2 aimDirection;
+    private Vector2 aimDirection; // legacy input fallback
+    private Vector2 _currentAimDir = Vector2.right; // normalized direction used by Shootlazer
+    private TeleportOnFireHover _teleportHover;
 
     private void Awake()
     {
         statsPlayer = GetComponent<PlayerStats>();
         m_transform = GetComponent<Transform>();
         candamage = false;
-        lazer.SetActive(false);
+        if (lazer != null) lazer.SetActive(false);
 
+        // try find TeleportOnFireHover on this object, parents or any instance in scene
+        _teleportHover = GetComponent<TeleportOnFireHover>() 
+                         ?? GetComponentInParent<TeleportOnFireHover>() 
+                         ?? FindObjectOfType<TeleportOnFireHover>();
+        // ensure we have a camera reference; prefer assigned Cam, else try teleport's camera, else Camera.main
+        if (Cam == null && _teleportHover != null)
+            Cam = _teleportHover.playerCamera;
+        if (Cam == null)
+            Cam = Camera.main;
     }
    
 
     private void Update()
     {
+        // update active state/sound
         if (energy >= 0f && cooldownTime >= 3f && isPressing)
         {
-            lazer.SetActive(true);
-
+            if (lazer != null) lazer.SetActive(true);
             candamage = true;
-            if (!lazersound.isPlaying) lazersound.Play();
-
-
+            if (lazersound != null && !lazersound.isPlaying) lazersound.Play();
         }
         if (energy <= 0f || cooldownTime < 3f || !isPressing)
         {
             Debug.Log("Out of energy");
-            lazer.SetActive(false);
+            if (lazer != null) lazer.SetActive(false);
             candamage = false;
-            lazersound.Stop();
-            
-
+            if (lazersound != null) lazersound.Stop();
         }
 
+        // compute aim direction using TeleportOnFireHover cursor if available,
+        // otherwise fallback to legacy InputSystem aimDirection or mouse position
+        Vector3 mouseWorldPos;
+        if (_teleportHover != null && Cam != null)
+        {
+            // compute proper z distance so ScreenToWorldPoint maps to the plane of this object
+            float zDistance = Mathf.Abs(Cam.transform.position.z - transform.position.z);
+            Vector3 screenPoint = new Vector3(_teleportHover.aimPosition.x, _teleportHover.aimPosition.y, zDistance);
+            mouseWorldPos = Cam.ScreenToWorldPoint(screenPoint);
+            mouseWorldPos.z = transform.position.z;
+        }
+        else if (Cam != null)
+        {
+            float zDistance = Mathf.Abs(Cam.transform.position.z - transform.position.z);
+            Vector3 screenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, zDistance);
+            mouseWorldPos = Cam.ScreenToWorldPoint(screenPoint);
+            mouseWorldPos.z = transform.position.z;
+        }
+        else
+        {
+            // final fallback: use aimDirection from input
+            Vector2 fallbackDir = aimDirection.sqrMagnitude > 0.001f ? aimDirection.normalized : (Vector2)transform.right;
+            _currentAimDir = fallbackDir;
+            mouseWorldPos = (Vector3)m_transform.position + (Vector3)_currentAimDir * defDistanceRay;
+        }
 
+        // compute final direction from fire origin to mouseWorldPos
+        Vector2 origin = lazerFirePoint != null ? (Vector2)lazerFirePoint.position : (Vector2)m_transform.position;
+        Vector2 dir = (mouseWorldPos - (Vector3)origin);
+        if (dir.sqrMagnitude > 0.0001f)
+            _currentAimDir = dir.normalized;
 
+        // rotate the laser object to face the cursor
+        float angledRad = Mathf.Atan2(_currentAimDir.y, _currentAimDir.x);
+        float angledDeg = angledRad * Mathf.Rad2Deg;
+        if (lazer != null) lazer.transform.rotation = Quaternion.Euler(0, 0, angledDeg);
 
         Shootlazer();
- 
+
         if (energy < maxEnergy && candamage == false)
         {
             energy += Time.deltaTime * 3f;
@@ -73,7 +114,6 @@ public class MikuBean : MonoBehaviour
         { 
             cooldownTime = 0f;
             isCoolingDown = true;
-
         }
         if (isCoolingDown)
         {
@@ -87,12 +127,6 @@ public class MikuBean : MonoBehaviour
             energy -= Time.deltaTime * 5f;
         }
 
-        //Vector3 MousePos = (Vector2)Cam.ScreenToWorldPoint(Input.mousePosition);
-        //float angledRad = Mathf.Atan2(MousePos.y - transform.position.y, MousePos.x - transform.position.x);
-        float angledRad = Mathf.Atan2(aimDirection.y, aimDirection.x);
-        
-        float angledDeg = (180 / Mathf.PI) * angledRad ; //offset this by 90 degrees
-        lazer.transform.rotation = Quaternion.Euler(0, 0, angledDeg);
         if (damageInterval <= 0.2f)
         {
             damageInterval += Time.deltaTime * 1.15f;
@@ -106,15 +140,10 @@ public class MikuBean : MonoBehaviour
 
     public void PowerSuperCool(InputAction.CallbackContext ctx)
     {
-       
-            if (ctx.started)
-            {
-
-             isPressing = true;
-
+        if (ctx.started)
+        {
+            isPressing = true;
         }
-        
-
         if (ctx.canceled)
         {
             isPressing = false;
@@ -127,17 +156,16 @@ public class MikuBean : MonoBehaviour
 
         // use the fire point if assigned, otherwise use this object's transform
         Vector2 origin = lazerFirePoint != null ? (Vector2)lazerFirePoint.position : (Vector2)m_transform.position;
-        Vector2 direction = lazerFirePoint != null ? (Vector2)lazerFirePoint.right : (Vector2)transform.right;
+        Vector2 direction = _currentAimDir;
 
         // cast all hits along the ray so we can damage every hit object
         RaycastHit2D[] hits = Physics2D.RaycastAll(origin, direction, defDistanceRay);
 
-        // default end point is full range; you can change to hits[0].point if you want beam to stop at first obstacle
-        Vector2 endPoint = origin + direction.normalized * defDistanceRay;
+        // default end point is full range
+        Vector2 endPoint = origin + direction * defDistanceRay;
 
         if (hits != null && hits.Length > 0)
         {
-            // sort hits by distance so behavior is deterministic
             Array.Sort(hits, (a, b) => a.distance.CompareTo(b.distance));
 
             // apply damage to all hit objects at once (respecting damage interval)
@@ -162,6 +190,9 @@ public class MikuBean : MonoBehaviour
 
                 damageInterval = 0f;
             }
+
+            // if you want the beam to stop at first hit uncomment following:
+            // endPoint = origin + direction * hits[0].distance;
         }
 
         Draw2DRay(origin, endPoint);

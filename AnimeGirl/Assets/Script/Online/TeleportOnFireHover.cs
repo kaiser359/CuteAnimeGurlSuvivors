@@ -40,12 +40,38 @@ public class TeleportOnFireHover : MonoBehaviour
             _reticleSR.sortingOrder = 1000; // render on top of most things
             _reticleInstance.transform.localScale = Vector3.one * reticleScale;
         }
+
+        // clamp initially to camera viewport
+        ClampAimToCamera();
     }
 
+    private void Start()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
     private void Update()
     {
         aimPosition += aimDelta;
+        ClampAimToCamera();
         UpdateReticlePosition();
+    }
+
+
+    private void ClampAimToCamera()
+    {
+        // if no camera assigned use full screen bounds
+        if (playerCamera == null)
+        {
+            aimPosition.x = Mathf.Clamp(aimPosition.x, 0f, Screen.width);
+            aimPosition.y = Mathf.Clamp(aimPosition.y, 0f, Screen.height);
+            return;
+        }
+
+        // use camera pixel rect so cursor stays inside the camera viewport (handles split-screen / viewport adjustments)
+        Rect pr = playerCamera.pixelRect;
+        aimPosition.x = Mathf.Clamp(aimPosition.x, pr.xMin, pr.xMax);
+        aimPosition.y = Mathf.Clamp(aimPosition.y, pr.yMin, pr.yMax);
     }
 
     private void UpdateReticlePosition()
@@ -89,7 +115,7 @@ public class TeleportOnFireHover : MonoBehaviour
     public void Aim(InputAction.CallbackContext ctx)
     {
         Vector2 delta = ctx.ReadValue<Vector2>();
-        // removed inversion so vertical movement matches cursor movement
+        // vertical no longer inverted; delta applied directly
         aimDelta = delta;
     }
     

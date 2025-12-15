@@ -607,6 +607,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _moveSpeed: 5
+  lastMoveDirection: {x: 0, y: 0}
   Aim: {fileID: 1614288647}
 --- !u!212 &426308116
 SpriteRenderer:

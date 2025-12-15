@@ -6,6 +6,7 @@ public class EnemyFollow : MonoBehaviour
     public GameObject target;
     public float speed;
     public GameObject findPaperFigurine;
+    public Animator animator;
 
     public float distanceToStop = 3f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -37,6 +38,7 @@ public class EnemyFollow : MonoBehaviour
             player = GameObject.FindWithTag("Player");
         }
 
+        animator.SetBool("IsIdle/Move", true);
         float distance = Vector2.Distance(transform.position, player.transform.position);
         Vector2 direction = player.transform.position - transform.position;
         direction.Normalize();

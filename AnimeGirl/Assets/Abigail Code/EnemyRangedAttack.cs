@@ -14,6 +14,7 @@ public class EnemyRangedAttack : MonoBehaviour
     private float timeToFire;
     public float fireForce = 1f;
     public float lifeTime = 10f;
+    public Animator animator;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -43,6 +44,8 @@ public class EnemyRangedAttack : MonoBehaviour
     {
         if (timeToFire <= 0f)
         {
+            animator.SetBool("IsAttacking", true);
+            animator.SetBool("IsAttackingStill", true);
             Debug.Log("Shoot");
             GameObject intBullet = Instantiate(bulletPrefab, firingPoint.position, firingPoint.rotation);
             intBullet.GetComponent<Rigidbody2D>().AddForce(-firingPoint.up * -fireForce, ForceMode2D.Impulse);

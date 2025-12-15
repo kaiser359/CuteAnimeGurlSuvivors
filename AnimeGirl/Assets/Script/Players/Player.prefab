@@ -229,7 +229,7 @@ MonoBehaviour:
     m_Bits: 8
   cooldown: 5
   aimPosition: {x: 0, y: 0}
-  reticle: {fileID: -8322380279004402570, guid: fa86c7f75107d7c45b2fb8d26f49750d, type: 3}
+  reticle: {fileID: 5998533990593196103, guid: 67ebffe14deb3fd41ae08caefe77a84e, type: 3}
 --- !u!114 &7728896468987258641
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -577,6 +577,18 @@ MonoBehaviour:
       - m_Target: {fileID: 3402260939002394808}
         m_TargetAssemblyTypeName: meleeatk, Assembly-CSharp
         m_MethodName: Melee
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3843341787014224063}
+        m_TargetAssemblyTypeName: TeleportOnFireHover, Assembly-CSharp
+        m_MethodName: Teleport
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

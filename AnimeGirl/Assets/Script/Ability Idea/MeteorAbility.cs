@@ -27,7 +27,7 @@ public class MeteorAbility : MonoBehaviour
             cooldownTimer -= Time.deltaTime;
     }
 
-    // TODO: Test
+
     public void Meteor(InputAction.CallbackContext ctx)
     {
         if (ctx.canceled)

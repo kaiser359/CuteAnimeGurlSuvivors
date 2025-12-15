@@ -1,0 +1,559 @@
+fileFormatVersion: 2
+guid: b3db961137e43cb43a26c8af5af44f57
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7305667595195682155
+    second: Enemy two Sprite sheet attack_0
+  - first:
+      213: -9008509252972183396
+    second: Enemy two Sprite sheet attack_1
+  - first:
+      213: -6025585856996558561
+    second: Enemy two Sprite sheet attack_2
+  - first:
+      213: -7453944643836445969
+    second: Enemy two Sprite sheet attack_3
+  - first:
+      213: -7413146465666841667
+    second: Enemy two Sprite sheet attack_4
+  - first:
+      213: -4393497967928831595
+    second: Enemy two Sprite sheet attack_5
+  - first:
+      213: -4517901487807903593
+    second: Enemy two Sprite sheet attack_6
+  - first:
+      213: 7665003145109221982
+    second: Enemy two Sprite sheet attack_7
+  - first:
+      213: 761629563831273211
+    second: Enemy two Sprite sheet attack_8
+  - first:
+      213: -1767932825755322640
+    second: Enemy two Sprite sheet attack_9
+  - first:
+      213: -8291677485423578874
+    second: Enemy two Sprite sheet attack_10
+  - first:
+      213: -8405127081406472650
+    second: Enemy two Sprite sheet attack_11
+  - first:
+      213: -327061590817086050
+    second: Enemy two Sprite sheet attack_12
+  - first:
+      213: -4744670152974167898
+    second: Enemy two Sprite sheet attack_13
+  - first:
+      213: -4406949698568774550
+    second: Enemy two Sprite sheet attack_14
+  - first:
+      213: -8448470858151229250
+    second: Enemy two Sprite sheet attack_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Enemy two Sprite sheet attack_0
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 159
+        width: 14
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6d88b288f1f26560800000000000000
+      internalID: 7305667595195682155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy two Sprite sheet attack_1
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 159
+        width: 29
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9006c440985bf280800000000000000
+      internalID: -9008509252972183396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy two Sprite sheet attack_2
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 159
+        width: 42
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f193a168691d06ca0800000000000000
+      internalID: -6025585856996558561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy two Sprite sheet attack_3
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 159
+        width: 48
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: feaf3b0d6d44e8890800000000000000
+      internalID: -7453944643836445969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy two Sprite sheet attack_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 119
+        width: 50
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db34cf5e0963f1990800000000000000
+      internalID: -7413146465666841667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy two Sprite sheet attack_5
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 119
+        width: 51
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 591933c30e82703c0800000000000000
+      internalID: -4393497967928831595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy two Sprite sheet attack_6
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 119
+        width: 100
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7984001a8803d41c0800000000000000
+      internalID: -4517901487807903593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy two Sprite sheet attack_7
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 79
+        width: 18
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e52bc72efbf8f5a60800000000000000
+      internalID: 7665003145109221982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy two Sprite sheet attack_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 79
+        width: 50
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf649929d0ad19a00800000000000000
+      internalID: 761629563831273211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy two Sprite sheet attack_9
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 39
+        width: 18
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f6f91e367a0777e0800000000000000
+      internalID: -1767932825755322640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy two Sprite sheet attack_10
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 79
+        width: 49
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6013939124b0eec80800000000000000
+      internalID: -8291677485423578874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy two Sprite sheet attack_11
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 39
+        width: 22
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63e50c4a37dfa5b80800000000000000
+      internalID: -8405127081406472650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy two Sprite sheet attack_12
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 79
+        width: 40
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e956cab473b067bf0800000000000000
+      internalID: -327061590817086050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy two Sprite sheet attack_13
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 39
+        width: 18
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a0939b52ab872eb0800000000000000
+      internalID: -4744670152974167898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy two Sprite sheet attack_14
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 39
+        width: 16
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6c1bc1299e57d2c0800000000000000
+      internalID: -4406949698568774550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy two Sprite sheet attack_15
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 0
+        width: 14
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb808a4348001ca80800000000000000
+      internalID: -8448470858151229250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Enemy two Sprite sheet attack_0: 7305667595195682155
+      Enemy two Sprite sheet attack_1: -9008509252972183396
+      Enemy two Sprite sheet attack_10: -8291677485423578874
+      Enemy two Sprite sheet attack_11: -8405127081406472650
+      Enemy two Sprite sheet attack_12: -327061590817086050
+      Enemy two Sprite sheet attack_13: -4744670152974167898
+      Enemy two Sprite sheet attack_14: -4406949698568774550
+      Enemy two Sprite sheet attack_15: -8448470858151229250
+      Enemy two Sprite sheet attack_2: -6025585856996558561
+      Enemy two Sprite sheet attack_3: -7453944643836445969
+      Enemy two Sprite sheet attack_4: -7413146465666841667
+      Enemy two Sprite sheet attack_5: -4393497967928831595
+      Enemy two Sprite sheet attack_6: -4517901487807903593
+      Enemy two Sprite sheet attack_7: 7665003145109221982
+      Enemy two Sprite sheet attack_8: 761629563831273211
+      Enemy two Sprite sheet attack_9: -1767932825755322640
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

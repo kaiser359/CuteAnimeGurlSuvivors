@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerAbilities : MonoBehaviour
 {
-    // TODO: Test
+
     public void UseAbility(InputAction.CallbackContext ctx)
     {
         if (ctx.canceled)

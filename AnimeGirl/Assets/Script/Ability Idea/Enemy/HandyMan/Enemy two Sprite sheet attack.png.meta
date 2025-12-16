@@ -179,7 +179,7 @@ TextureImporter:
         width: 14
         height: 41
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -201,7 +201,7 @@ TextureImporter:
         width: 29
         height: 40
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -223,7 +223,7 @@ TextureImporter:
         width: 42
         height: 31
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -245,7 +245,7 @@ TextureImporter:
         width: 48
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -267,7 +267,7 @@ TextureImporter:
         width: 50
         height: 22
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -289,7 +289,7 @@ TextureImporter:
         width: 51
         height: 21
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -308,10 +308,10 @@ TextureImporter:
         serializedVersion: 2
         x: 100
         y: 119
-        width: 100
+        width: 50
         height: 22
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -333,7 +333,7 @@ TextureImporter:
         width: 18
         height: 41
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -355,7 +355,7 @@ TextureImporter:
         width: 50
         height: 24
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -377,7 +377,7 @@ TextureImporter:
         width: 18
         height: 41
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -399,7 +399,7 @@ TextureImporter:
         width: 49
         height: 31
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -421,7 +421,7 @@ TextureImporter:
         width: 22
         height: 42
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -443,7 +443,7 @@ TextureImporter:
         width: 40
         height: 39
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -465,7 +465,7 @@ TextureImporter:
         width: 18
         height: 41
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -487,7 +487,7 @@ TextureImporter:
         width: 16
         height: 41
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -509,7 +509,7 @@ TextureImporter:
         width: 14
         height: 40
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -522,11 +522,33 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Enemy two Sprite sheet attack_16
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 119
+        width: 50
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ffae26fa3b17ee43b1cf71a4a0c93ff
+      internalID: -1190838575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 2462ddbdd463e994b8fd10af88ceb39a
     internalID: 0
     vertices: []
     indices: 
@@ -544,6 +566,7 @@ TextureImporter:
       Enemy two Sprite sheet attack_13: -4744670152974167898
       Enemy two Sprite sheet attack_14: -4406949698568774550
       Enemy two Sprite sheet attack_15: -8448470858151229250
+      Enemy two Sprite sheet attack_16: -1190838575
       Enemy two Sprite sheet attack_2: -6025585856996558561
       Enemy two Sprite sheet attack_3: -7453944643836445969
       Enemy two Sprite sheet attack_4: -7413146465666841667

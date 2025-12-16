@@ -39,7 +39,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
         if (timer <= 0f)
         {
             animator.SetBool("IsHurt", false);
-            animator.SetBool("IsDead", false);
+          
         }
 
             if (stats == null)
@@ -91,7 +91,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
         {
             Necromancy.Instance.CreateAllys(1f); // spawn 1 ally
         }
-        animator.SetBool("IsDead", true);
+
         Destroy(gameObject);
     }
 

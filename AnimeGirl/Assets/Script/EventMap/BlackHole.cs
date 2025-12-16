@@ -19,6 +19,13 @@ public class BlackHole : MonoBehaviour
 
     void Update()
     {
+
+        timer += Time.deltaTime * 2;
+        if (timer >= 20f)
+        {
+            Destroy(this.gameObject);
+        }
+
         var player = FindObjectsByType<PlayerMovement>(FindObjectsSortMode.None)
             .Where(item => Vector2.Distance(item.transform.position, transform.position) < PullRange)
             .FirstOrDefault()
@@ -30,11 +37,6 @@ public class BlackHole : MonoBehaviour
         float distance = Vector2.Distance(player.transform.position, transform.position);
         _shouldPull = distance <= PullRange;
 
-        timer += Time.deltaTime * 2;
-        if (timer >= 20f)
-        {
-            Destroy(this.gameObject);
-        }
     }
 
     void FixedUpdate()

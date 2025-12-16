@@ -11,7 +11,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     public PlayerStats stats;
     public GameObject xpdrop;
     public ParticleSystem critdamaged;
-    public Animator animator;
+    //public Animator animator;
     void Start()
     {
         currentHealth = maxHealth;
@@ -38,7 +38,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     }
     public void TakeDamage(float damage)
     {
-        animator.SetBool("IsHurt", true);
+        //animator.SetBool("IsHurt", true);
         float critChance = stats?.baseCritChance ?? 0;
         float randomValue = UnityEngine.Random.Range(0.00f,1f);
         currentHealth -= damage;
@@ -53,7 +53,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
             critdamaged.Play();
             Debug.Log("Critical Hit! Enemy took " + critDamage + " damage.");
         }
-        animator.SetBool("IsHurt", true);
+      //  animator.SetBool("IsHurt", true);
         if (currentHealth <= 0)
         {
         Die();

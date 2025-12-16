@@ -143,7 +143,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.99, y: 1.07, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6861609394815434427}
@@ -231,6 +231,8 @@ MonoBehaviour:
   cooldown: 5
   aimPosition: {x: 0, y: 0}
   reticle: {fileID: 5998533990593196103, guid: 67ebffe14deb3fd41ae08caefe77a84e, type: 3}
+  reticleWorldZ: 0
+  reticleScale: 1
 --- !u!114 &7728896468987258641
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -780,7 +782,7 @@ Animator:
   m_GameObject: {fileID: 1394905247002266231}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2fb7dbcbc9c72854eaa63979b229d5a5, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

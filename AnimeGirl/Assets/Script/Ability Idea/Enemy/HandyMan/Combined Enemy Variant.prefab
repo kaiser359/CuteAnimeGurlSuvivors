@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 8912611022100779517}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.01, y: 1.94, z: 0}
+  m_LocalPosition: {x: 0.01, y: 0.323, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -39,13 +39,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -5418498023830905944, guid: c80d37f700e61f4459c23c21c476c17e, type: 3}
+      propertyPath: ShapeModule.radius.value
+      value: 0.3472746
+      objectReference: {fileID: 0}
+    - target: {fileID: 601092833620595293, guid: c80d37f700e61f4459c23c21c476c17e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -3962389705958049942, guid: 5fbe818287e04204587caaf5014bdd41, type: 3}
     - target: {fileID: 1731009926468347836, guid: c80d37f700e61f4459c23c21c476c17e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.27220565
+      value: -12.77
       objectReference: {fileID: 0}
     - target: {fileID: 1731009926468347836, guid: c80d37f700e61f4459c23c21c476c17e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.7271605
+      value: -12.97
       objectReference: {fileID: 0}
     - target: {fileID: 1731009926468347836, guid: c80d37f700e61f4459c23c21c476c17e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -78,6 +86,22 @@ PrefabInstance:
     - target: {fileID: 1731009926468347836, guid: c80d37f700e61f4459c23c21c476c17e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2660529870592794255, guid: c80d37f700e61f4459c23c21c476c17e, type: 3}
+      propertyPath: m_Size.x
+      value: 0.20722818
+      objectReference: {fileID: 0}
+    - target: {fileID: 2660529870592794255, guid: c80d37f700e61f4459c23c21c476c17e, type: 3}
+      propertyPath: m_Size.y
+      value: 0.48708725
+      objectReference: {fileID: 0}
+    - target: {fileID: 2660529870592794255, guid: c80d37f700e61f4459c23c21c476c17e, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.00288558
+      objectReference: {fileID: 0}
+    - target: {fileID: 2660529870592794255, guid: c80d37f700e61f4459c23c21c476c17e, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.01291275
       objectReference: {fileID: 0}
     - target: {fileID: 5062858261542363923, guid: c80d37f700e61f4459c23c21c476c17e, type: 3}
       propertyPath: m_Name
@@ -152,6 +176,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pHealth: {fileID: 0}
   damage: 10
+  animator: {fileID: 0}
 --- !u!114 &6256198512470294710
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -172,6 +197,7 @@ MonoBehaviour:
   fireRate: 0.8
   fireForce: 10
   lifeTime: 10
+  animator: {fileID: 0}
 --- !u!114 &5010742559237416471
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,3 +215,5 @@ MonoBehaviour:
   stats: {fileID: 0}
   xpdrop: {fileID: 5569618417064185599, guid: 939cf18005a3e7e42b072ee1054c016c, type: 3}
   critdamaged: {fileID: 1446055429119639286}
+  animator: {fileID: 0}
+  timer: 0

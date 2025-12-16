@@ -38,7 +38,7 @@ public class EnemyFollow : MonoBehaviour
             player = GameObject.FindWithTag("Player");
         }
 
-        animator.SetBool("IsIdle/Move", true);
+        animator.SetBool("IsIdle", true);
         float distance = Vector2.Distance(transform.position, player.transform.position);
         Vector2 direction = player.transform.position - transform.position;
         direction.Normalize();

@@ -17,6 +17,9 @@ public class meleeatk : MonoBehaviour
     public float damage = 10f;
     public float attackCooldown = 0.5f;
 
+    Animation _animator;
+
+
     [Header("Attack window (optional)")]
     [Tooltip("If >0, perform hits over this duration (useful for swing animations)")]
     public float attackHitWindow = 0f;
@@ -24,6 +27,7 @@ public class meleeatk : MonoBehaviour
     private float _cooldownTimer;
 
     private Vector2 aimDirection;
+    private string _currentState;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -133,5 +137,17 @@ public class meleeatk : MonoBehaviour
         Gizmos.color = Color.red;
         Vector3 origin = (attackOrigin != null) ? attackOrigin.position : transform.position;
         Gizmos.DrawWireSphere(origin, attackRange);
+    }
+
+    private void ChangeAnimationState(string newState)
+    {
+        if (newState == _currentState)
+        {
+            return;
+        }
+
+        _animator.Play(newState);
+
+        _currentState = newState;
     }
 }

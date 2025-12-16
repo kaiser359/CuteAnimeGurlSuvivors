@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class LevelUpSystem : MonoBehaviour
@@ -94,7 +95,7 @@ public class LevelUpSystem : MonoBehaviour
                 }
             }
         }
-
+        
         // spawn cards
         for (int i = 0; i < currentSelectionIndices.Count; i++)
         {
@@ -127,6 +128,8 @@ public class LevelUpSystem : MonoBehaviour
                 () => OnCardPicked(abilityIndex, occurrences)
             );
         }
+
+        transform.parent.GetComponentInChildren<EventSystem>().SetSelectedGameObject(spawnedCards.FirstOrDefault().transform.GetChild(0).gameObject);
 
         // show UI
         if (levelUpCanvas != null)

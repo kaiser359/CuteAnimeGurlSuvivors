@@ -335,7 +335,15 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spritesprinklebattle_0: -9132251387817580249
+      spritesprinklebattle_1: 2502571740835372484
+      spritesprinklebattle_2: -6747714762018275657
+      spritesprinklebattle_3: 8659397734838343076
+      spritesprinklebattle_4: -7733047831426343317
+      spritesprinklebattle_5: -3842146241105459706
+      spritesprinklebattle_6: 7199979351816768155
+      spritesprinklebattle_7: -3112764160872024180
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

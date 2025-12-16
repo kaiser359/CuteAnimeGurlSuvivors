@@ -749,19 +749,7 @@ MonoBehaviour:
     m_ActionId: 91655c74-01a2-46aa-bc09-db3da9ae0b25
     m_ActionName: 'Player/Inventory[/Keyboard/f,/XInputControllerWindows/leftShoulder]'
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2765795614659339844}
-        m_TargetAssemblyTypeName: GrindingLevels, Assembly-CSharp
-        m_MethodName: AddXP
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: 1e790fc6-3c77-426e-9b29-7469025bb058
     m_ActionName: 'Player/XP Test[/Keyboard/quote,/XInputControllerWindows/rightTrigger]'
   - m_PersistentCalls:
@@ -780,6 +768,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: bb35cca1-eb14-4f1b-b86b-16ecb81f027d
     m_ActionName: Player/New action
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 663c5520-ff36-48ff-84dc-e87caf304f4e
+    m_ActionName: Player/WallSkill
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -2187,12 +2179,12 @@ MonoBehaviour:
     icon: {fileID: 0}
     abilityType: 9
     baseValue: 50
-    valuePerLevel: 5
+    valuePerLevel: 10
     isMultiplier: 0
-    cooldownBase: 20
+    cooldownBase: 9
     cooldownReductionPerLevel: 1
     cooldownIsMultiplier: 0
-    maxLevel: 100
+    maxLevel: 5
   - abilityName: protection
     description: Gain a shield (this will stack)
     icon: {fileID: 0}
@@ -2254,6 +2246,17 @@ MonoBehaviour:
     abilityType: 12
     baseValue: 5
     valuePerLevel: 1
+    isMultiplier: 0
+    cooldownBase: 0
+    cooldownReductionPerLevel: 0
+    cooldownIsMultiplier: 0
+    maxLevel: 5
+  - abilityName: LifeSteal
+    description: Healing per hit
+    icon: {fileID: 0}
+    abilityType: 11
+    baseValue: 0.2
+    valuePerLevel: 0.2
     isMultiplier: 0
     cooldownBase: 0
     cooldownReductionPerLevel: 0

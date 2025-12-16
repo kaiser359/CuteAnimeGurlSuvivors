@@ -11,7 +11,8 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     public PlayerStats stats;
     public GameObject xpdrop;
     public ParticleSystem critdamaged;
-    //public Animator animator;
+    public Animator animator;
+    public float timer = 0f;
     void Start()
     {
         currentHealth = maxHealth;
@@ -19,7 +20,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
 
     void Awake()
     {
-        stats = GameObject.FindWithTag("Player").GetComponent<PlayerStats>();
+       // stats = GameObject.FindWithTag("Player").GetComponent<PlayerStats>();
     }
 
 
@@ -31,14 +32,25 @@ public class EnemyHealth : MonoBehaviour, IDamageable
 
     private void Update()
     {
-        if (stats == null)
+        if (timer > 0f)
+        {
+            timer -= Time.deltaTime;
+        }
+        if (timer <= 0f)
+        {
+            animator.SetBool("IsHurt", false);
+            animator.SetBool("IsDead", false);
+        }
+
+            if (stats == null)
         {
             stats = GameObject.FindWithTag("Player").GetComponent<PlayerStats>();
         }
     }
     public void TakeDamage(float damage)
     {
-        //animator.SetBool("IsHurt", true);
+        animator.SetBool("IsHurt", true);
+        timer = 0.2f;
         float critChance = stats?.baseCritChance ?? 0;
         float randomValue = UnityEngine.Random.Range(0.00f,1f);
         currentHealth -= damage;
@@ -53,7 +65,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
             critdamaged.Play();
             Debug.Log("Critical Hit! Enemy took " + critDamage + " damage.");
         }
-      //  animator.SetBool("IsHurt", true);
+        
         if (currentHealth <= 0)
         {
         Die();
@@ -79,7 +91,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
         {
             Necromancy.Instance.CreateAllys(1f); // spawn 1 ally
         }
-
+        animator.SetBool("IsDead", true);
         Destroy(gameObject);
     }
 

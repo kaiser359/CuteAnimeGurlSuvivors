@@ -1,4 +1,5 @@
 using System;
+using TMPro;
 using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -23,6 +24,8 @@ public class MikuBean : MonoBehaviour
     private bool isPressing = false;
     private PlayerStats statsPlayer;
 
+
+    public TextMeshProUGUI cooldownText; 
     private Vector2 aimDirection; // legacy input fallback
     private Vector2 _currentAimDir = Vector2.right; // normalized direction used by Shootlazer
     private TeleportOnFireHover _teleportHover;
@@ -48,6 +51,14 @@ public class MikuBean : MonoBehaviour
 
     private void Update()
     {
+        if (isCoolingDown == true) {
+            cooldownText.text = "Lazer CooldownTime: " + Mathf.Ceil(cooldownTime).ToString();
+        }
+        if (isCoolingDown == false)
+        {
+            cooldownText.text = "Lazer Energy: " + Mathf.Ceil(energy).ToString();
+        }
+
         // update active state/sound
         if (energy >= 0f && cooldownTime >= 3f && isPressing)
         {
@@ -57,6 +68,8 @@ public class MikuBean : MonoBehaviour
         }
         if (energy <= 0f || cooldownTime < 3f || !isPressing)
         {
+            
+               
             Debug.Log("Out of energy");
             if (lazer != null) lazer.SetActive(false);
             candamage = false;
@@ -154,21 +167,21 @@ public class MikuBean : MonoBehaviour
     {
         if (m_lineRenderer == null) return;
 
-        // use the fire point if assigned, otherwise use this object's transform
+       
         Vector2 origin = lazerFirePoint != null ? (Vector2)lazerFirePoint.position : (Vector2)m_transform.position;
         Vector2 direction = _currentAimDir;
 
-        // cast all hits along the ray so we can damage every hit object
+        
         RaycastHit2D[] hits = Physics2D.RaycastAll(origin, direction, defDistanceRay);
 
-        // default end point is full range
+       
         Vector2 endPoint = origin + direction * defDistanceRay;
 
         if (hits != null && hits.Length > 0)
         {
             Array.Sort(hits, (a, b) => a.distance.CompareTo(b.distance));
 
-            // apply damage to all hit objects at once (respecting damage interval)
+           
             if (candamage && damageInterval >= 0.2f)
             {
                 foreach (var h in hits)
@@ -191,8 +204,7 @@ public class MikuBean : MonoBehaviour
                 damageInterval = 0f;
             }
 
-            // if you want the beam to stop at first hit uncomment following:
-            // endPoint = origin + direction * hits[0].distance;
+            
         }
 
         Draw2DRay(origin, endPoint);

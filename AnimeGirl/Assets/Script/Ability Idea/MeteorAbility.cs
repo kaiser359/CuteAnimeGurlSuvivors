@@ -1,14 +1,16 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(PlayerStats))]
+
 public class MeteorAbility : MonoBehaviour
 {
-    public GameObject meteorPrefab;       // prefab that needs to have MeteorAOE component
+    public GameObject meteorPrefab;     
     public LayerMask groundLayers;        
-    public KeyCode throwKey = KeyCode.Mouse1; // right click by default
+    public KeyCode throwKey = KeyCode.Mouse1; 
     public Camera mainCamera;
+    public TextMeshProUGUI cooldownText;
 
     private PlayerStats stats;
 
@@ -24,7 +26,14 @@ public class MeteorAbility : MonoBehaviour
     {
         // cooldown tick
         if (cooldownTimer > 0f)
+        {
             cooldownTimer -= Time.deltaTime;
+            cooldownText.text = "Meteor CD: " + Mathf.Ceil(cooldownTimer).ToString();
+        }
+        else
+        {
+            cooldownText.text = "Meteor Ready!";
+        }
     }
 
 

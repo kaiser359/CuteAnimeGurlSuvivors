@@ -176,58 +176,58 @@ public class LevelUpSystem : MonoBehaviour
         {
             case AbilityType.Damage:
                 if (playerStats != null) playerStats.SetDamage(computedValue);
-                else Debug.Log($"[Ability] Damage set to {computedValue} (level {newLevel})");
+              
                 break;
 
             case AbilityType.MaxHealth:
                 if (playerStats != null) playerStats.SetMaxHealth(computedValue);
-                else Debug.Log($"[Ability] MaxHealth set to {computedValue} (level {newLevel})");
+                
                 break;
 
             case AbilityType.MoveSpeed:
                 if (playerStats != null) playerStats.SetMoveSpeed(computedValue);
-                else Debug.Log($"[Ability] MoveSpeed set to {computedValue} (level {newLevel})");
+                
                 break;
 
             case AbilityType.FireRate:
                 if (playerStats != null) playerStats.SetFireRate(computedValue);
-                else Debug.Log($"[Ability] FireRate set to {computedValue} (level {newLevel})");
+           
                 break;
 
             case AbilityType.CritChance:
                 if (playerStats != null) playerStats.SetCritChance(computedValue);
-                else Debug.Log($"[Ability] CritChance set to {computedValue} (level {newLevel})");
+              
                 break;
 
             case AbilityType.LootChance:
                 if (playerStats != null) playerStats.SetLootChance(computedValue);
-                else Debug.Log($"[Ability] LootChance set to {computedValue} (level {newLevel})");
+
                 break;
 
             case AbilityType.DashCooldown:
                 if (playerStats != null) playerStats.SetDashCooldown(computedValue);
-                else Debug.Log($"[Ability] DashCooldown set to {computedValue} (level {newLevel})");
+              
                 break;
 
             case AbilityType.Shield:
                 if (playerStats != null) playerStats.AddShield(computedValue * addedLevels);
-                else Debug.Log($"[Ability] Shield added {computedValue * addedLevels} (addedLevels {addedLevels})");
+                
                 break;
             case AbilityType.CritDamage:
                 if (playerStats != null) playerStats.SetCritDamage(computedValue * addedLevels);
-                else Debug.Log($"[Ability] critdamage added {computedValue * addedLevels} (addedLevels {addedLevels})");
+              
                 break;
             case AbilityType.MikuBean:
                 if (playerStats != null) playerStats.SetMikuBean(computedValue);
-                else Debug.Log($"[Ability] MikuBean set to {computedValue} (level {newLevel})");
+               
                 break;
             case AbilityType.Lifesteal:
                 if (playerStats != null) playerStats.SetMikuBean(computedValue);
-                else Debug.Log($"[Ability] MikuBean set to {computedValue} (level {newLevel})");
+             
                 break;
             case AbilityType.Necromancy:
                 if (playerStats != null) playerStats.SetNecromancyAmount(computedValue);
-                else Debug.Log($"[Ability] Necromancy set to {computedValue} (level {newLevel})");
+               
                 break;
 
             // inside LevelUpSystem.ApplyAbilityEffect(...)

@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Collider2D))]
+
+
 public class HolyWall : MonoBehaviour
 {
     [Header("Tick settings")]
@@ -29,7 +30,7 @@ public class HolyWall : MonoBehaviour
         
     }
 
-    // runtime state
+
     private readonly HashSet<EnemyHealth> _enemiesInside = new HashSet<EnemyHealth>();
     private PlayerHealth _playerInside;
     private Collider2D _col;
@@ -43,7 +44,7 @@ public class HolyWall : MonoBehaviour
         }
         else
         {
-            // ensure the collider is a trigger so OnTrigger callbacks fire
+          
             if (!_col.isTrigger)
                 _col.isTrigger = true;
         }
@@ -63,7 +64,7 @@ public class HolyWall : MonoBehaviour
             return;
         }
 
-        // enemy - prefer EnemyHealth then IDamageable (EnemyHealth used elsewhere)
+      
         if (other.CompareTag("Enemy"))
         {
             var eh = other.GetComponentInParent<EnemyHealth>();
@@ -78,7 +79,7 @@ public class HolyWall : MonoBehaviour
             {
                 _enemiesInside.Add(asEh);
             }
-            // if non-EnemyHealth IDamageable implementations exist, you can store them similarly
+           
         }
     }
 
@@ -139,7 +140,7 @@ public class HolyWall : MonoBehaviour
         StopAllCoroutines();
     }
 
-    // Optional: visualize trigger area in editor
+
     private void OnDrawGizmosSelected()
     {
         if (TryGetComponent<Collider2D>(out var c))

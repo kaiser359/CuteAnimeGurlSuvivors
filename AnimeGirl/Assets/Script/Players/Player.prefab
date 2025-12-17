@@ -34,7 +34,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 67, y: -31}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &859332381709224885
@@ -126,7 +126,8 @@ GameObject:
   - component: {fileID: 1141587822279890846}
   - component: {fileID: -8211495432770462464}
   - component: {fileID: 4738933391353821429}
-  m_Layer: 0
+  - component: {fileID: 8502534341539077703}
+  m_Layer: 7
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -394,11 +395,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d364e7c10955148418d19a9d2bb10196, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defDistanceRay: 10
+  defDistanceRay: 20
   lazerFirePoint: {fileID: 1392300493830808359}
   m_lineRenderer: {fileID: 7703069799794149537}
   lazer: {fileID: 4686508388842697055}
-  energy: 7
+  energy: 10
   maxEnergy: 10
   cooldownTime: 3
   isCoolingDown: 0
@@ -769,7 +770,19 @@ MonoBehaviour:
     m_ActionId: bb35cca1-eb14-4f1b-b86b-16ecb81f027d
     m_ActionName: Player/New action
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8502534341539077703}
+        m_TargetAssemblyTypeName: CreateWall, Assembly-CSharp
+        m_MethodName: WallSkill
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 663c5520-ff36-48ff-84dc-e87caf304f4e
     m_ActionName: Player/WallSkill
   m_NeverAutoSwitchControlSchemes: 0
@@ -799,6 +812,26 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8502534341539077703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1394905247002266231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b63fb27e048ab074d88882e3758fc3a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aimProvider: {fileID: 3843341787014224063}
+  mainCamera: {fileID: 4309332662433344540}
+  wallPrefab: {fileID: 791046421596538744, guid: a6ca97ba7ca48b048ae3d303ad72987f, type: 3}
+  groundLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  placementWorldZ: 0
+  wallCooldown: 5
 --- !u!1 &1543275298263071022
 GameObject:
   m_ObjectHideFlags: 0
@@ -1404,7 +1437,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 67, y: -36}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &4686508388842697055
@@ -1614,7 +1647,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6698113, g: 0.6698113, b: 0.6698113, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1921,7 +1954,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.8301887, g: 0.8301887, b: 0.8301887, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2211,9 +2244,9 @@ MonoBehaviour:
     description: Decreases cooldown time and slightly increases damage
     icon: {fileID: -8783021853406769408, guid: 9c7be927c625681498a2c907a7efe639, type: 3}
     abilityType: 10
-    baseValue: 2
-    valuePerLevel: 2
-    isMultiplier: 0
+    baseValue: 5
+    valuePerLevel: 1.15
+    isMultiplier: 1
     cooldownBase: 0
     cooldownReductionPerLevel: 0
     cooldownIsMultiplier: 0
@@ -2327,7 +2360,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.8301887, g: 0.7949448, b: 0.7949448, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2603,7 +2636,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2672,7 +2705,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9071853866375414910}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 

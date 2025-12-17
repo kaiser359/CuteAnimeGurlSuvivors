@@ -14,14 +14,18 @@ public class EnemyAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (pHealth == null)
+        {
+            pHealth = GameObject.FindWithTag("Player").GetComponent<PlayerHealth>();
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        animator.SetBool("IsAttacking", true);
+        
         if (other.gameObject.CompareTag("Player"))
         {
+            animator.SetBool("IsAttacking", true);
             other.gameObject.GetComponent<PlayerHealth>().health -= damage;
         }
     }

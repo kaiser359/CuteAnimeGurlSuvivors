@@ -34,6 +34,9 @@ public class PlayerMovement : MonoBehaviour
             Vector3 vector3 = Vector3.left * _movement.x + Vector3.down * _movement.y;
             Aim.rotation = Quaternion.LookRotation(Vector3.forward, vector3);
         }
+
+        _animator.SetFloat("X", _rb.linearVelocityX);
+        _animator.SetFloat("Y", _rb.linearVelocityY);
     }
 
     public void Move(InputAction.CallbackContext ctx)
@@ -43,8 +46,6 @@ public class PlayerMovement : MonoBehaviour
         if (ctx.ReadValue<Vector2>() != Vector2.zero)
         {
             lastMoveDirection = ctx.ReadValue<Vector2>();
-            _animator.SetFloat("X", _rb.linearVelocityX);
-            _animator.SetFloat("Y", _rb.linearVelocityY);
         }
     }
 }

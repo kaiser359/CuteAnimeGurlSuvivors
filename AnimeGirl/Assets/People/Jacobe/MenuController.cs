@@ -51,6 +51,8 @@ public class MenuController : MonoBehaviour
     private Resolution[] resolutions;
 
     public float volume;
+
+    public chooseChar chooseChar;
     //public TMP_Text volumeText;
 
     private void Start()
@@ -93,7 +95,15 @@ public class MenuController : MonoBehaviour
     }
 
     public void NewGameDialogYes()
-    {
+    {if (chooseChar.chosen)
+        {
+            _newGameWorld = "sampleSceneCharacter2";
+        }
+        else
+        {
+            
+            _newGameWorld = "SampleScene";
+        }
         SceneManager.LoadScene(_newGameWorld);
     }
 

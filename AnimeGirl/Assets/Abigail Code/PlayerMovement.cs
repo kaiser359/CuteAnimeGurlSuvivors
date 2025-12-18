@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float _moveSpeed = 5f;
 
     private Vector2 _movement;
-
+    public Animator _animator;
     private Rigidbody2D _rb;
     private Vector2 input;
     public Vector2 lastMoveDirection;
@@ -43,6 +43,8 @@ public class PlayerMovement : MonoBehaviour
         if (ctx.ReadValue<Vector2>() != Vector2.zero)
         {
             lastMoveDirection = ctx.ReadValue<Vector2>();
+            _animator.SetFloat("X", _rb.linearVelocityX);
+            _animator.SetFloat("Y", _rb.linearVelocityY);
         }
     }
 }

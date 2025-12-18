@@ -263,6 +263,7 @@ GameObject:
   - component: {fileID: -8211495432770462464}
   - component: {fileID: 4738933391353821429}
   - component: {fileID: 8502534341539077703}
+  - component: {fileID: 7090700514011185693}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -558,6 +559,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _moveSpeed: 5
+  _animator: {fileID: 4738933391353821429}
   lastMoveDirection: {x: 0, y: 0}
   Aim: {fileID: 7333218905235242324}
 --- !u!114 &7682612768498606699
@@ -970,6 +972,30 @@ MonoBehaviour:
     m_Bits: 0
   placementWorldZ: 0
   wallCooldown: 5
+--- !u!114 &7090700514011185693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1394905247002266231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d10b95e34687a042b4c53245a17f159, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotateToMouse: 1
+  rotationOffset: 0
+  attackKey: 323
+  attackOrigin: {fileID: 1392300493830808359}
+  attackRange: 0.8
+  hitMask:
+    serializedVersion: 2
+    m_Bits: 64
+  damage: 10
+  attackCooldown: 0.5
+  _animator: {fileID: 4738933391353821429}
+  attackHitWindow: 0
 --- !u!1 &1543275298263071022
 GameObject:
   m_ObjectHideFlags: 0
@@ -1241,6 +1267,7 @@ MonoBehaviour:
     m_Bits: 4294967295
   damage: 10
   attackCooldown: 0.5
+  _animator: {fileID: 0}
   attackHitWindow: 0.5
 --- !u!1 &2504507562038442734
 GameObject:

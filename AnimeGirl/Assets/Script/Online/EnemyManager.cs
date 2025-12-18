@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.Cinemachine;
 using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
@@ -23,7 +24,7 @@ public class EnemyManager : MonoBehaviour
 
     // Wave management
     public int currentWave = 1;
-    private int enemiesPerWave = 2; // Start with 10 enemies in wave 1
+    private int enemiesPerWave = 5; // Start with 10 enemies in wave 1
     [SerializeField]private int enemiesSpawnedInWave = 0;
    [SerializeField] private int currentEnemiesAlive = 0;
 
@@ -34,9 +35,10 @@ public class EnemyManager : MonoBehaviour
 
     public float MinSpawnDistance = 10f; // Min Spawn Distance Away From Player
     public float MaxSpawnDistance = 30f; // Max Spawn Distance Away From Player
+  
 
     // Difficulty scaling (adjust as needed)
-    private const int ENEMIES_INCREASE_PER_WAVE = 3; //const int, and other functions make the game run more smoothly, i recommend. 
+    private const int ENEMIES_INCREASE_PER_WAVE = 1; //const int, and other functions make the game run more smoothly, i recommend. 
     private const float SPAWN_RATE_INCREASE_PER_WAVE = 0.2f;
     void Start()
     {
@@ -54,6 +56,7 @@ public class EnemyManager : MonoBehaviour
         else
         {
             HandleWaveSpawning();
+            
         }
     }
 

@@ -1,3 +1,4 @@
+using Unity.Cinemachine;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -27,8 +28,15 @@ public class TeleportOnFireHover : MonoBehaviour
     private GameObject _reticleInstance;
     private SpriteRenderer _reticleSR;
 
+    public CinemachineConfiner2D confiner; // Reference to the Cinemachine Confiner
+
     private void Awake()
     {
+        GameObject boundingObject = GameObject.Find("Dark background vr3_0");
+        if (boundingObject != null)
+        {
+            confiner.BoundingShape2D = boundingObject.GetComponent<Collider2D>();
+        }
         aimPosition = new Vector2(Screen.width, Screen.height) / 2;
 
         // Create a world-space reticle sprite (if a sprite was provided)

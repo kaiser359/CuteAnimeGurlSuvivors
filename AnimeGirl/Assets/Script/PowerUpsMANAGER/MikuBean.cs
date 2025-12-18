@@ -137,7 +137,7 @@ public class MikuBean : MonoBehaviour
             }
         }
         if (candamage == true) {
-            energy -= Time.deltaTime * 5f;
+            energy -= Time.deltaTime * 3f;
         }
 
         if (damageInterval <= 0.2f)

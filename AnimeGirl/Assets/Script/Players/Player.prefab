@@ -371,6 +371,7 @@ MonoBehaviour:
   reticle: {fileID: 5998533990593196103, guid: 67ebffe14deb3fd41ae08caefe77a84e, type: 3}
   reticleWorldZ: 0
   reticleScale: 1
+  confiner: {fileID: 8048610183957313784}
 --- !u!114 &7728896468987258641
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2842,7 +2843,7 @@ Transform:
   m_GameObject: {fileID: 8467051416246292034}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.000005722046, y: 4.154359, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

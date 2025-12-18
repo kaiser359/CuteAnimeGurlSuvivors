@@ -17,7 +17,7 @@ public class meleeatk : MonoBehaviour
     public float damage = 10f;
     public float attackCooldown = 0.5f;
 
-    Animation _animator;
+    public Animator _animator;
 
 
     [Header("Attack window (optional)")]
@@ -85,6 +85,7 @@ public class meleeatk : MonoBehaviour
         Vector2 origin = attackOrigin != null ? (Vector2)attackOrigin.position : (Vector2)transform.position;
         Collider2D[] hits = Physics2D.OverlapCircleAll(origin, attackRange, hitMask);
         ApplyDamageToHits(hits);
+        _animator.SetTrigger("Mouse0");
     }
 
     private IEnumerator PerformAttackWindow()
@@ -139,15 +140,5 @@ public class meleeatk : MonoBehaviour
         Gizmos.DrawWireSphere(origin, attackRange);
     }
 
-    private void ChangeAnimationState(string newState)
-    {
-        if (newState == _currentState)
-        {
-            return;
-        }
-
-        _animator.Play(newState);
-
-        _currentState = newState;
-    }
+    
 }

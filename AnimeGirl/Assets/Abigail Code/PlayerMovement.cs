@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float _moveSpeed = 5f;
 
     private Vector2 _movement;
-
+    public Animator _animator;
     private Rigidbody2D _rb;
     private Vector2 input;
     public Vector2 lastMoveDirection;
@@ -34,6 +34,9 @@ public class PlayerMovement : MonoBehaviour
             Vector3 vector3 = Vector3.left * _movement.x + Vector3.down * _movement.y;
             Aim.rotation = Quaternion.LookRotation(Vector3.forward, vector3);
         }
+
+        _animator.SetFloat("X", _rb.linearVelocityX);
+        _animator.SetFloat("Y", _rb.linearVelocityY);
     }
 
     public void Move(InputAction.CallbackContext ctx)

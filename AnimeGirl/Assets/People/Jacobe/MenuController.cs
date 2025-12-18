@@ -97,12 +97,12 @@ public class MenuController : MonoBehaviour
     public void NewGameDialogYes()
     {if (chooseChar.chosen)
         {
-            _newGameWorld = "sampleSceneCharacter2";
+            _newGameWorld = "InGameUITestCharacter2";
         }
         else
         {
             
-            _newGameWorld = "SampleScene";
+            _newGameWorld = "InGameUITest";
         }
         SceneManager.LoadScene(_newGameWorld);
     }

@@ -40,7 +40,7 @@ public class EnemyManager : MonoBehaviour
     // Difficulty scaling (adjust as needed)
     private const int ENEMIES_INCREASE_PER_WAVE = 1; //const int, and other functions make the game run more smoothly, i recommend. 
     private const float SPAWN_RATE_INCREASE_PER_WAVE = 0.2f;
-    private float timeSinceLastSpawn = 0f;
+    public float timeSinceLastSpawn = 0f;
     void Start()
     {
         // Calculate the initial time required between spawns

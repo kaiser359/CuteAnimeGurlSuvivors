@@ -159,6 +159,7 @@ MonoBehaviour:
   critdamaged: {fileID: 7804385059088845670}
   animator: {fileID: 6300350719346286775}
   timer: 0.5
+  scoreValue: 100
 --- !u!198 &7804385059088845670
 ParticleSystem:
   m_ObjectHideFlags: 0

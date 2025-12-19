@@ -2126,6 +2126,7 @@ MonoBehaviour:
   currentEnemiesAlive: 0
   MinSpawnDistance: 1
   MaxSpawnDistance: 5.93
+  timeSinceLastSpawn: 0
 --- !u!4 &1294951339
 Transform:
   m_ObjectHideFlags: 0
@@ -2219,6 +2220,7 @@ MonoBehaviour:
   currentEnemiesAlive: 0
   MinSpawnDistance: 1
   MaxSpawnDistance: 5.93
+  timeSinceLastSpawn: 0
 --- !u!4 &1711416566
 Transform:
   m_ObjectHideFlags: 0

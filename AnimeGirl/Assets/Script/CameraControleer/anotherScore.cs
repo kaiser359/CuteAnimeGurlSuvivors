@@ -16,6 +16,8 @@ public class anotherScore : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
         meshpa.text = "Max Score: " + max.maxScore.ToString(); 
     }
 

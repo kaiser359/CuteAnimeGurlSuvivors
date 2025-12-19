@@ -394,7 +394,7 @@ MonoBehaviour:
   baseLootChance: 0.05
   dashCooldown: 1
   baseCritDamage: 1.5
-  baseMikuBean: 2
+  baseMikuBean: 5
   baselifesteal: 0.1
   necromancyAmount: 5
   meteorDamage: 50
@@ -2812,7 +2812,7 @@ MonoBehaviour:
     description: Increase meteor damage and decrease cooldown time
     icon: {fileID: 0}
     abilityType: 9
-    baseValue: 50
+    baseValue: 80
     valuePerLevel: 10
     isMultiplier: 0
     cooldownBase: 9
@@ -2845,7 +2845,7 @@ MonoBehaviour:
     description: Decreases cooldown time and slightly increases damage
     icon: {fileID: -8783021853406769408, guid: 9c7be927c625681498a2c907a7efe639, type: 3}
     abilityType: 10
-    baseValue: 5
+    baseValue: 10
     valuePerLevel: 1.15
     isMultiplier: 1
     cooldownBase: 0

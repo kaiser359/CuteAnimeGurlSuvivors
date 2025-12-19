@@ -2810,7 +2810,7 @@ MonoBehaviour:
   abilities:
   - abilityName: KABOM
     description: Increase meteor damage and decrease cooldown time
-    icon: {fileID: 0}
+    icon: {fileID: -8783021853406769408, guid: 9c7be927c625681498a2c907a7efe639, type: 3}
     abilityType: 9
     baseValue: 80
     valuePerLevel: 10
@@ -2820,8 +2820,8 @@ MonoBehaviour:
     cooldownIsMultiplier: 0
     maxLevel: 5
   - abilityName: protection
-    description: Gain a shield (this will stack)
-    icon: {fileID: 0}
+    description: Gain a shield (will stack)
+    icon: {fileID: -8783021853406769408, guid: 9c7be927c625681498a2c907a7efe639, type: 3}
     abilityType: 8
     baseValue: 5
     valuePerLevel: 5
@@ -2831,7 +2831,7 @@ MonoBehaviour:
     cooldownIsMultiplier: 0
     maxLevel: 100
   - abilityName: Health
-    description: Increases max health
+    description: Increase max health
     icon: {fileID: -8783021853406769408, guid: 9c7be927c625681498a2c907a7efe639, type: 3}
     abilityType: 1
     baseValue: 110
@@ -2842,7 +2842,7 @@ MonoBehaviour:
     cooldownIsMultiplier: 0
     maxLevel: 10
   - abilityName: Miku Beam
-    description: Decreases cooldown time and slightly increases damage
+    description: Decrease cooldown time and slightly increase damage
     icon: {fileID: -8783021853406769408, guid: 9c7be927c625681498a2c907a7efe639, type: 3}
     abilityType: 10
     baseValue: 10
@@ -2853,8 +2853,8 @@ MonoBehaviour:
     cooldownIsMultiplier: 0
     maxLevel: 100
   - abilityName: CritRate
-    description: Increases base damage
-    icon: {fileID: 0}
+    description: Increase base damage
+    icon: {fileID: -8783021853406769408, guid: 9c7be927c625681498a2c907a7efe639, type: 3}
     abilityType: 4
     baseValue: 0.15
     valuePerLevel: 0.05
@@ -2864,8 +2864,8 @@ MonoBehaviour:
     cooldownIsMultiplier: 0
     maxLevel: 5
   - abilityName: CritDamage
-    description: increases base damage
-    icon: {fileID: 0}
+    description: increase base damage
+    icon: {fileID: -8783021853406769408, guid: 9c7be927c625681498a2c907a7efe639, type: 3}
     abilityType: 5
     baseValue: 1.5
     valuePerLevel: 0.05
@@ -2875,8 +2875,8 @@ MonoBehaviour:
     cooldownIsMultiplier: 0
     maxLevel: 100
   - abilityName: Necromancy
-    description: After killing an enemy it will come back from the dead to help you
-    icon: {fileID: 0}
+    description: After killing an enemy you summon allys
+    icon: {fileID: -8783021853406769408, guid: 9c7be927c625681498a2c907a7efe639, type: 3}
     abilityType: 12
     baseValue: 5
     valuePerLevel: 1
@@ -2886,8 +2886,8 @@ MonoBehaviour:
     cooldownIsMultiplier: 0
     maxLevel: 5
   - abilityName: LifeSteal
-    description: Healing per hit
-    icon: {fileID: 0}
+    description: Gain health back after dealing damage
+    icon: {fileID: -8783021853406769408, guid: 9c7be927c625681498a2c907a7efe639, type: 3}
     abilityType: 11
     baseValue: 0.2
     valuePerLevel: 0.2

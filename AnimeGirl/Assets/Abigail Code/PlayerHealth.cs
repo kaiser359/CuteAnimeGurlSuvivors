@@ -1,5 +1,6 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
@@ -8,6 +9,8 @@ public class PlayerHealth : MonoBehaviour
     public float maxHealth;
     public Image healthBar;
     private PlayerStats statsPlayer;
+ 
+    public MaxScore maxScore;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -33,6 +36,12 @@ public class PlayerHealth : MonoBehaviour
     {
         if(health <= 0f)
         {
+            if(maxScore.maxScore < maxScore.score)
+            {
+                maxScore.maxScore = maxScore.score;
+            }
+            maxScore.score = 0;
+            SceneManager.LoadScene("Main MenuTest");
             Destroy(gameObject);
         }
     }

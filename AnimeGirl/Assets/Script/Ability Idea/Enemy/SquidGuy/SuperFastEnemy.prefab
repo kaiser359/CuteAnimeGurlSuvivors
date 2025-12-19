@@ -159,6 +159,7 @@ MonoBehaviour:
   critdamaged: {fileID: 7804385059088845670}
   animator: {fileID: 7093509664993717434}
   timer: 0.5
+  scoreValue: 5
 --- !u!198 &7804385059088845670
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -4990,7 +4991,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pHealth: {fileID: 0}
-  damage: 1
+  damage: 10
   animator: {fileID: 7093509664993717434}
 --- !u!95 &7093509664993717434
 Animator:

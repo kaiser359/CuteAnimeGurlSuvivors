@@ -115,6 +115,10 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 3572638935911192686, guid: c80d37f700e61f4459c23c21c476c17e, type: 3}
+      propertyPath: scoreValue
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 5062858261542363923, guid: c80d37f700e61f4459c23c21c476c17e, type: 3}
       propertyPath: m_Name
       value: Combined Enemy Variant

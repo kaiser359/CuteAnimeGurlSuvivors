@@ -13,6 +13,8 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     public ParticleSystem critdamaged;
     public Animator animator;
     public float timer = 0f;
+    InGameScoreManager scoreManager;
+    public int scoreValue = 10;
     void Start()
     {
         currentHealth = maxHealth;
@@ -20,7 +22,8 @@ public class EnemyHealth : MonoBehaviour, IDamageable
 
     void Awake()
     {
-       // stats = GameObject.FindWithTag("Player").GetComponent<PlayerStats>();
+        // stats = GameObject.FindWithTag("Player").GetComponent<PlayerStats>();
+        scoreManager = GameObject.FindWithTag("GameControlle").GetComponent<InGameScoreManager>();
     }
 
 
@@ -77,6 +80,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     {
         float xpamount = UnityEngine.Random.Range(1f, 5f);
         int xpCount = Mathf.FloorToInt(xpamount);
+        scoreManager.AddScore(scoreValue);
         for (int i = 0; i < xpCount; i++)
         {
             Instantiate(xpdrop, transform.position, Quaternion.identity);

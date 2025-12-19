@@ -157,6 +157,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "anotherskill",
+                    "type": "Button",
+                    "id": "9226504a-49d1-46f6-bc90-31671fb7849e",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -718,6 +727,28 @@
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
                     "action": "WallSkill",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1c3caa6f-88e4-406d-8142-343b4a573a41",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "anotherskill",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "947ad902-948f-4725-8e91-7d9c6400c71c",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad",
+                    "action": "anotherskill",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

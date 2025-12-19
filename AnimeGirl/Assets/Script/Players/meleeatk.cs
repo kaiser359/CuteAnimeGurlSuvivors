@@ -69,6 +69,9 @@ public class meleeatk : MonoBehaviour
         if (ctx.canceled)
             return;
 
+        Debug.Log("731");
+        _animator.SetTrigger("Mouse0");
+
         if (_cooldownTimer <= 0f)
         {
             if (attackHitWindow > 0f)
@@ -85,7 +88,6 @@ public class meleeatk : MonoBehaviour
         Vector2 origin = attackOrigin != null ? (Vector2)attackOrigin.position : (Vector2)transform.position;
         Collider2D[] hits = Physics2D.OverlapCircleAll(origin, attackRange, hitMask);
         ApplyDamageToHits(hits);
-        _animator.SetTrigger("Mouse0");
     }
 
     private IEnumerator PerformAttackWindow()

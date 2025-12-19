@@ -264,6 +264,7 @@ GameObject:
   - component: {fileID: 4738933391353821429}
   - component: {fileID: 8502534341539077703}
   - component: {fileID: 7090700514011185693}
+  - component: {fileID: 6319957392915242587}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -928,6 +929,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 663c5520-ff36-48ff-84dc-e87caf304f4e
     m_ActionName: Player/WallSkill
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6319957392915242587}
+        m_TargetAssemblyTypeName: Icefrost, Assembly-CSharp
+        m_MethodName: iceSkill
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 9226504a-49d1-46f6-bc90-31671fb7849e
+    m_ActionName: 'Player/anotherskill[/Keyboard/f,/XInputControllerWindows/buttonEast]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -999,6 +1016,25 @@ MonoBehaviour:
   attackCooldown: 0.5
   _animator: {fileID: 4738933391353821429}
   attackHitWindow: 0
+--- !u!114 &6319957392915242587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1394905247002266231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 257f712178b931643a67d94b1d9252cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  icePrefab: {fileID: 17058551974807139, guid: 969d9675cf0a0fb4c9d9944f5580e654, type: 3}
+  firePoint: {fileID: 586075567540593552}
+  cam: {fileID: 4309332662433344540}
+  iceForce: 11.5
+  lifeTime: 6
+  cooldown: 4
+  cooldownTimer: 0
 --- !u!1 &1543275298263071022
 GameObject:
   m_ObjectHideFlags: 0
@@ -1737,7 +1773,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 586075567540593552}
   m_Father: {fileID: 1392300493830808359}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!1 &4249775698263065308
@@ -2667,6 +2704,37 @@ MonoBehaviour:
     MaxWindowSize: 0
     Padding: 0
   m_LegacyMaxWindowSize: -2
+--- !u!1 &7242342575168116535
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 586075567540593552}
+  m_Layer: 0
+  m_Name: anotheranother
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &586075567540593552
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7242342575168116535}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -1.641, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8940313313642672361}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7322302225964177514
 GameObject:
   m_ObjectHideFlags: 0

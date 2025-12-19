@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: c85ed60e8da1dbb40924bf7ab2380175
+guid: d2dac487c58b9c44c9235611c870bc65
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3235193900128965260
-    second: Venus Melo Credits_0
+      213: -1635568933443035777
+    second: Walkup_0
+  - first:
+      213: -5077780961862568705
+    second: Walkup_1
+  - first:
+      213: 191384037484995701
+    second: Walkup_2
+  - first:
+      213: 2484150675894681461
+    second: Walkup_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +46,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -51,7 +60,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 48
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -126,13 +135,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Venus Melo Credits_0
+      name: Walkup_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1920
-        height: 1080
+        x: 9
+        y: 112
+        width: 79
+        height: 75
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +150,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c8292bc16b7b5ec20800000000000000
-      internalID: 3235193900128965260
+      spriteID: f7d967c78ba4d49e0800000000000000
+      internalID: -1635568933443035777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walkup_1
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 112
+        width: 78
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff4b0f05e191889b0800000000000000
+      internalID: -5077780961862568705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walkup_2
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 17
+        width: 79
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57429f1a4cee7a200800000000000000
+      internalID: 191384037484995701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walkup_3
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 17
+        width: 78
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57fbf3dc0e9797220800000000000000
+      internalID: 2484150675894681461
       vertices: []
       indices: 
       edges: []
@@ -161,7 +236,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Venus Melo Credits_0: 3235193900128965260
+      Walkup_0: -1635568933443035777
+      Walkup_1: -5077780961862568705
+      Walkup_2: 191384037484995701
+      Walkup_3: 2484150675894681461
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

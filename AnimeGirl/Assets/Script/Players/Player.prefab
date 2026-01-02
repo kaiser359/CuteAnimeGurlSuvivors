@@ -1031,7 +1031,7 @@ MonoBehaviour:
   icePrefab: {fileID: 17058551974807139, guid: 969d9675cf0a0fb4c9d9944f5580e654, type: 3}
   firePoint: {fileID: 586075567540593552}
   cam: {fileID: 4309332662433344540}
-  iceForce: 11.5
+  iceSpeed: 15
   lifeTime: 6
   cooldown: 4
   cooldownTimer: 0

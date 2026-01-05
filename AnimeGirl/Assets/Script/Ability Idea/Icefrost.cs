@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 public class Icefrost : MonoBehaviour
 {
-    [Header("Ice Skill")]
+    
     public GameObject icePrefab;
     public Transform firePoint;
     public Camera cam;

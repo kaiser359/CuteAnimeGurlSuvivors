@@ -97,7 +97,7 @@ public class MenuController : MonoBehaviour
     public void NewGameDialogYes()
     {if (chooseChar.chosen)
         {
-            _newGameWorld = "SampleSceneCharacter2";
+            _newGameWorld = "SampleScene 2";
         }
         else
         {

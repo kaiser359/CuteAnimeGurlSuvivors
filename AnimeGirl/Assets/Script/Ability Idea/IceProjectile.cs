@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 public class IceProjectile : MonoBehaviour
 {
-    [Tooltip("World units per second the projectile moves while following the cursor")]
+   
     public float speed = 8f;
     public float lifetime = 6f;
 

@@ -261,7 +261,6 @@ GameObject:
   - component: {fileID: 2287042609581660008}
   - component: {fileID: 1141587822279890846}
   - component: {fileID: -8211495432770462464}
-  - component: {fileID: 4738933391353821429}
   - component: {fileID: 8502534341539077703}
   - component: {fileID: 7090700514011185693}
   - component: {fileID: 6319957392915242587}
@@ -342,12 +341,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 1389591211000041742, guid: 287920a56b05ee6469d1f9c7b48cb43c, type: 3}
+  m_Sprite: {fileID: -1138785818, guid: 287920a56b05ee6469d1f9c7b48cb43c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 4, y: 6}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -471,8 +470,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.56, y: 3.54}
-    newSize: {x: 1, y: 1}
+    oldSize: {x: 4, y: 6}
+    newSize: {x: 4, y: 6}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -562,7 +561,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _moveSpeed: 5
-  _animator: {fileID: 4738933391353821429}
+  _animator: {fileID: 0}
   lastMoveDirection: {x: 0, y: 0}
   Aim: {fileID: 7333218905235242324}
 --- !u!114 &7682612768498606699
@@ -950,28 +949,6 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 4309332662433344540}
---- !u!95 &4738933391353821429
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1394905247002266231}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 2fb7dbcbc9c72854eaa63979b229d5a5, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &8502534341539077703
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1014,7 +991,7 @@ MonoBehaviour:
     m_Bits: 64
   damage: 10
   attackCooldown: 0.5
-  _animator: {fileID: 4738933391353821429}
+  _animator: {fileID: 0}
   attackHitWindow: 0
 --- !u!114 &6319957392915242587
 MonoBehaviour:
@@ -1031,7 +1008,7 @@ MonoBehaviour:
   icePrefab: {fileID: 17058551974807139, guid: 969d9675cf0a0fb4c9d9944f5580e654, type: 3}
   firePoint: {fileID: 586075567540593552}
   cam: {fileID: 4309332662433344540}
-  iceForce: 11.5
+  iceSpeed: 12
   lifeTime: 6
   cooldown: 4
   cooldownTimer: 0
@@ -1306,7 +1283,7 @@ MonoBehaviour:
     m_Bits: 4294967295
   damage: 10
   attackCooldown: 0.5
-  _animator: {fileID: 4738933391353821429}
+  _animator: {fileID: 0}
   attackHitWindow: 0.5
 --- !u!1 &2504507562038442734
 GameObject:

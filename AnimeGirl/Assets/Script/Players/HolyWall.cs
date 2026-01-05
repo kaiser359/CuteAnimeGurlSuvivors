@@ -6,16 +6,13 @@ using UnityEngine;
 
 public class HolyWall : MonoBehaviour
 {
-    [Header("Tick settings")]
-    [Tooltip("Seconds between each damage/heal tick")]
+   
     public float tickInterval = 0.5f;
 
-    [Header("Damage to enemies")]
-    [Tooltip("Damage applied to enemies each tick")]
+   
     public float damagePerTick = 5f;
 
-    [Header("Heal to player")]
-    [Tooltip("Amount healed to player each tick while inside")]
+   
     public float healPerTick = 1f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

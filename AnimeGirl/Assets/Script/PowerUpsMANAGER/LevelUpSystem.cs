@@ -13,22 +13,22 @@ public class LevelUpSystem : MonoBehaviour
     [Header("Abilities")]
     public List<AbilityData> abilities = new List<AbilityData>();
 
-    // tracks current levels for each ability (parallel to abilities list)
+   
     [HideInInspector] public List<int> abilityLevels = new List<int>();
 
     [Header("UI")]
-    public CanvasGroup levelUpCanvas;   // panel that shows/hides the level-up UI
-    public Transform cardsParent;       // layout transform to spawn cards under
-    public GameObject cardPrefab;       // prefab with LevelUpCard
+    public CanvasGroup levelUpCanvas;   
+    public Transform cardsParent;       
+    public GameObject cardPrefab;    
 
     [Header("Settings")]
     public int cardsToShow = 3;
-    public bool allowDuplicates = true; // duplicates allowed among the 3 shown cards
+    public bool allowDuplicates = true; 
 
     [Header("Game hooks (optional)")]
-    public PlayerStats playerStats;     // optional reference to player stats to apply effects immediately
+    public PlayerStats playerStats;   
 
-    // runtime
+  
     private List<int> currentSelectionIndices = new List<int>();
     private List<GameObject> spawnedCards = new List<GameObject>();
     private System.Random rng = new System.Random();
@@ -38,10 +38,10 @@ public class LevelUpSystem : MonoBehaviour
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
 
-        // ensure abilityLevels matches abilities count
+       
         EnsureLevelsSize();
 
-        // hide UI initially
+        
         if (levelUpCanvas != null)
         {
             levelUpCanvas.alpha = 0f;
@@ -58,9 +58,7 @@ public class LevelUpSystem : MonoBehaviour
             abilityLevels.RemoveRange(abilities.Count, abilityLevels.Count - abilities.Count);
     }
 
-    /// <summary>
-    /// Call this from your XP/leveling system when the player levels up.
-    /// </summary>
+  
     public void OnPlayerLeveledUp()
     {
         ShowLevelUp();
@@ -85,7 +83,7 @@ public class LevelUpSystem : MonoBehaviour
             currentSelectionIndices.Add(idx);
             if (!allowDuplicates)
             {
-                // if duplicates not allowed, ensure unique selection
+                
                 int attempts = 0;
                 while (currentSelectionIndices.Count(x => x == idx) > 1 && attempts < 20)
                 {
@@ -96,7 +94,7 @@ public class LevelUpSystem : MonoBehaviour
             }
         }
         
-        // spawn cards
+      
         for (int i = 0; i < currentSelectionIndices.Count; i++)
         {
             int abilityIndex = currentSelectionIndices[i];
@@ -112,14 +110,14 @@ public class LevelUpSystem : MonoBehaviour
                 continue;
             }
 
-            // count duplicates for this ability in the current choice
+       
             int occurrences = currentSelectionIndices.Count(x => x == abilityIndex);
 
-            // prepare display strings
+            
             string title = data.abilityName;
             string desc = $"{data.description}\n(+{occurrences} level{(occurrences > 1 ? "s" : "")})";
 
-            // setup click callback
+           
             card.Setup(
                 title,
                 desc,
@@ -151,27 +149,27 @@ public class LevelUpSystem : MonoBehaviour
 
         EnsureLevelsSize();
 
-        // apply levels, respecting maxLevel if set
+      
         int current = abilityLevels[abilityIndex];
         int newLevel = current + occurrences;
         int max = abilities[abilityIndex].maxLevel;
         if (max > 0 && newLevel > max) newLevel = max;
         abilityLevels[abilityIndex] = newLevel;
 
-        // apply the actual gameplay effect
+       
         ApplyAbilityEffect(abilityIndex, newLevel, occurrences);
 
-        // close
+       
         CloseLevelUp();
     }
 
     private void ApplyAbilityEffect(int abilityIndex, int newLevel, int addedLevels)
     {
         var data = abilities[abilityIndex];
-        // Compute value from base + level * increment
+       
         float computedValue = data.baseValue + (newLevel * data.valuePerLevel);
 
-        // Use a switch/case like your original script
+        
         switch (data.abilityType)
         {
             case AbilityType.Damage:
@@ -230,17 +228,18 @@ public class LevelUpSystem : MonoBehaviour
                
                 break;
 
-            // inside LevelUpSystem.ApplyAbilityEffect(...)
+            
             case AbilityType.Meteor:
-                // Primary value = meteor damage, cooldown handled by GetCooldown
+               
                 if (playerStats != null)
                 {
-                    float damage = data.GetValue(newLevel);         // uses baseValue & valuePerLevel
-                    float cooldown = data.GetCooldown(newLevel);    // uses cooldownBase & cooldownReductionPerLevel
+                    float damage = data.GetValue(newLevel);        
+                    float cooldown = data.GetCooldown(newLevel);    
                     playerStats.SetMeteorDamage(damage);
                     playerStats.SetMeteorCooldown(cooldown);
 
-                    // Optionally allow setting radius from ability data (if you add a field)
+                   
+                   
                     // playerStats.SetMeteorRadius(data.someRadiusField);
 
                     Debug.Log($"[Ability] Meteor: damage={damage}, cooldown={cooldown}, level={newLevel}");
@@ -277,11 +276,7 @@ public class LevelUpSystem : MonoBehaviour
         }
     }
 
-#if UNITY_EDITOR
-    // convenience in editor to force show
-    [ContextMenu("DEBUG_ShowLevelUp")]
-    private void DebugShow() => ShowLevelUp();
-#endif
+
 }
 
 

@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class IcePathNode : MonoBehaviour
@@ -27,5 +28,14 @@ public class IcePathNode : MonoBehaviour
             var moveScript = other.GetComponent<PlayerMovement>();
             if (moveScript != null) moveScript._moveSpeed = 5f;
         }
+        if(other.CompareTag("Enemy"))
+        {
+            var enemyScript = other.GetComponent<EnemyHealth>();
+            if (enemyScript != null)
+            {
+                enemyScript.TakeDamage(5f);
+            }
+        }
     }
+    
 }

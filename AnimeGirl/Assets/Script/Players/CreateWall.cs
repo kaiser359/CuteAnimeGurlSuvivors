@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 public class CreateWall : MonoBehaviour
 {
     public PlayerHealth playersss;
-    private bool used;
+    private bool used = false;
     [SerializeField] private float timing = 5f; 
 
     private void Start()
@@ -21,7 +21,7 @@ public class CreateWall : MonoBehaviour
             return;
         if (used)
             return;
-        playersss.health += 15;
+        playersss.health += 15f;
         used = true;
 
 

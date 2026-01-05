@@ -6,16 +6,16 @@ public class MeteorAOE : MonoBehaviour
     public float radius = 2.5f;
     public float delayBeforeImpact = 0.6f;
     public LayerMask enemyLayer;
-    public GameObject impactVFX;    // optional VFX prefab (spawned at impact)
-    public float destroyAfter = 1f; // time after impact to destroy object
-    public float fallDuration = 1f; // time to reach the target
+    public GameObject impactVFX;    
+    public float destroyAfter = 1f;
+    public float fallDuration = 1f; 
 
     private float damage = 50f;
     private Vector2 target;
     private Vector3 startPosition;
 
     public GameObject Fire;
-    public int fireCount = 10; // number of fires to spawn in the AOE
+    public int fireCount = 10; 
 
     
     public void Initialize(Vector2 targetPosition, float damageAmount, float r)
@@ -23,7 +23,7 @@ public class MeteorAOE : MonoBehaviour
         target = targetPosition;
         damage = damageAmount;
         radius = r;
-        startPosition = (Vector3)target + Vector3.up * 10f; // start high above
+        startPosition = (Vector3)target + Vector3.up * 10f; 
         transform.position = startPosition;
 
         StartCoroutine(FallAndImpact());
@@ -43,7 +43,7 @@ public class MeteorAOE : MonoBehaviour
             transform.position = Vector3.Lerp(startPosition, (Vector3)target, t);
             yield return null;
         }
-        // spawn impact VFX might delete later
+       
         if (impactVFX != null)
             Instantiate(impactVFX, (Vector3)target, Quaternion.identity);
 
@@ -65,7 +65,7 @@ public class MeteorAOE : MonoBehaviour
             }
         }
 
-        // spawn multiple fires distributed inside the AOE, For loop 
+        
         if (Fire != null)
         {
             for (int i = 0; i < fireCount; i++)
@@ -77,7 +77,7 @@ public class MeteorAOE : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("MeteorAOE: Fire prefab is not assigned.");
+          
         }
 
         

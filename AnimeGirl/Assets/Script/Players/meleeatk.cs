@@ -11,7 +11,7 @@ public class meleeatk : MonoBehaviour
 
     [Header("Attack")]
     public KeyCode attackKey = KeyCode.Mouse0;
-    public Transform attackOrigin; // optional - defaults to this.transform
+    public Transform attackOrigin;
     public float attackRange = 0.8f;
     public LayerMask hitMask = ~0;
     public float damage = 10f;
@@ -52,7 +52,7 @@ public class meleeatk : MonoBehaviour
             }
         }
 
-        // attack input & cooldown
+       
         _cooldownTimer -= Time.deltaTime;
     }
 
@@ -93,7 +93,7 @@ public class meleeatk : MonoBehaviour
     private IEnumerator PerformAttackWindow()
     {
         float elapsed = 0f;
-        float interval = 0.05f; // hit sampling interval
+        float interval = 0.05f;
         while (elapsed < attackHitWindow)
         {
             Vector2 origin = attackOrigin != null ? (Vector2)attackOrigin.position : (Vector2)transform.position;
@@ -111,7 +111,7 @@ public class meleeatk : MonoBehaviour
             var col = hits[i];
             if (col == null) continue;
 
-            // try common damage receivers (IDamageable, EnemyHealth, Enemy)
+           
             var dmgable = col.GetComponentInParent<IDamageable>();
             if (dmgable != null)
             {

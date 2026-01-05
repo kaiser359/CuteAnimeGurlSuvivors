@@ -19,10 +19,10 @@ public class Evasion : MonoBehaviour
     private float _lastDashTime = -10f;
     private RigidbodyConstraints2D _originalConstraints;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    
     void Start()
     {
-        // preserved comment block — cache components
+      
         _rb = GetComponent<Rigidbody2D>();
         _col = GetComponent<Collider2D>();
         if (_rb != null) _originalConstraints = _rb.constraints;
@@ -46,24 +46,24 @@ public class Evasion : MonoBehaviour
 
         if (_rb != null)
         {
-            // ensure rotation remains frozen during dash
+           
             _rb.constraints |= RigidbodyConstraints2D.FreezeRotation;
         }
 
         if (_col != null)
         {
-            // disable collider so player can pass through objects while dashing
+          
             _col.enabled = false;
         }
 
-        // determine dash direction from input; fallback to current up if no input
+       
         Vector2 inputDir = GetComponent<PlayerMovement>().lastMoveDirection;
         Vector2 dashDir = inputDir.sqrMagnitude > 0.0001f ? inputDir.normalized : (Vector2)transform.up;
         Vector2 startPos = _rb != null ? _rb.position : (Vector2)transform.position;
         Vector2 targetPos = startPos + dashDir * dashDistance;
 
         float elapsed = 0f;
-        // move using physics-friendly MovePosition in FixedUpdate cadence
+       
         while (elapsed < dashDuration)
         {
             elapsed += Time.fixedDeltaTime;
@@ -78,19 +78,19 @@ public class Evasion : MonoBehaviour
             yield return new WaitForFixedUpdate();
         }
 
-        // ensure final position
+      
         if (_rb != null)
             _rb.MovePosition(targetPos);
         else
             transform.position = targetPos;
 
-        // restore collider and constraints
+      
         if (_col != null) _col.enabled = true;
         if (_rb != null) _rb.constraints = _originalConstraints;
 
         _isDashing = false;
     }
 
-    // Optional: expose whether currently dashing
+  
     public bool IsDashing => _isDashing;
 }

@@ -269,6 +269,7 @@ MonoBehaviour:
   currentEnemiesAlive: 0
   MinSpawnDistance: 2.97
   MaxSpawnDistance: 6.5
+  timeSinceLastSpawn: 0
 --- !u!4 &195907028
 Transform:
   m_ObjectHideFlags: 0
@@ -681,6 +682,95 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &523338910
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 523338913}
+  - component: {fileID: 523338912}
+  - component: {fileID: 523338911}
+  m_Layer: 0
+  m_Name: MenuController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &523338911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 523338910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a003984db23923b438a96a4c6876d8d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canUse: 1
+  menuController: {fileID: 523338912}
+  volumeTextValue: {fileID: 0}
+  volumeSlider: {fileID: 0}
+  brightnessSlider: {fileID: 0}
+  brightnessTextValue: {fileID: 0}
+  qualityDropdown: {fileID: 0}
+  fullScreenToggle: {fileID: 0}
+  SensitvityTextValue: {fileID: 0}
+  SensitvitySlider: {fileID: 0}
+  invertYToggle: {fileID: 0}
+--- !u!114 &523338912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 523338910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 354b57c5a9f4d2140b4d11df6ed6979a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LoadGameDialog_YesBtn: {fileID: 0}
+  volumeTextValue: {fileID: 0}
+  volumeSlider: {fileID: 0}
+  defaultVolume: 1
+  SensitvityTextValue: {fileID: 0}
+  SensitvitySlider: {fileID: 0}
+  defaultSensitvity: 4
+  mainSensitivity: 4
+  invertYToggle: {fileID: 0}
+  brightnessSlider: {fileID: 0}
+  brightnessTextValue: {fileID: 0}
+  defaultBrightness: 1
+  qualityDropdown: {fileID: 0}
+  fullScreenToggle: {fileID: 0}
+  comfirmationPrompt: {fileID: 0}
+  _newGameWorld: 
+  noSavedGameDialog: {fileID: 0}
+  resolutionDropdown: {fileID: 0}
+  volume: 0
+  chooseChar: {fileID: 0}
+  LoadGameBtn: {fileID: 0}
+--- !u!4 &523338913
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 523338910}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 961.28357, y: 552.83105, z: -0.008478105}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &560460481
 GameObject:
   m_ObjectHideFlags: 0
@@ -862,6 +952,7 @@ MonoBehaviour:
   currentEnemiesAlive: 0
   MinSpawnDistance: 2.97
   MaxSpawnDistance: 11.77
+  timeSinceLastSpawn: 0
 --- !u!4 &613846241
 Transform:
   m_ObjectHideFlags: 0
@@ -1534,6 +1625,7 @@ MonoBehaviour:
   currentEnemiesAlive: 0
   MinSpawnDistance: 2.97
   MaxSpawnDistance: 13
+  timeSinceLastSpawn: 0
 --- !u!4 &861285214
 Transform:
   m_ObjectHideFlags: 0
@@ -1730,6 +1822,7 @@ MonoBehaviour:
   currentEnemiesAlive: 0
   MinSpawnDistance: 1
   MaxSpawnDistance: 5.93
+  timeSinceLastSpawn: 0
 --- !u!4 &1035317052
 Transform:
   m_ObjectHideFlags: 0
@@ -2194,6 +2287,7 @@ MonoBehaviour:
   currentEnemiesAlive: 0
   MinSpawnDistance: 1
   MaxSpawnDistance: 5.93
+  timeSinceLastSpawn: 0
 --- !u!4 &1222325015
 Transform:
   m_ObjectHideFlags: 0
@@ -2904,6 +2998,7 @@ MonoBehaviour:
   currentEnemiesAlive: 0
   MinSpawnDistance: 2.97
   MaxSpawnDistance: 6.5
+  timeSinceLastSpawn: 0
 --- !u!4 &1580512749
 Transform:
   m_ObjectHideFlags: 0
@@ -2966,6 +3061,7 @@ MonoBehaviour:
   currentEnemiesAlive: 0
   MinSpawnDistance: 1
   MaxSpawnDistance: 9.9
+  timeSinceLastSpawn: 0
 --- !u!4 &1583774130
 Transform:
   m_ObjectHideFlags: 0
@@ -3334,6 +3430,7 @@ MonoBehaviour:
   currentEnemiesAlive: 0
   MinSpawnDistance: 1
   MaxSpawnDistance: 9.9
+  timeSinceLastSpawn: 0
 --- !u!4 &1885643426
 Transform:
   m_ObjectHideFlags: 0
@@ -3801,3 +3898,4 @@ SceneRoots:
   - {fileID: 1222325015}
   - {fileID: 1885643426}
   - {fileID: 1583774130}
+  - {fileID: 523338913}

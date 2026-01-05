@@ -152,7 +152,7 @@ RectTransform:
   m_Father: {fileID: 1930783569}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -524,31 +524,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 354b57c5a9f4d2140b4d11df6ed6979a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LoadGameDialog_YesBtn: {fileID: 0}
-  volumeTextValue: {fileID: 0}
-  volumeSlider: {fileID: 0}
+  LoadGameDialog_YesBtn: {fileID: 1068410178}
+  volumeTextValue: {fileID: 2128755663}
+  volumeSlider: {fileID: 1470366503}
   defaultVolume: 1
-  SensitvityTextValue: {fileID: 0}
-  SensitvitySlider: {fileID: 0}
+  SensitvityTextValue: {fileID: 1126348784}
+  SensitvitySlider: {fileID: 513536960}
   defaultSensitvity: 4
   mainSensitivity: 4
-  invertYToggle: {fileID: 0}
-  brightnessSlider: {fileID: 0}
-  brightnessTextValue: {fileID: 0}
+  invertYToggle: {fileID: 830319172}
+  brightnessSlider: {fileID: 614410509}
+  brightnessTextValue: {fileID: 114448042}
   defaultBrightness: 1
-  qualityDropdown: {fileID: 0}
-  fullScreenToggle: {fileID: 0}
-  _qualityLevel: 0
-  _isFullScreen: 0
-  _brightnessLevel: 0
+  qualityDropdown: {fileID: 1195323664}
+  fullScreenToggle: {fileID: 98088762}
   comfirmationPrompt: {fileID: 0}
-  _newGameWorld: 
-  WorldToLoad: 
+  _newGameWorld: SampleScene
   noSavedGameDialog: {fileID: 0}
-  resolutionDropdown: {fileID: 0}
+  resolutionDropdown: {fileID: 449565890}
   volume: 0
-  chooseChar: {fileID: 0}
-  LoadGameBtn: {fileID: 0}
+  chooseChar: {fileID: 859397286}
+  LoadGameBtn: {fileID: 1554401834}
 --- !u!1 &62017682
 GameObject:
   m_ObjectHideFlags: 0
@@ -1622,7 +1618,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.5707547, b: 0.7359078, a: 1}
+  m_Color: {r: 0.14509803, g: 0.7123038, b: 0.8666667, a: 0.6509804}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2255,10 +2251,10 @@ RectTransform:
   - {fileID: 652874459}
   m_Father: {fileID: 1891091559}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 960, y: -37.5}
+  m_SizeDelta: {x: 640, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &248633144
 MonoBehaviour:
@@ -2856,7 +2852,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &303462711
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5396,7 +5392,7 @@ RectTransform:
   m_Father: {fileID: 1392130555}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -9255,7 +9251,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &998144201
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9766,10 +9762,10 @@ RectTransform:
   - {fileID: 267357973}
   m_Father: {fileID: 1891091559}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 320, y: -37.5}
+  m_SizeDelta: {x: 640, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1020566822
 MonoBehaviour:
@@ -12590,6 +12586,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a003984db23923b438a96a4c6876d8d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canUse: 0
+  menuController: {fileID: 0}
+  volumeTextValue: {fileID: 0}
+  volumeSlider: {fileID: 0}
+  brightnessSlider: {fileID: 0}
+  brightnessTextValue: {fileID: 0}
+  qualityDropdown: {fileID: 0}
+  fullScreenToggle: {fileID: 0}
+  SensitvityTextValue: {fileID: 0}
+  SensitvitySlider: {fileID: 0}
+  invertYToggle: {fileID: 0}
 --- !u!4 &1358829979
 Transform:
   m_ObjectHideFlags: 0
@@ -16132,7 +16139,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.14509803, g: 0.7123038, b: 0.8666667, a: 0.6509804}
+  m_Color: {r: 0.9607844, g: 0.5411765, b: 0.7137255, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -17008,10 +17015,10 @@ RectTransform:
   - {fileID: 508299905}
   m_Father: {fileID: 1891091559}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 1600, y: -37.5}
+  m_SizeDelta: {x: 640, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1999903173
 MonoBehaviour:

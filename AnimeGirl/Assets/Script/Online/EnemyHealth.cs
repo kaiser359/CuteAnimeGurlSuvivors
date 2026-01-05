@@ -7,7 +7,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
 {
     public float maxHealth = 10f;
     [SerializeField]private float currentHealth;
-    private EnemyManager manager; // Reference to the manager
+    private EnemyManager manager; 
     public PlayerStats stats;
     public GameObject xpdrop;
     public ParticleSystem critdamaged;
@@ -27,7 +27,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     }
 
 
-    // Call this immediately after instantiation
+    
     public void SetManager(EnemyManager mgr)
     {
         manager = mgr;
@@ -75,7 +75,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
         }
     }
 
-    // inside Die() method, replace or update it to call Necromancy.Instance
+   
     private void Die()
     {
         float xpamount = UnityEngine.Random.Range(1f, 5f);
@@ -90,10 +90,10 @@ public class EnemyHealth : MonoBehaviour, IDamageable
             manager.EnemyDied();
         }
 
-        // Spawn an ally on death (if necromancy exists)
+        
         if (Necromancy.Instance != null)
         {
-            Necromancy.Instance.CreateAllys(1f); // spawn 1 ally
+            Necromancy.Instance.CreateAllys(1f);
         }
 
         Destroy(gameObject);

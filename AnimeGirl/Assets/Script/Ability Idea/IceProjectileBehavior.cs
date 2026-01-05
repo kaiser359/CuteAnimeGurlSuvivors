@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class IceProjectileBehavior : MonoBehaviour
 {
-    public GameObject speedNodePrefab; // Assign a prefab with a trigger collider
-    public float nodeSpawnDistance = 0.5f; // How often to drop a speed zone
+    public GameObject speedNodePrefab;
+    public float nodeSpawnDistance = 0.5f; 
     private Vector2 lastSpawnPos;
 
     public void Launch(Vector2 direction, float speed, float lifetime)
@@ -14,7 +14,6 @@ public class IceProjectileBehavior : MonoBehaviour
         rb.gravityScale = 0;
         rb.linearVelocity = direction * speed;
 
-        // Rotate to face travel direction
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, angle);
 
@@ -24,7 +23,7 @@ public class IceProjectileBehavior : MonoBehaviour
 
     void Update()
     {
-        // Drop a "speed node" every few units to create the functional path
+      
         if (Vector2.Distance(transform.position, lastSpawnPos) > nodeSpawnDistance)
         {
             if (speedNodePrefab != null)

@@ -26,8 +26,8 @@ public class MikuBean : MonoBehaviour
 
 
     public TextMeshProUGUI cooldownText; 
-    private Vector2 aimDirection; // legacy input fallback
-    private Vector2 _currentAimDir = Vector2.right; // normalized direction used by Shootlazer
+    private Vector2 aimDirection; 
+    private Vector2 _currentAimDir = Vector2.right; 
     private TeleportOnFireHover _teleportHover;
 
     private void Awake()
@@ -37,11 +37,11 @@ public class MikuBean : MonoBehaviour
         candamage = false;
         if (lazer != null) lazer.SetActive(false);
 
-        // try find TeleportOnFireHover on this object, parents or any instance in scene
+        
         _teleportHover = GetComponent<TeleportOnFireHover>() 
                          ?? GetComponentInParent<TeleportOnFireHover>() 
                          ?? FindObjectOfType<TeleportOnFireHover>();
-        // ensure we have a camera reference; prefer assigned Cam, else try teleport's camera, else Camera.main
+        
         if (Cam == null && _teleportHover != null)
             Cam = _teleportHover.playerCamera;
         if (Cam == null)
@@ -59,7 +59,7 @@ public class MikuBean : MonoBehaviour
             cooldownText.text = "Lazer Energy: " + Mathf.Ceil(energy).ToString();
         }
 
-        // update active state/sound
+       
         if (energy >= 0f && cooldownTime >= 3f && isPressing)
         {
             if (lazer != null) lazer.SetActive(true);
@@ -76,12 +76,11 @@ public class MikuBean : MonoBehaviour
             if (lazersound != null) lazersound.Stop();
         }
 
-        // compute aim direction using TeleportOnFireHover cursor if available,
-        // otherwise fallback to legacy InputSystem aimDirection or mouse position
+      
         Vector3 mouseWorldPos;
         if (_teleportHover != null && Cam != null)
         {
-            // compute proper z distance so ScreenToWorldPoint maps to the plane of this object
+          
             float zDistance = Mathf.Abs(Cam.transform.position.z - transform.position.z);
             Vector3 screenPoint = new Vector3(_teleportHover.aimPosition.x, _teleportHover.aimPosition.y, zDistance);
             mouseWorldPos = Cam.ScreenToWorldPoint(screenPoint);
@@ -96,13 +95,13 @@ public class MikuBean : MonoBehaviour
         }
         else
         {
-            // final fallback: use aimDirection from input
+           
             Vector2 fallbackDir = aimDirection.sqrMagnitude > 0.001f ? aimDirection.normalized : (Vector2)transform.right;
             _currentAimDir = fallbackDir;
             mouseWorldPos = (Vector3)m_transform.position + (Vector3)_currentAimDir * defDistanceRay;
         }
 
-        // compute final direction from fire origin to mouseWorldPos
+       
         Vector2 origin = lazerFirePoint != null ? (Vector2)lazerFirePoint.position : (Vector2)m_transform.position;
         Vector2 dir = (mouseWorldPos - (Vector3)origin);
         if (dir.sqrMagnitude > 0.0001f)
@@ -187,7 +186,7 @@ public class MikuBean : MonoBehaviour
                 foreach (var h in hits)
                 {
                     if (h.collider == null) continue;
-                    if (h.collider.gameObject == gameObject) continue; // avoid hitting self
+                    if (h.collider.gameObject == gameObject) continue; 
 
                     var enemyHealth = h.collider.GetComponent<EnemyHealth>();
                     if (enemyHealth != null)

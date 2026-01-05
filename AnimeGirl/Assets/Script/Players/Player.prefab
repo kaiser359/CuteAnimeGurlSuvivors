@@ -262,9 +262,9 @@ GameObject:
   - component: {fileID: 1141587822279890846}
   - component: {fileID: -8211495432770462464}
   - component: {fileID: 4738933391353821429}
-  - component: {fileID: 8502534341539077703}
   - component: {fileID: 7090700514011185693}
   - component: {fileID: 6319957392915242587}
+  - component: {fileID: 7210038945633456204}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -915,7 +915,7 @@ MonoBehaviour:
     m_ActionName: Player/New action
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8502534341539077703}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: CreateWall, Assembly-CSharp
         m_MethodName: WallSkill
         m_Mode: 0
@@ -972,26 +972,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &8502534341539077703
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1394905247002266231}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b63fb27e048ab074d88882e3758fc3a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  aimProvider: {fileID: 3843341787014224063}
-  mainCamera: {fileID: 4309332662433344540}
-  wallPrefab: {fileID: 791046421596538744, guid: a6ca97ba7ca48b048ae3d303ad72987f, type: 3}
-  groundLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  placementWorldZ: 0
-  wallCooldown: 8
 --- !u!114 &7090700514011185693
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1035,6 +1015,26 @@ MonoBehaviour:
   lifeTime: 6
   cooldown: 4
   cooldownTimer: 0
+--- !u!114 &7210038945633456204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1394905247002266231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b63fb27e048ab074d88882e3758fc3a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aimProvider: {fileID: 0}
+  mainCamera: {fileID: 0}
+  wallPrefab: {fileID: 0}
+  groundLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  placementWorldZ: 0
+  wallCooldown: 5
 --- !u!1 &1543275298263071022
 GameObject:
   m_ObjectHideFlags: 0

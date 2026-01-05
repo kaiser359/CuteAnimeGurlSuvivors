@@ -145,8 +145,8 @@ public class EnemyManager : MonoBehaviour
             }
         }
 
-        // Should not happen if chances add up correctly
-        return enemyTypes[0].prefab; // later i will add a guarantee chance to come a boss fight using similar code here
+      
+        return enemyTypes[0].prefab;
     }
 
     private Vector3 GetRandomSpawnPosition()
@@ -154,18 +154,18 @@ public class EnemyManager : MonoBehaviour
         Vector2 randomDirection = Random.insideUnitCircle.normalized; // Random direction
         float randomDistance = Random.Range(MinSpawnDistance, MaxSpawnDistance);
         Vector3 spawnOffset = new Vector3(randomDirection.x, randomDirection.y, 0) * randomDistance;
-        return Player.position + spawnOffset; // Final spawn position
+        return Player.position + spawnOffset;
     }
 
     private void StartNextWave()
     {
         currentWave++;
-        // Increase difficulty:
+       
         enemiesPerWave += ENEMIES_INCREASE_PER_WAVE;
         timeBetweenSpawns = 1f / (BASE_SPAWN_RATE_PER_SECOND + (currentWave - 1) * SPAWN_RATE_INCREASE_PER_WAVE);
 
         enemiesSpawnedInWave = 0;
-        currentEnemiesAlive = 0; // Should be 0 already from the check
+        currentEnemiesAlive = 0; 
 
         inWaveBreak = false;
         Debug.Log($"Starting Wave {currentWave} with {enemiesPerWave} enemies at a rate of 1 every {timeBetweenSpawns:F2} seconds.");

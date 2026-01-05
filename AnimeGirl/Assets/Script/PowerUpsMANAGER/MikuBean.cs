@@ -26,8 +26,8 @@ public class MikuBean : MonoBehaviour
 
 
     public TextMeshProUGUI cooldownText; 
-    private Vector2 aimDirection; // legacy input fallback
-    private Vector2 _currentAimDir = Vector2.right; // normalized direction used by Shootlazer
+    private Vector2 aimDirection; 
+    private Vector2 _currentAimDir = Vector2.right; 
     private TeleportOnFireHover _teleportHover;
 
     private void Awake()
@@ -37,11 +37,11 @@ public class MikuBean : MonoBehaviour
         candamage = false;
         if (lazer != null) lazer.SetActive(false);
 
-        // try find TeleportOnFireHover on this object, parents or any instance in scene
+        
         _teleportHover = GetComponent<TeleportOnFireHover>() 
                          ?? GetComponentInParent<TeleportOnFireHover>() 
                          ?? FindObjectOfType<TeleportOnFireHover>();
-        // ensure we have a camera reference; prefer assigned Cam, else try teleport's camera, else Camera.main
+        
         if (Cam == null && _teleportHover != null)
             Cam = _teleportHover.playerCamera;
         if (Cam == null)
@@ -59,7 +59,7 @@ public class MikuBean : MonoBehaviour
             cooldownText.text = "Lazer Energy: " + Mathf.Ceil(energy).ToString();
         }
 
-        // update active state/sound
+       
         if (energy >= 0f && cooldownTime >= 3f && isPressing)
         {
             if (lazer != null) lazer.SetActive(true);
@@ -186,7 +186,7 @@ public class MikuBean : MonoBehaviour
                 foreach (var h in hits)
                 {
                     if (h.collider == null) continue;
-                    if (h.collider.gameObject == gameObject) continue; // avoid hitting self
+                    if (h.collider.gameObject == gameObject) continue; 
 
                     var enemyHealth = h.collider.GetComponent<EnemyHealth>();
                     if (enemyHealth != null)

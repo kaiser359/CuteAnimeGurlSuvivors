@@ -27,7 +27,7 @@ public class IceProjectile : MonoBehaviour
         }
 
         Vector3 targetWorld;
-        // Prefer TeleportOnFireHover cursor if available
+       
         if (teleportHover != null && teleportHover.playerCamera != null)
         {
             Camera pc = teleportHover.playerCamera;
@@ -51,7 +51,7 @@ public class IceProjectile : MonoBehaviour
         Vector3 dir = targetWorld - transform.position;
         if (dir.sqrMagnitude > 0.0001f)
         {
-            // Move smoothly toward the live cursor position so the projectile "follows" the cursor
+           //direction from curson in firre rover
             float step = speed * Time.deltaTime;
             transform.position = Vector3.MoveTowards(transform.position, targetWorld, step);
             float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;

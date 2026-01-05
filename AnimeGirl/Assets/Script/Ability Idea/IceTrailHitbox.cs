@@ -3,7 +3,7 @@ using System.Collections;
 using System.Reflection;
 using UnityEngine;
 
-[RequireComponent(typeof(Collider2D))]
+
 public class IceTrailHitbox : MonoBehaviour
 {
     public float lifeTime = 0.6f;
@@ -13,14 +13,14 @@ public class IceTrailHitbox : MonoBehaviour
 
     void Awake()
     {
-        // ensure trigger collider
+      
         var col = GetComponent<Collider2D>();
         col.isTrigger = true;
     }
 
     void Start()
     {
-        // self-disable after lifeTime if not already destroyed
+        
         if (lifeTime > 0f)
             Invoke(nameof(Disable), lifeTime);
     }
@@ -36,19 +36,17 @@ public class IceTrailHitbox : MonoBehaviour
         if (!_active) return;
         if (!other.CompareTag("Player")) return;
 
-        // attempt several non-invasive ways to temporarily increase player speed:
-        // 1) find public float fields or properties named common variants (moveSpeed, speed, walkSpeed)
-        // 2) fallback: apply impulse to Rigidbody2D
+        
         var go = other.gameObject;
 
-        // try to modify a public float field/property using reflection
+       
         MonoBehaviour[] comps = go.GetComponents<MonoBehaviour>();
         foreach (var comp in comps)
         {
             if (comp == null) continue;
             Type t = comp.GetType();
 
-            // try fields
+           
             FieldInfo f = t.GetField("moveSpeed", BindingFlags.Public | BindingFlags.Instance)
                         ?? t.GetField("speed", BindingFlags.Public | BindingFlags.Instance)
                         ?? t.GetField("walkSpeed", BindingFlags.Public | BindingFlags.Instance);
@@ -61,7 +59,7 @@ public class IceTrailHitbox : MonoBehaviour
                 return;
             }
 
-            // try properties
+          
             PropertyInfo p = t.GetProperty("moveSpeed", BindingFlags.Public | BindingFlags.Instance)
                              ?? t.GetProperty("speed", BindingFlags.Public | BindingFlags.Instance)
                              ?? t.GetProperty("walkSpeed", BindingFlags.Public | BindingFlags.Instance);
@@ -75,19 +73,19 @@ public class IceTrailHitbox : MonoBehaviour
             }
         }
 
-        // fallback: try Rigidbody2D impulse as temporary velocity bump
+        
         var rb = go.GetComponent<Rigidbody2D>();
         if (rb != null)
         {
             Vector2 bump = (rb.linearVelocity.magnitude > 0.01f ? rb.linearVelocity.normalized : Vector2.right) * (speedMultiplier - 1f) * 3f;
             rb.AddForce(bump, ForceMode2D.Impulse);
-            // can't easily revert Rigidbody2D velocity reliably; just exit
+            
             _active = false;
             return;
         }
     }
 
-    System.Collections.IEnumerator RestoreFieldAfter(FieldInfo field, MonoBehaviour comp, float original, float delay)
+    IEnumerator RestoreFieldAfter(FieldInfo field, MonoBehaviour comp, float original, float delay)
     {
         yield return new WaitForSeconds(delay);
         if (comp != null && field != null)
@@ -97,7 +95,7 @@ public class IceTrailHitbox : MonoBehaviour
         Destroy(gameObject);
     }
 
-    System.Collections.IEnumerator RestorePropertyAfter(PropertyInfo prop, MonoBehaviour comp, float original, float delay)
+    IEnumerator RestorePropertyAfter(PropertyInfo prop, MonoBehaviour comp, float original, float delay)
     {
         yield return new WaitForSeconds(delay);
         if (comp != null && prop != null && prop.CanWrite)

@@ -264,6 +264,7 @@ GameObject:
   - component: {fileID: 8502534341539077703}
   - component: {fileID: 7090700514011185693}
   - component: {fileID: 6319957392915242587}
+  - component: {fileID: 2395792632117196083}
   m_Layer: 7
   m_Name: Player2
   m_TagString: Player
@@ -961,14 +962,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b63fb27e048ab074d88882e3758fc3a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aimProvider: {fileID: 3843341787014224063}
-  mainCamera: {fileID: 4309332662433344540}
-  wallPrefab: {fileID: 791046421596538744, guid: a6ca97ba7ca48b048ae3d303ad72987f, type: 3}
-  groundLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  placementWorldZ: 0
-  wallCooldown: 8
+  playersss: {fileID: 0}
+  timing: 5
 --- !u!114 &7090700514011185693
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1012,6 +1007,28 @@ MonoBehaviour:
   lifeTime: 6
   cooldown: 4
   cooldownTimer: 0
+--- !u!95 &2395792632117196083
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1394905247002266231}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1543275298263071022
 GameObject:
   m_ObjectHideFlags: 0

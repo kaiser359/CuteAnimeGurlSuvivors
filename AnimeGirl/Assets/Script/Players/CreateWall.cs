@@ -5,7 +5,7 @@ public class CreateWall : MonoBehaviour
 {
     public PlayerHealth playersss;
     private bool used;
-    [SerializeField] private float timing = 10f; 
+    [SerializeField] private float timing = 5f; 
 
     private void Start()
     {
@@ -21,7 +21,7 @@ public class CreateWall : MonoBehaviour
             return;
         if (used)
             return;
-        playersss.health += 10;
+        playersss.health += 15;
         used = true;
 
 
@@ -34,7 +34,7 @@ public class CreateWall : MonoBehaviour
             if (timing <= 0f)
             {
                 used = false;
-                timing = 10f;
+                timing = 5f;
             }
         }
     }

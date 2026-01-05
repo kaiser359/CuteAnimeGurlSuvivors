@@ -9,7 +9,6 @@ public class PlayerInventory : MonoBehaviour
     public void AddPaperFigurine(int amount)
     {
         paperFigurines += amount;
-        Debug.Log("Picked up +1 paper figurine! Total: " + paperFigurines);
     }
 
     public void Use(InputAction.CallbackContext ctx)
@@ -25,4 +24,4 @@ public class PlayerInventory : MonoBehaviour
         }
     }
 
-}//might usse this script for storing items later on. 
+}

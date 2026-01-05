@@ -6,29 +6,30 @@ using UnityEngine.InputSystem;
 
 public class TeleportOnFireHover : MonoBehaviour
 {
-    [Header("Player Camera")]
+    //this script had becomed bizare.its the now a "screen" which creates a cursor for most abilities.
+
     public Camera playerCamera;
 
-    [Header("LayerMask for Clickable Objects")]
+   
     public LayerMask fireLayer;
 
-    [Header("Teleport Settings")]
+   
     public float cooldown = 5f;
     private float nextTeleportTime = 0f;
 
     private Vector2 aimDelta;
     public Vector2 aimPosition;
 
-    [Header("Reticle")]
+   
     public Sprite reticle;
-    [Tooltip("World Z position where reticle will be placed (usually 0)")]
+   
     public float reticleWorldZ = 0f;
-    [Tooltip("Local scale applied to instantiated reticle sprite")]
+    
     public float reticleScale = 1f;
     private GameObject _reticleInstance;
     private SpriteRenderer _reticleSR;
 
-    public CinemachineConfiner2D confiner; // Reference to the Cinemachine Confiner
+    public CinemachineConfiner2D confiner; 
 
     private void Awake()
     {
@@ -39,17 +40,17 @@ public class TeleportOnFireHover : MonoBehaviour
         }
         aimPosition = new Vector2(Screen.width, Screen.height) / 2;
 
-        // Create a world-space reticle sprite (if a sprite was provided)
+        
         if (reticle != null)
         {
             _reticleInstance = new GameObject("Reticle");
             _reticleSR = _reticleInstance.AddComponent<SpriteRenderer>();
             _reticleSR.sprite = reticle;
-            _reticleSR.sortingOrder = 1000; // render on top of most things
+            _reticleSR.sortingOrder = 1000; 
             _reticleInstance.transform.localScale = Vector3.one * reticleScale;
         }
 
-        // clamp initially to camera viewport
+     
         ClampAimToCamera();
     }
 
@@ -68,7 +69,7 @@ public class TeleportOnFireHover : MonoBehaviour
 
     private void ClampAimToCamera()
     {
-        // if no camera assigned use full screen bounds
+      
         if (playerCamera == null)
         {
             aimPosition.x = Mathf.Clamp(aimPosition.x, 0f, Screen.width);
@@ -76,7 +77,7 @@ public class TeleportOnFireHover : MonoBehaviour
             return;
         }
 
-        // use camera pixel rect so cursor stays inside the camera viewport (handles split-screen / viewport adjustments)
+       
         Rect pr = playerCamera.pixelRect;
         aimPosition.x = Mathf.Clamp(aimPosition.x, pr.xMin, pr.xMax);
         aimPosition.y = Mathf.Clamp(aimPosition.y, pr.yMin, pr.yMax);
@@ -87,7 +88,7 @@ public class TeleportOnFireHover : MonoBehaviour
         if (_reticleInstance == null || playerCamera == null)
             return;
 
-        // compute world position at the desired reticleWorldZ plane
+        
         float zDistance = Mathf.Abs(playerCamera.transform.position.z - reticleWorldZ);
         Vector3 screenPoint = new Vector3(aimPosition.x, aimPosition.y, zDistance);
         Vector3 world = playerCamera.ScreenToWorldPoint(screenPoint);
@@ -123,7 +124,7 @@ public class TeleportOnFireHover : MonoBehaviour
     public void Aim(InputAction.CallbackContext ctx)
     {
         Vector2 delta = ctx.ReadValue<Vector2>();
-        // vertical no longer inverted; delta applied directly
+       
         aimDelta = delta;
     }
     

@@ -37,6 +37,8 @@ public class PlayerMovement : MonoBehaviour
 
         _animator.SetFloat("X", _rb.linearVelocityX);
         _animator.SetFloat("Y", _rb.linearVelocityY);
+
+
     }
 
     public void Move(InputAction.CallbackContext ctx)

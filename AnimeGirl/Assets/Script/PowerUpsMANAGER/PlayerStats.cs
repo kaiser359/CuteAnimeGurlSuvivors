@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-    // existing fields...
+   
     public float baseDamage = 1f;
     public float baseMaxHealth = 100f;
     public float baseMoveSpeed = 5f;
@@ -16,13 +16,13 @@ public class PlayerStats : MonoBehaviour
     public float baselifesteal = 0.1f;
     public float necromancyAmount = 5f;
 
-    // Meteor specific (tuned by LevelUpSystem when Meteor is chosen)
+   
     [Header("Meteor")]
     public float meteorDamage = 50f;
     public float meteorCooldown = 20f;
-    public float meteorRadius = 2.5f; // default radius, can also be changed on prefab
+    public float meteorRadius = 2.5f;
 
-    // Standard setters (used by LevelUpSystem)
+    
     public void SetDamage(float value) => baseDamage = value;
     public void SetMaxHealth(float value) => baseMaxHealth = value;
     public void SetMoveSpeed(float value) => baseMoveSpeed = value;
@@ -41,22 +41,22 @@ public class PlayerStats : MonoBehaviour
 
 
 
-    // Meteor setters
+    
     public void SetMeteorDamage(float damage)
     {
         meteorDamage = damage;
-        Debug.Log($"MeteorDamage set -> {meteorDamage}");
+       
     }
 
     public void SetMeteorCooldown(float cd)
     {
         meteorCooldown = cd;
-        Debug.Log($"MeteorCooldown set -> {meteorCooldown}");
+       
     }
 
     public void SetMeteorRadius(float r)
     {
         meteorRadius = r;
-        Debug.Log($"MeteorRadius set -> {meteorRadius}");
+       
     }
 }

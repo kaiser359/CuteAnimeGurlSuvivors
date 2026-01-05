@@ -9,43 +9,43 @@ public class EnemyManager : MonoBehaviour
     public class EnemyType
     {
         public GameObject prefab;
-        public float spawnChance; // Chance to spawn this type ( 0.6 for 60%) 
+        public float spawnChance; // ( 0.6 for 60%) 
     }
 
     public List<EnemyType> enemyTypes = new List<EnemyType>();
-    public Transform spawnPoint; // Assign a spawn point in the Inspector
+    public Transform spawnPoint;
 
     public Transform Player;
 
-    // Spawning parameters
+  
     private const float BASE_SPAWN_RATE_PER_SECOND = 3.0f;
-    private float timeBetweenSpawns; // Time needed to pass for one spawn
+    private float timeBetweenSpawns;
     private float spawnTimer = 0f;
 
-    // Wave management
+   
     public int currentWave = 1;
-    private int enemiesPerWave = 5; // Start with 10 enemies in wave 1
+    private int enemiesPerWave = 5; 
     [SerializeField]private int enemiesSpawnedInWave = 0;
    [SerializeField] private int currentEnemiesAlive = 0;
 
-    // Wave transition
+   
     private const float WAVE_BREAK_TIME = 10.0f;
     private float waveBreakTimer = WAVE_BREAK_TIME;
     private bool inWaveBreak = true;
 
-    public float MinSpawnDistance = 10f; // Min Spawn Distance Away From Player
-    public float MaxSpawnDistance = 30f; // Max Spawn Distance Away From Player
+    public float MinSpawnDistance = 10f; 
+    public float MaxSpawnDistance = 30f;
   
 
-    // Difficulty scaling (adjust as needed)
-    private const int ENEMIES_INCREASE_PER_WAVE = 1; //const int, and other functions make the game run more smoothly, i recommend. 
+  
+    private const int ENEMIES_INCREASE_PER_WAVE = 1; 
     private const float SPAWN_RATE_INCREASE_PER_WAVE = 0.2f;
     public float timeSinceLastSpawn = 0f;
     void Start()
     {
-        // Calculate the initial time required between spawns
+        
         timeBetweenSpawns = 1f / BASE_SPAWN_RATE_PER_SECOND;
-        Debug.Log("Game started. Waiting for the first wave to begin.");
+       
     }
 
     void Update()
@@ -79,20 +79,20 @@ public class EnemyManager : MonoBehaviour
 
     private void HandleWaveSpawning()
     {
-        // Check if the current wave is complete (all enemies spawned)
+       
         if (enemiesSpawnedInWave >= enemiesPerWave)
         {
-            // If all spawned enemies are also dead, end the wave and start the break
+            
             if (currentEnemiesAlive <= 0)
             {
-                Debug.Log($"Wave {currentWave} complete! Starting 20 second break.");
+               
                 inWaveBreak = true;
                 waveBreakTimer = WAVE_BREAK_TIME;
             }
             return;
         }
 
-        // Handle the slow spawning process
+       
         spawnTimer += Time.deltaTime;
 
         if (spawnTimer >= timeBetweenSpawns)
@@ -106,18 +106,18 @@ public class EnemyManager : MonoBehaviour
     {
         if (enemyTypes.Count == 0)
         {
-            Debug.LogError("No enemy types defined in the manager!");
+            
             return;
         }
 
-        // Select an enemy type based on chance
+        
         GameObject enemyPrefabToSpawn = SelectRandomEnemyPrefab();
 
         if (enemyPrefabToSpawn != null)
         {
             Vector3 spawnPosition = GetRandomSpawnPosition();
             GameObject newEnemy = Instantiate(enemyPrefabToSpawn, spawnPosition, Quaternion.identity);
-            // We need a reference to the manager within the enemy script. the script for enemy i did is subject to change.
+           
             newEnemy.GetComponent<EnemyHealth>().SetManager(this);
 
             enemiesSpawnedInWave++;
@@ -151,7 +151,7 @@ public class EnemyManager : MonoBehaviour
 
     private Vector3 GetRandomSpawnPosition()
     {
-        Vector2 randomDirection = Random.insideUnitCircle.normalized; // Random direction
+        Vector2 randomDirection = Random.insideUnitCircle.normalized; 
         float randomDistance = Random.Range(MinSpawnDistance, MaxSpawnDistance);
         Vector3 spawnOffset = new Vector3(randomDirection.x, randomDirection.y, 0) * randomDistance;
         return Player.position + spawnOffset;
@@ -168,7 +168,7 @@ public class EnemyManager : MonoBehaviour
         currentEnemiesAlive = 0; 
 
         inWaveBreak = false;
-        Debug.Log($"Starting Wave {currentWave} with {enemiesPerWave} enemies at a rate of 1 every {timeBetweenSpawns:F2} seconds.");
+        
     }
     private void OnDrawGizmos()
     {
@@ -185,7 +185,7 @@ public class EnemyManager : MonoBehaviour
 
 
 
-    // Public method called by the Enemy Health script when an enemy dies
+   
     public void EnemyDied()
     {
         currentEnemiesAlive--;

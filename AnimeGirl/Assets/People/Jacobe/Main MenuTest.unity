@@ -538,10 +538,21 @@ MonoBehaviour:
   defaultBrightness: 1
   qualityDropdown: {fileID: 1195323664}
   fullScreenToggle: {fileID: 98088762}
+<<<<<<< HEAD
+  _qualityLevel: 0
+  _isFullScreen: 0
+  _brightnessLevel: 0
+  comfirmationPrompt: {fileID: 630219708}
+  _newGameWorld: SampleScene
+  WorldToLoad: 
+  noSavedGameDialog: {fileID: 481227978}
+  resolutionDropdown: {fileID: 1195323664}
+=======
   comfirmationPrompt: {fileID: 0}
   _newGameWorld: SampleScene
   noSavedGameDialog: {fileID: 0}
   resolutionDropdown: {fileID: 449565890}
+>>>>>>> 3d4f1727ed3c95d00383928931ac4f35bdb3a060
   volume: 0
   chooseChar: {fileID: 859397286}
   LoadGameBtn: {fileID: 1554401834}
@@ -8298,8 +8309,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Score: '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 97122e9ebfcbd884681856fd61c168a6, type: 2}
-  m_sharedMaterial: {fileID: 7564743742437778847, guid: 97122e9ebfcbd884681856fd61c168a6, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

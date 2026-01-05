@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 1731009926468347836}
   - component: {fileID: 601092833620595293}
   - component: {fileID: 7929798845094656947}
-  - component: {fileID: 1323292702367993951}
   - component: {fileID: 3346946381707849374}
   - component: {fileID: 3125809909310236310}
   - component: {fileID: 2660529870592794255}
@@ -114,20 +113,6 @@ MonoBehaviour:
   findPaperFigurine: {fileID: 0}
   animator: {fileID: 7395354774930850702}
   distanceToStop: 0
---- !u!114 &1323292702367993951
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5062858261542363923}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 854a30da4d2e2ee40aaa011e067b439c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 40
-  maxHealth: 40
 --- !u!114 &3346946381707849374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -226,6 +211,7 @@ MonoBehaviour:
   critdamaged: {fileID: -5418498023830905944}
   animator: {fileID: 7395354774930850702}
   timer: 0.5
+  scoreValue: 10
 --- !u!198 &-5418498023830905944
 ParticleSystem:
   m_ObjectHideFlags: 0

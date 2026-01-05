@@ -24,7 +24,7 @@ public class MeteorAbility : MonoBehaviour
 
     private void Update()
     {
-        // cooldown tick
+        
         if (cooldownTimer > 0f)
         {
             cooldownTimer -= Time.deltaTime;
@@ -45,7 +45,7 @@ public class MeteorAbility : MonoBehaviour
         if (cooldownTimer <= 0f && meteorPrefab != null)
         {
             Vector3 mouseWorldPos = mainCamera.ScreenToWorldPoint(GetComponent<TeleportOnFireHover>().aimPosition);
-            mouseWorldPos.z = 0f;   // IMPORTANT for 2D accuracy
+            mouseWorldPos.z = 0f;   // IMPORTANT
             Vector2 targetPos = mouseWorldPos;
 
 

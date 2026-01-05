@@ -14,10 +14,9 @@ public class PlayerAbilities : MonoBehaviour
         TryUseAbility(AbilityType.Meteor);
     }
 
-    // Added missing method definition
+    
     private void TryUseAbility(AbilityType abilityType)
     {
-        // TODO: Implement ability usage logic here
-        Debug.Log($"Trying to use ability: {abilityType}");
+
     }
 }

@@ -3,7 +3,7 @@ using TMPro;
 using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using static UnityEngine.Rendering.DebugUI;
+
 [RequireComponent(typeof(PlayerStats))]
 public class MikuBean : MonoBehaviour
 {
@@ -107,7 +107,7 @@ public class MikuBean : MonoBehaviour
         if (dir.sqrMagnitude > 0.0001f)
             _currentAimDir = dir.normalized;
 
-        // rotate the laser object to face the cursor
+       
         float angledRad = Mathf.Atan2(_currentAimDir.y, _currentAimDir.x);
         float angledDeg = angledRad * Mathf.Rad2Deg;
         if (lazer != null) lazer.transform.rotation = Quaternion.Euler(0, 0, angledDeg);
@@ -211,7 +211,7 @@ public class MikuBean : MonoBehaviour
 
     void Draw2DRay(Vector2 startPos, Vector2 endPos)
     {
-        // ensure renderer has two positions
+      
         if (m_lineRenderer.positionCount < 2)
             m_lineRenderer.positionCount = 2;
 

@@ -35,9 +35,9 @@ public class Icefrost : MonoBehaviour
         if (!ctx.started || cooldownTimer > 0f || icePrefab == null) return;
 
         Vector2 origin = firePoint != null ? (Vector2)firePoint.position : (Vector2)transform.position;
-        Vector2 fireDirection = transform.right; // Default
+        Vector2 fireDirection = transform.right;
 
-        // Use your specific AimPosition/Camera logic
+      
         if (_teleportHover != null && _teleportHover.playerCamera != null)
         {
             Camera pc = _teleportHover.playerCamera;
@@ -49,10 +49,10 @@ public class Icefrost : MonoBehaviour
             fireDirection = ((Vector2)worldPoint - origin).normalized;
         }
 
-        // Spawn Projectile
+        
         GameObject ice = Instantiate(icePrefab, origin, Quaternion.identity);
 
-        // Setup Movement
+        
         IceProjectileBehavior proj = ice.GetComponent<IceProjectileBehavior>();
         if (proj == null) proj = ice.AddComponent<IceProjectileBehavior>();
 

@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D))]
+
 public class Ally : MonoBehaviour
 {
 
@@ -22,13 +22,13 @@ public class Ally : MonoBehaviour
     [HideInInspector]
     public Necromancy OwnerNecromancy;
 
-    // Separation / avoidance settings
+   
 
     public float separationRadius = 0.8f;
 
     public float separationStrength = 2.5f;
 
-    // Idle spread so allies don't all sit on the exact same point near owner
+   
 
     public float idleMinRadius = 0.4f;
 
@@ -38,14 +38,13 @@ public class Ally : MonoBehaviour
     private Transform _target;
     private float _attackTimer;
     private Vector2 _cachedOwnerPos;
-    private Vector2 _idleOffset; // per-ally offset so they spread around owner
-
+    private Vector2 _idleOffset;
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
         _attackTimer = attackInterval;
 
-        // pick a persistent random idle offset direction & radius so allies spread
+       
         _idleOffset = Random.insideUnitCircle.normalized * Random.Range(idleMinRadius, idleMaxRadius);
 
         StartCoroutine(TargetAndMoveRoutine());
@@ -60,7 +59,7 @@ public class Ally : MonoBehaviour
 
     private IEnumerator TargetAndMoveRoutine()
     {
-        // Frequent retargeting keeps behavior responsive
+       
         while (true)
         {
             FindNearestTarget();
@@ -70,7 +69,7 @@ public class Ally : MonoBehaviour
 
     void FixedUpdate()
     {
-        // Keep owner position cached each frame
+        
         if (OwnerNecromancy != null)
             _cachedOwnerPos = OwnerNecromancy.transform.position;
         else
@@ -121,7 +120,7 @@ public class Ally : MonoBehaviour
             _rb.MovePosition(_rb.position + vel * Time.fixedDeltaTime);
         }
 
-        // Attack when in range
+      
         if (dist <= attackRange)
         {
             _attackTimer -= Time.fixedDeltaTime;
@@ -166,7 +165,7 @@ public class Ally : MonoBehaviour
 
         if (count > 0)
         {
-            result = result / count; // average
+            result = result / count; 
             result = result.normalized * separationStrength * Mathf.Clamp01(result.magnitude);
         }
         return result;
@@ -174,19 +173,19 @@ public class Ally : MonoBehaviour
 
     private void ReturnTowardOwner()
     {
-        // move to a nearby point around the owner (so ally doesn't stack exactly on player)
+       
         if (OwnerNecromancy == null) return;
 
         Vector2 targetPos = (Vector2)OwnerNecromancy.transform.position + _idleOffset;
         Vector2 ownerPos = (Vector2)OwnerNecromancy.transform.position;
         float currentDist = Vector2.Distance(_rb.position, targetPos);
 
-        // If too far, move closer; else do minor idle (small wander)
-        if (currentDist > 0.25f) // get reasonably close to idle offset
+        
+        if (currentDist > 0.25f) 
         {
             Vector2 dir = (targetPos - _rb.position).normalized;
 
-            // apply separation while returning to avoid stacking near owner
+         
             Vector2 separation = ComputeSeparation();
             Vector2 combined = (dir + separation).normalized;
 
@@ -196,7 +195,7 @@ public class Ally : MonoBehaviour
 
     private void FindNearestTarget()
     {
-        // Use Physics2D.OverlapCircleAll for reliable detection
+      
         Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, detectionRadius);
         float bestDist = Mathf.Infinity;
         Transform best = null;
@@ -210,7 +209,7 @@ public class Ally : MonoBehaviour
             Transform candidate = col.transform;
             float d = Vector2.Distance(transform.position, candidate.position);
 
-            // Optionally ensure candidate is not too far from the owner (so ally won't chase off-screen)
+           
             if (OwnerNecromancy != null)
             {
                 float distToOwner = Vector2.Distance(OwnerNecromancy.transform.position, candidate.position);
@@ -231,7 +230,7 @@ public class Ally : MonoBehaviour
     {
         if (_target == null) return;
 
-        // Prefer IDamageable interface or EnemyHealth, fall back to legacy Enemy
+        
         var dmgable = _target.GetComponentInParent<IDamageable>();
         if (dmgable != null)
         {
@@ -254,11 +253,11 @@ public class Ally : MonoBehaviour
             }
         }
 
-        // If the target was destroyed by the damage, clear reference immediately and retarget
+        
         if (_target == null || !_target.gameObject.activeInHierarchy)
         {
             _target = null;
-            FindNearestTarget(); // immediate retarget
+            FindNearestTarget(); 
         }
     }
 
@@ -268,7 +267,6 @@ public class Ally : MonoBehaviour
             OwnerNecromancy.NotifyAllyDestroyed(gameObject);
     }
 
-    // visual debug in editor
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.cyan;

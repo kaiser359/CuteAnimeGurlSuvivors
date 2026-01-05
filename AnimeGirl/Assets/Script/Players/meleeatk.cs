@@ -4,12 +4,12 @@ using UnityEngine.InputSystem;
 
 public class meleeatk : MonoBehaviour
 {
-    [Header("Rotation")]
+
     public bool rotateToMouse = true;
-    [Tooltip("Degrees to add to computed angle (useful if sprite faces up/right by default)")]
+   
     public float rotationOffset = 0f;
 
-    [Header("Attack")]
+   
     public KeyCode attackKey = KeyCode.Mouse0;
     public Transform attackOrigin;
     public float attackRange = 0.8f;
@@ -20,8 +20,7 @@ public class meleeatk : MonoBehaviour
     public Animator _animator;
 
 
-    [Header("Attack window (optional)")]
-    [Tooltip("If >0, perform hits over this duration (useful for swing animations)")]
+    
     public float attackHitWindow = 0f;
 
     private float _cooldownTimer;
@@ -29,7 +28,7 @@ public class meleeatk : MonoBehaviour
     private Vector2 aimDirection;
     private string _currentState;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    
     void Start()
     {
         if (attackOrigin == null) attackOrigin = transform;
@@ -39,7 +38,7 @@ public class meleeatk : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // rotation follows mouse
+        
         if (rotateToMouse)
         {
             Camera cam = Camera.main;
@@ -69,7 +68,7 @@ public class meleeatk : MonoBehaviour
         if (ctx.canceled)
             return;
 
-        Debug.Log("731");
+      
         _animator.SetTrigger("Mouse0");
 
         if (_cooldownTimer <= 0f)

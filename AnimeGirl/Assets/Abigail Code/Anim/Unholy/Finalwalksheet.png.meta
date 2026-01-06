@@ -1,31 +1,25 @@
 fileFormatVersion: 2
-guid: 4bc69f21db429134784a67e43002d51a
+guid: 330e6bcb82d0fff48baa0cc607f1a0a4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -9132251387817580249
-    second: spritesprinklebattle_0
+      213: -2443343783409747946
+    second: Finalwalksheet_0
   - first:
-      213: 2502571740835372484
-    second: spritesprinklebattle_1
+      213: 2892249038187435183
+    second: Finalwalksheet_1
   - first:
-      213: -6747714762018275657
-    second: spritesprinklebattle_2
+      213: -1673423089602752757
+    second: Finalwalksheet_2
   - first:
-      213: 8659397734838343076
-    second: spritesprinklebattle_3
+      213: -8557201099331144632
+    second: Finalwalksheet_3
   - first:
-      213: -7733047831426343317
-    second: spritesprinklebattle_4
+      213: -6458060590963102946
+    second: Finalwalksheet_4
   - first:
-      213: -3842146241105459706
-    second: spritesprinklebattle_5
-  - first:
-      213: 7199979351816768155
-    second: spritesprinklebattle_6
-  - first:
-      213: -3112764160872024180
-    second: spritesprinklebattle_7
+      213: -5231445049615909167
+    second: Finalwalksheet_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -147,13 +141,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: spritesprinklebattle_0
+      name: Finalwalksheet_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 164
-        width: 80
-        height: 71
+        x: 36
+        y: 89
+        width: 35
+        height: 74
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -162,85 +156,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 729a09d5fb9b34180800000000000000
-      internalID: -9132251387817580249
+      spriteID: 618f3bd36cf771ed0800000000000000
+      internalID: -2443343783409747946
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesprinklebattle_1
+      name: Finalwalksheet_1
       rect:
         serializedVersion: 2
-        x: 113
-        y: 164
-        width: 75
-        height: 75
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4cd5c653dbbeab220800000000000000
-      internalID: 2502571740835372484
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spritesprinklebattle_2
-      rect:
-        serializedVersion: 2
-        x: 221
-        y: 170
-        width: 67
-        height: 77
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7bebd34cc2d4b52a0800000000000000
-      internalID: -6747714762018275657
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spritesprinklebattle_3
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 81
-        width: 68
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4a59cd14c5c5c2870800000000000000
-      internalID: 8659397734838343076
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spritesprinklebattle_4
-      rect:
-        serializedVersion: 2
-        x: 110
-        y: 87
-        width: 80
+        x: 136
+        y: 89
+        width: 28
         height: 73
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -250,20 +178,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b6e5ab008f1bea490800000000000000
-      internalID: -7733047831426343317
+      spriteID: fa4902b2d25532820800000000000000
+      internalID: 2892249038187435183
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesprinklebattle_5
+      name: Finalwalksheet_2
       rect:
         serializedVersion: 2
-        x: 202
-        y: 84
-        width: 86
-        height: 78
+        x: 229
+        y: 89
+        width: 29
+        height: 73
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -272,20 +200,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6068ecba954fdaac0800000000000000
-      internalID: -3842146241105459706
+      spriteID: b0f8a41f09ec6c8e0800000000000000
+      internalID: -1673423089602752757
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesprinklebattle_6
+      name: Finalwalksheet_3
       rect:
         serializedVersion: 2
-        x: 0
-        y: 2
-        width: 84
-        height: 76
+        x: 12
+        y: 0
+        width: 51
+        height: 67
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -294,20 +222,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b9a8f27c2177be360800000000000000
-      internalID: 7199979351816768155
+      spriteID: 844f8ca20f6be3980800000000000000
+      internalID: -8557201099331144632
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesprinklebattle_7
+      name: Finalwalksheet_4
       rect:
         serializedVersion: 2
-        x: 104
-        y: 5
-        width: 92
-        height: 78
+        x: 113
+        y: 0
+        width: 51
+        height: 68
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -316,8 +244,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c87f7a1ec7d3dc4d0800000000000000
-      internalID: -3112764160872024180
+      spriteID: e1be1b9db1c5066a0800000000000000
+      internalID: -6458060590963102946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Finalwalksheet_5
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 0
+        width: 29
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1defaabd17c2667b0800000000000000
+      internalID: -5231445049615909167
       vertices: []
       indices: 
       edges: []
@@ -336,14 +286,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      spritesprinklebattle_0: -9132251387817580249
-      spritesprinklebattle_1: 2502571740835372484
-      spritesprinklebattle_2: -6747714762018275657
-      spritesprinklebattle_3: 8659397734838343076
-      spritesprinklebattle_4: -7733047831426343317
-      spritesprinklebattle_5: -3842146241105459706
-      spritesprinklebattle_6: 7199979351816768155
-      spritesprinklebattle_7: -3112764160872024180
+      Finalwalksheet_0: -2443343783409747946
+      Finalwalksheet_1: 2892249038187435183
+      Finalwalksheet_2: -1673423089602752757
+      Finalwalksheet_3: -8557201099331144632
+      Finalwalksheet_4: -6458060590963102946
+      Finalwalksheet_5: -5231445049615909167
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

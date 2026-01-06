@@ -34,7 +34,7 @@ public class IcePathNode : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             var moveScript = other.GetComponent<PlayerMovement>();
-            if (moveScript != null) moveScript._moveSpeed = 9f;
+            if (moveScript != null) moveScript._moveSpeed = moveScript._movementSpeed;
         }
         if(other.CompareTag("Enemy"))
         {

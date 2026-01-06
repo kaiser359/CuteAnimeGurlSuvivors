@@ -8,8 +8,8 @@ public class Icefrost : MonoBehaviour
     public Transform firePoint;
     public Camera cam;
     public float iceSpeed = 12f;
-    public float lifeTime = 6f;
-    public float cooldown = 4f;
+    public float lifeTime = 4f;
+    public float cooldown = 5f;
     public float cooldownTimer = 0f;
 
     private TeleportOnFireHover _teleportHover;

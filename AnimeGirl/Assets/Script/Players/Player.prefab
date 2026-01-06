@@ -371,7 +371,7 @@ MonoBehaviour:
     m_Bits: 8
   cooldown: 5
   aimPosition: {x: 0, y: 0}
-  reticle: {fileID: 5998533990593196103, guid: 67ebffe14deb3fd41ae08caefe77a84e, type: 3}
+  reticle: {fileID: -113619527424295160, guid: 8e24c19aa1a307f4da7a2157ea98c489, type: 3}
   reticleWorldZ: 0
   reticleScale: 1
   confiner: {fileID: 8048610183957313784}
@@ -562,6 +562,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _moveSpeed: 9
+  _movementSpeed: 0
   _animator: {fileID: 4738933391353821429}
   lastMoveDirection: {x: 0, y: 0}
   Aim: {fileID: 7333218905235242324}

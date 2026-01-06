@@ -3,7 +3,8 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] public float _moveSpeed;
+   public float _moveSpeed;
+    public float _movementSpeed;
 
     private Vector2 _movement;
     public Animator _animator;
@@ -14,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     bool isWalking = false;
     private void Awake()
     {
+        _movementSpeed = _moveSpeed;
         _rb = GetComponent<Rigidbody2D>();
     }
 

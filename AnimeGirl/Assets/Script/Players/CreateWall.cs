@@ -5,27 +5,33 @@ public class CreateWall : MonoBehaviour
 {
     public PlayerHealth playersss;
     private bool used = false;
-    [SerializeField] private float timing = 5f; 
+    [SerializeField] private float timing = 5f;
+    private float initialTiming;
 
     private void Start()
     {
- 
-   
+        
+        initialTiming = timing;
     }
 
-  
     public void WallSkill(InputAction.CallbackContext ctx)
     {
-       
-        if (ctx.canceled || !ctx.performed)
+     
+        if (!ctx.performed)
             return;
         if (used)
             return;
-        playersss.health += 15f;
+        if (playersss == null)
+        {
+           
+            return;
+        }
+
+       
+        playersss.health = Mathf.Min(playersss.health + 15f, playersss.maxHealth);
         used = true;
-
-
     }
+
     private void Update()
     {
         if (used)
@@ -34,9 +40,8 @@ public class CreateWall : MonoBehaviour
             if (timing <= 0f)
             {
                 used = false;
-                timing = 5f;
+                timing = initialTiming;
             }
         }
     }
-
 }

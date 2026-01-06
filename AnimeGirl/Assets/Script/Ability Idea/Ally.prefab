@@ -128,15 +128,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c79d177be4c9ad14fad86da5da601b45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
+  moveSpeed: 6
   damage: 10
-  attackInterval: 0.5
-  attackRange: 0.8
+  attackInterval: 0.2
+  attackRange: 1
   detectionRadius: 10
   maxDistanceFromOwner: 6
   lifeTime: 30
   OwnerNecromancy: {fileID: 0}
-  separationRadius: 0.8
+  separationRadius: 1.5
   separationStrength: 2.5
   idleMinRadius: 0.4
   idleMaxRadius: 1.2

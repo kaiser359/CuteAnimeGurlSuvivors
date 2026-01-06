@@ -4,13 +4,13 @@ using UnityEngine.InputSystem;
 
 public class Evasion : MonoBehaviour
 {
-    [Tooltip("Key to trigger the dash")]
+
     public KeyCode dashKey = KeyCode.Space;
-    [Tooltip("Distance the player dashes")]
+   
     public float dashDistance = 5f;
-    [Tooltip("How long the dash lasts (seconds)")]
+  
     public float dashDuration = 0.15f;
-    [Tooltip("Cooldown between dashes (seconds)")]
+  
     public float dashCooldown = 0.5f;
 
     private Rigidbody2D _rb;

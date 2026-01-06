@@ -388,7 +388,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseDamage: 1
-  baseMaxHealth: 100
+  baseMaxHealth: 150
   baseMoveSpeed: 5
   baseFireRate: 1
   baseCritChance: 0.15
@@ -471,7 +471,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.8333334, y: 1.4583334}
+    oldSize: {x: 3.6666667, y: 2.9166667}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -561,7 +561,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d233d994adcefa45a5311bc0e197d76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveSpeed: 5
+  _moveSpeed: 9
   _animator: {fileID: 4738933391353821429}
   lastMoveDirection: {x: 0, y: 0}
   Aim: {fileID: 7333218905235242324}
@@ -591,8 +591,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11e3edd7f13633448a92ffa036a1b0fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
-  maxHealth: 100
+  health: 170
+  maxHealth: 170
   healthBar: {fileID: 976766521928913166}
   maxScore: {fileID: 11400000, guid: ce281c332e1b67d4395c80e6078b663b, type: 2}
 --- !u!114 &4655429733741332835
@@ -915,7 +915,7 @@ MonoBehaviour:
     m_ActionName: Player/New action
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 7210038945633456204}
         m_TargetAssemblyTypeName: CreateWall, Assembly-CSharp
         m_MethodName: WallSkill
         m_Mode: 0

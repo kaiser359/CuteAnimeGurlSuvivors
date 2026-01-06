@@ -265,6 +265,7 @@ GameObject:
   - component: {fileID: 7090700514011185693}
   - component: {fileID: 6319957392915242587}
   - component: {fileID: 2395792632117196083}
+  - component: {fileID: -8795313590005235858}
   m_Layer: 7
   m_Name: Player2
   m_TagString: Player
@@ -561,7 +562,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d233d994adcefa45a5311bc0e197d76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveSpeed: 5
+  _moveSpeed: 12
   _animator: {fileID: 2395792632117196083}
   lastMoveDirection: {x: 0, y: 0}
   Aim: {fileID: 7333218905235242324}
@@ -1029,6 +1030,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-8795313590005235858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1394905247002266231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b63fb27e048ab074d88882e3758fc3a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playersss: {fileID: 4972336310639523834}
+  timing: 5
 --- !u!1 &1543275298263071022
 GameObject:
   m_ObjectHideFlags: 0
